@@ -19,9 +19,9 @@ h1{font-size:25px;font-weight:800;color:#233022}
 .overview{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}
 .ov{font-size:14px;font-weight:700;padding:6px 12px;border-radius:9px;border:1px solid var(--line)}
 .ov-s{background:var(--sbg);color:var(--s)} .ov-a{background:var(--abg);color:var(--a)} .ov-b{background:var(--bbg);color:var(--b)} .ov-bc{background:var(--bcbg);color:var(--bc)} .ov-c{background:var(--cbg);color:var(--c)}
-.twrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;margin-top:16px;background:var(--card)}
+.twrap{overflow:visible;border:1px solid var(--line);border-radius:14px;margin-top:16px;background:var(--card)}
 table{border-collapse:collapse;width:100%;min-width:1180px;font-size:14px}
-thead th{background:#e3ead6;color:#4a5644;font-weight:700;font-size:13px;text-align:left;padding:11px 12px;border-bottom:2px solid var(--line);white-space:nowrap;position:sticky;top:0}
+thead th{background:#e3ead6;color:#4a5644;font-weight:700;font-size:13px;text-align:left;padding:11px 12px;border-bottom:2px solid var(--line);white-space:nowrap;position:sticky;top:0;z-index:5;box-shadow:0 2px 5px rgba(0,0,0,.10)}
 th.r,td.q{text-align:right}
 tbody td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
 tr:hover td{background:var(--card2)}
