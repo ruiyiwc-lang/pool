@@ -98,7 +98,19 @@
 </div>
 
 <script>
-// px/chg/pe 为初始快照(实时接口会覆盖)；lo/hi 为250日基线；q=gtimg代码
+// 52周高低基线(近250交易日)——每晚cron回填真实值,盘中突破由前端实时顶起
+// ==== BASE52_START ====
+const BASE52 = {
+"hk00700":[411.0,677.7],"hk09992":[137.38,337.08],"sh600660":[47.53,74.58],
+"sh600309":[54.50,97.00],"sh600519":[1151.01,1568.00],"sz002415":[27.63,37.09],
+"sh603259":[78.38,135.17],"sz300750":[257.72,468.75],"sh600406":[21.08,32.06],
+"sh601899":[18.82,44.94],"sh600938":[25.41,44.54],"sh601088":[36.80,51.18],
+"sh601600":[7.06,15.85],"sh603993":[8.02,28.78],"sh600887":[23.76,29.78],
+"sh603288":[31.60,42.45],"hk09633":[39.22,55.12],"hk01579":[11.16,16.73],
+"sh600900":[25.38,30.68],"sh600941":[85.38,113.44]
+};
+// ==== BASE52_END ====
+// px/chg/pe 为初始快照(实时接口会覆盖)；lo/hi 从BASE52注入；q=gtimg代码
 const DATA = {
   "成长 / 收费站池 — PEG式A/B线定价":[
     {tier:"接近 · 短期可能出手", cls:"t-near", stocks:[
@@ -162,7 +174,10 @@ const DATA = {
 
 // flatten for fetching
 const STOCKS=[];
-for(const tiers of Object.values(DATA)) for(const t of tiers) for(const s of t.stocks) STOCKS.push(s);
+for(const tiers of Object.values(DATA)) for(const t of tiers) for(const s of t.stocks){
+  if(BASE52[s.q]){ s.lo=BASE52[s.q][0]; s.hi=BASE52[s.q][1]; } // 用cron回填的基线覆盖
+  STOCKS.push(s);
+}
 
 function ampCls(a){return a>=100?'amp-hi':(a>=50?'amp-md':'amp-lo');}
 
@@ -229,7 +244,15 @@ function applyQuotes(txt){
     if(raw){
       const f=raw.split('~');
       const px=parseFloat(f[3]), chg=parseFloat(f[32]), pe=parseFloat(f[39]);
-      if(isFinite(px)&&px>0){ s.px=px; if(isFinite(chg))s.chg=chg; if(isFinite(pe)&&pe!==0)s.pe=pe; ok++; }
+      const dHi=parseFloat(f[33]), dLo=parseFloat(f[34]); // 当日最高/最低
+      if(isFinite(px)&&px>0){
+        s.px=px; if(isFinite(chg))s.chg=chg; if(isFinite(pe)&&pe!==0)s.pe=pe; ok++;
+        // 盘中突破52周高低→实时顶起基线（老高点滚出窗口由每晚cron回填）
+        const hiC=Math.max(px, isFinite(dHi)?dHi:0);
+        const loC=Math.min(px, isFinite(dLo)?dLo:Infinity);
+        if(hiC>s.hi) s.hi=+hiC.toFixed(2);
+        if(loC<s.lo) s.lo=+loC.toFixed(2);
+      }
     }
   });
   render();
