@@ -218,32 +218,52 @@ function render(){
   document.getElementById('app').innerHTML=html;
 }
 
-// ==== 实时行情：qt.gtimg.cn 用 <script> 注入绕过跨域（返回 v_xxx="..." 全局变量）====
-function refresh(){
-  const codes=STOCKS.map(s=>s.q).join(',');
+// ==== 实时行情：qt.gtimg.cn（响应头带 access-control-allow-origin:* → fetch 可跨域；GBK编码用TextDecoder解码）====
+function applyQuotes(txt){
+  let ok=0;
+  const re=/v_([a-z]+\d+)="([^"]*)"/g; let m;
+  const map={};
+  while((m=re.exec(txt))!==null){ map[m[1]]=m[2]; }
+  STOCKS.forEach(s=>{
+    const raw=map[s.q];
+    if(raw){
+      const f=raw.split('~');
+      const px=parseFloat(f[3]), chg=parseFloat(f[32]), pe=parseFloat(f[39]);
+      if(isFinite(px)&&px>0){ s.px=px; if(isFinite(chg))s.chg=chg; if(isFinite(pe)&&pe!==0)s.pe=pe; ok++; }
+    }
+  });
+  render();
+  const t=new Date().toLocaleTimeString('zh-CN',{hour12:false});
+  document.getElementById('upd').innerHTML=`<span class="live">● 实时</span> 已更新 ${ok}/${STOCKS.length} 只 · ${t}`;
+}
+
+function fallbackScript(codes){
   const sc=document.createElement('script');
   sc.charset='GBK';
   sc.src='https://qt.gtimg.cn/q='+codes+'&_='+Date.now();
   sc.onload=function(){
-    let ok=0;
-    STOCKS.forEach(s=>{
-      const raw=window['v_'+s.q];
-      if(raw && typeof raw==='string'){
-        const f=raw.split('~');
-        const px=parseFloat(f[3]), chg=parseFloat(f[32]), pe=parseFloat(f[39]);
-        if(isFinite(px)&&px>0){ s.px=px; if(isFinite(chg))s.chg=chg; if(isFinite(pe)&&pe!==0)s.pe=pe; ok++; }
-      }
-    });
-    render();
-    const t=new Date().toLocaleTimeString('zh-CN',{hour12:false});
-    document.getElementById('upd').innerHTML=`<span class="live">● 实时</span> 已更新 ${ok}/${STOCKS.length} 只 · ${t}`;
+    let txt='';
+    STOCKS.forEach(s=>{ const raw=window['v_'+s.q]; if(raw) txt+=`v_${s.q}="${raw}"\n`; });
+    applyQuotes(txt);
     if(sc.parentNode) sc.parentNode.removeChild(sc);
   };
   sc.onerror=function(){
-    document.getElementById('upd').innerHTML=`<span class="fail">⚠ 行情接口拉取失败（跨域/网络），显示上次快照值</span>`;
+    document.getElementById('upd').innerHTML=`<span class="fail">⚠ 行情接口拉取失败（跨域/网络），显示上次值</span>`;
     if(sc.parentNode) sc.parentNode.removeChild(sc);
   };
   document.body.appendChild(sc);
+}
+
+function refresh(){
+  const codes=STOCKS.map(s=>s.q).join(',');
+  fetch('https://qt.gtimg.cn/q='+codes+'&_='+Date.now())
+    .then(r=>r.arrayBuffer())
+    .then(buf=>{
+      let txt;
+      try{ txt=new TextDecoder('gbk').decode(buf); }catch(e){ txt=new TextDecoder('utf-8').decode(buf); }
+      applyQuotes(txt);
+    })
+    .catch(()=>{ fallbackScript(codes); });
 }
 
 render();
