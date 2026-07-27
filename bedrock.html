@@ -45,6 +45,13 @@ td.q .sh{font-weight:800;font-size:15px} td.q .mv{display:block;font-size:12px;c
 .navwrap .lg{font-size:13px;color:var(--sub);margin:6px 0 10px} .navwrap .lg i{font-style:normal;font-weight:800}
 .navwrap .lg .p{color:var(--up)} .navwrap .lg .h{color:var(--dim)}
 .navnote{font-size:12.5px;color:var(--dim);line-height:1.8;margin-top:8px}
+.sg{font-weight:800;font-size:12.5px;padding:2px 9px;border-radius:6px;white-space:nowrap}
+.sg-hold{background:#dfe6d3;color:#5a6650} .sg-act{background:var(--up);color:#fff}
+.sop{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:16px;font-size:14px;line-height:1.85;color:var(--txt)}
+.sop h3{font-size:16px;color:#233022;margin-bottom:8px}
+.sop .ly{margin-top:12px} .sop .ly b{color:#233022}
+.sop .tag{display:inline-block;font-size:11.5px;font-weight:800;color:#fff;background:var(--acc);border-radius:6px;padding:1px 8px;margin-right:6px}
+.sop .gate{background:var(--goldbg);border-left:3px solid var(--gold);padding:8px 12px;margin-top:12px;border-radius:0 8px 8px 0;color:#5a4410}
 </style></head><body><div class="wrap">
 <h1>中国高端制造基石 · 2B 出海龙头(三问筛)</h1>
 <div class="statusbar"><span id="upd">加载中…</span><button class="rbtn" onclick="refresh()">↻ 刷新行情</button>
@@ -62,6 +69,8 @@ td.q .sh{font-weight:800;font-size:15px} td.q .mv{display:block;font-size:12px;c
 
 <div class="chips">
 <div class="chip"><div class="k">今日组合涨跌</div><div class="v" id="c-day">–</div></div>
+<div class="chip"><div class="k">再平衡信号</div><div class="v" id="c-reb">–</div></div>
+<div class="chip"><div class="k">下次季度再平衡</div><div class="v" id="c-next" style="font-size:15px">–</div></div>
 <div class="chip"><div class="k">已配置市值</div><div class="v" id="c-dep">–</div></div>
 <div class="chip"><div class="k">剩余现金</div><div class="v" id="c-cash">–</div></div>
 <div class="chip"><div class="k">核心档实配</div><div class="v" id="c-core">–</div></div>
@@ -69,9 +78,24 @@ td.q .sh{font-weight:800;font-size:15px} td.q .mv{display:block;font-size:12px;c
 </div>
 
 <div class="twrap"><table>
-<thead><tr><th>标的 · 细分</th><th>档位</th><th class="r">目标权重</th><th class="r">现价</th><th class="r">今日</th><th class="r">建议股数(整手)</th><th class="r">建议市值</th><th class="r">实时权重</th><th class="r">偏离</th></tr></thead>
-<tbody id="etfbody"><tr><td colspan="9" style="padding:20px;color:var(--sub)">加载行情中…</td></tr></tbody>
+<thead><tr><th>标的 · 细分</th><th>档位</th><th class="r">目标权重</th><th class="r">现价</th><th class="r">今日</th><th class="r">建议股数(整手)</th><th class="r">建议市值</th><th class="r">实时权重</th><th class="r">偏离</th><th>动作(信号灯)</th></tr></thead>
+<tbody id="etfbody"><tr><td colspan="10" style="padding:20px;color:var(--sub)">加载行情中…</td></tr></tbody>
 </table></div>
+
+<div class="sop">
+<h3>操作纪律手册 · 把一篮子股票当一只 ETF 来纪律化运作</h3>
+核心只有一句:<b>攒成 ETF 的意义就是把"选股的自由裁量"换成"照规则执行"</b>。三层各管一件事,互不越界。
+
+<div class="ly"><span class="tag">第一层</span><b>权重纪律(机械层,不掺个人看法)</b>——<b>建仓(分批网格)</b>:目标仓位分 4-5 份,每 2 周投一份;期间组合较建仓起点每跌 5% 额外补一份,约 2-3 个月建满,按目标权重下单凑整手。<b>再平衡(双轨)</b>:平时任一核心单只偏离目标 &gt;±2pct(相对 20%)、卫星 &gt;±0.7pct 就把它调回目标(上方信号灯亮"调回");无论如何每季度末最后一交易日全组合拉回一次(见"下次季度再平衡"卡片)。本质=被强制的高抛低吸,涨多的减、跌少的补,不预测。</div>
+
+<div class="ly"><span class="tag">第二层</span><b>生死纪律(基本面层,你就是"指数编制委员会")</b>——ETF 不会自动换成分。每季度用七问/护城河四级把 17 只逐一体检,只问"它还是不是赚得久×守得住×死不了的好公司"。坏了(七问不过/护城河塌/逻辑证伪)→该只清零剔除,权重按档内等权补给同档其余标的,<b>与股价无关、涨着也走</b>;份额/出海/盈利质量变了→升降档下次再平衡生效;没变→维持。新标的须先过三问筛+七问,进来先放卫星观察 1-2 季再谈升核心。</div>
+
+<div class="ly"><span class="tag">关键坑</span>某只暴跌时先分清:是<b>"跌多了触发再平衡该补"</b>还是<b>"逻辑坏了该杀"</b>。前者补、后者杀,<b>绝不把已坏掉的公司当便宜货越跌越补去接飞刀</b>。判断走第二层,不走第一层。</div>
+
+<div class="ly"><span class="tag">第三层</span><b>牛熊纪律(仓位层,卖出二分法)</b>——<b>个股级卖出</b>只因公司坏了(即第二层清零),不看价不看情绪。<b>组合级卖出</b>是唯一"因为贵而卖":只动总仓位、不动内部结构,须双确认——行业/全市场主升浪鸡犬升天(市场级情绪顶,非盯单只分位,防分位陷阱)＋组合整体估值分位到极端高位,两者都满足才分批减总仓、留底仓,减下来的转现金/红利 ETF 压舱。没到"满市欢腾"不因涨而卖;好公司的正常回撤不是卖出理由,不设机械止损,唯一"止损"是逻辑证伪。</div>
+
+<div class="gate"><b>总闸</b>:每次操作只记三样——<b>日期 · 动作 · 触发的是哪一条规则</b>。凡是找不到对应规则的操作,一律不做。这句是"ETF 化"与"随手买卖"的唯一分界线;你盯的永远是组合净值跑赢基准没、回撤控住没,而不是某只某天涨跌。</div>
+</div>
 
 <div class="navwrap">
 <h3>近一年组合净值回测(基准 100)</h3>
@@ -297,11 +321,14 @@ function renderETF(map){
    dep+=amt;if(p.t==='核心')coreAmt+=amt;else satAmt+=amt;
  });
  PORT.forEach(p=>{if(p._amt)dayNum+=p._chg*(p._amt/dep);});
+ let breach=0;
  PORT.forEach(p=>{
-   if(!p._amt){rows.push('<tr><td class="l"><div class="nml"><span class="nm">'+p.n+'</span><span class="code">'+p.c+' · '+p.cy+'</span></div><div class="seg">'+p.s+'</div></td><td colspan="8" style="color:var(--dim)">行情缺失</td></tr>');return;}
+   if(!p._amt){rows.push('<tr><td class="l"><div class="nml"><span class="nm">'+p.n+'</span><span class="code">'+p.c+' · '+p.cy+'</span></div><div class="seg">'+p.s+'</div></td><td colspan="9" style="color:var(--dim)">行情缺失</td></tr>');return;}
    const actW=p._amt/dep, dev=(actW-p.w)*100;
    const thr=p.t==='核心'?2:0.7;
-   const devCls=Math.abs(dev)>thr?'dev hi':'dev ok';
+   const brk=Math.abs(dev)>thr;if(brk)breach++;
+   const devCls=brk?'dev hi':'dev ok';
+   const sig=brk?('<span class="sg sg-act">'+(dev>0?'减 → 调回':'补 → 调回')+'</span>'):'<span class="sg sg-hold">持有</span>';
    const chgCls=p._chg>=0?'up':'down';
    const tierCls=p.t==='核心'?'t-core':'t-sat';
    rows.push('<tr'+(p.t==='核心'?' class="cr"':'')+'>'+
@@ -314,15 +341,28 @@ function renderETF(map){
      '<td class="q">'+wan(p._amt)+'</td>'+
      '<td class="q">'+(actW*100).toFixed(1)+'%</td>'+
      '<td class="q"><span class="'+devCls+'">'+(dev>=0?'+':'')+dev.toFixed(1)+'pct</span></td>'+
+     '<td>'+sig+'</td>'+
    '</tr>');
  });
  document.getElementById('etfbody').innerHTML=rows.join('');
  const dc=document.getElementById('c-day');
  dc.textContent=(dayNum>=0?'+':'')+dayNum.toFixed(2)+'%';dc.className='v '+(dayNum>=0?'up':'down');
+ const rb=document.getElementById('c-reb');
+ rb.textContent=breach>0?(breach+' 只需调回'):'全部达标';rb.className='v '+(breach>0?'up':'down');
+ document.getElementById('c-next').textContent=nextRebal();
  document.getElementById('c-dep').textContent=wan(dep);
  document.getElementById('c-cash').textContent=wan(CAP-dep);
  document.getElementById('c-core').textContent=(coreAmt/dep*100).toFixed(1)+'%';
  document.getElementById('c-sat').textContent=(satAmt/dep*100).toFixed(1)+'%';
+}
+function nextRebal(){
+ const now=new Date(),y=now.getFullYear();
+ const cands=[new Date(y,2,31),new Date(y,5,30),new Date(y,8,30),new Date(y,11,31),new Date(y+1,2,31)];
+ let t=cands.find(x=>x>=now)||cands[cands.length-1];
+ t=new Date(t.getTime());
+ while(t.getDay()===0||t.getDay()===6)t.setDate(t.getDate()-1);
+ const m=('0'+(t.getMonth()+1)).slice(-2),d=('0'+t.getDate()).slice(-2);
+ return t.getFullYear()+'-'+m+'-'+d;
 }
 document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',function(){
  document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('on'));
