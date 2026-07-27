@@ -1,0 +1,120 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>恒瑞医药 · 基石深度</title><style>
+:root{--bg:#eef2e6;--card:#f7faf0;--ink:#26301f;--dim:#5a6b4d;--line:#d3ddc2;--accent:#2f7d4f;--warn:#8a5a1a;--buy:#1f6b3a;--sell:#a23a3a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.85 -apple-system,'PingFang SC','Microsoft YaHei',sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:22px 18px 80px}
+a{color:var(--accent)}
+.top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+h1{font-size:30px;margin:6px 0 2px}
+.seg{color:var(--dim);font-size:16px}
+.crown{background:#f3e4a8;color:#7a5c10;border:1px solid #e0cd7a;border-radius:6px;padding:1px 8px;font-size:15px}
+.qbar{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0 8px;display:flex;flex-wrap:wrap;gap:18px;align-items:baseline;font-size:17px}
+.qbar b{font-size:26px;color:var(--accent)}
+.qbar .lbl{color:var(--dim);font-size:14px;margin-right:4px}
+#upd{color:var(--dim);font-size:13px}
+.rbtn{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:5px 12px;font-size:14px;cursor:pointer}
+h2{font-size:22px;margin:30px 0 10px;padding-left:10px;border-left:5px solid var(--accent)}
+p{margin:10px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;background:var(--card);font-size:16px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#e3ead4}
+.v-passx{color:#1f6b3a;font-weight:700}
+.v-pass{color:#2f7d4f;font-weight:600}
+.v-warn{color:#8a5a1a;font-weight:600}
+.v-fail{color:#a23a3a;font-weight:700}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:12px 0}
+.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px 12px 46px;margin:10px 0;position:relative}
+.step>b{font-size:17px}
+.sn{position:absolute;left:12px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sd{margin-top:6px}
+.dim{color:var(--dim);font-size:14px}
+table.calc{margin:10px 0 2px;font-size:15px}
+table.calc .dx{color:var(--sell);font-weight:700;white-space:nowrap}
+table.calc .pv{color:var(--buy);font-weight:700;font-size:17px;white-space:nowrap}
+table.calc tr.sum td{background:#eef3e2}
+.verdict{background:#e6f0e0;border:1px solid #bcd3a8;border-radius:12px;padding:14px 18px;font-size:18px;margin:12px 0}
+.val3{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.val3 .b{flex:1;min-width:150px;border-radius:10px;padding:12px 14px;text-align:center;border:1px solid var(--line)}
+.val3 .sell{background:#f6e4e4;border-color:#e0bcbc}
+.val3 .buy{background:#e4f0e6;border-color:#bcd8c2}
+.val3 .bot{background:#eae4f0;border-color:#cbbce0}
+.val3 .k{font-size:14px;color:var(--dim)}
+.val3 .p{font-size:26px;font-weight:700;margin-top:2px}
+.up{border-left:5px solid #c9b6e0;margin:12px 0;background:var(--card);border-radius:0 10px 10px 0;padding:12px 16px}
+.up.jj{border-color:#e0a6c0}.up.td{border-color:#c9a06a}.up.ts{border-color:#7aa6c9}.up.mg{border-color:#e0b46a}
+.up .who{font-weight:700;font-size:17px}
+.up.nocov{opacity:.7}
+.nav{margin:8px 0 4px}
+.foot{color:var(--dim);font-size:14px;margin-top:26px;border-top:1px dashed var(--line);padding-top:12px}
+.foot a{display:inline-block;margin:2px 10px 2px 0}
+</style></head><body><div class="wrap">
+<div class="nav"><a href="../bedrock.html">← 返回中国高端制造基石</a></div>
+<div class="top"><h1>恒瑞医药</h1><span class="seg">创新药(半2B:卖药+BD授权)</span></div>
+<div class="qbar" data-c="sh600276">
+<span><span class="lbl">现价</span><b id="px">—</b></span>
+<span><span class="lbl">涨跌</span><span id="chg">—</span></span>
+<span><span class="lbl">PE-TTM</span><span id="pe">—</span></span>
+<span><span class="lbl">总市值(亿)</span><span id="cap">—</span></span>
+<button class="rbtn" onclick="refresh()">↻ 刷新</button><span id="upd">加载中…</span>
+</div>
+
+<h2>一、财报与增长</h2><p><b>2025</b>营收316.29亿(+13.02%)、归母净利77.11亿(+21.69%)、净利率24.4%，利润增速快于营收=结构改善。</p><p>创新药销售163.42亿(+26.09%)占药品销售58.34%;研发投入87.24亿(费用化69.61亿)——高投入吞噬利润但为第二曲线蓄能。</p><p>2026Q1营收81.41亿(+12.98%)、归母22.82亿(+21.78%)、创新药占比61.69%首破六成;BD大单:GSK首付5亿/总125亿美元、默沙东Lp(a)总19.7亿美元。</p>
+<h2>二、业务状况</h2><p>创新药占比58%→61.69%持续上台阶，管线含ADC/GLP-1(HRS-9531)/PD-1双抗;BD出海爆发，近两年License-out潜在金额超百亿美元，首付款直接增厚当期利润。</p><p>仿制药仍占药品销售约四成，处集采'挤出期'存量降价萎缩;出海目前='卖青苗'收首付/里程碑，尚未自建海外商业化、海外终端赚钱能力未验证。</p>
+<h2>三、管理层</h2><p>孙飘扬(实控人)专注主业、无失信，分红稳定(2025拟10派2元)，2025年5月H股上市补国际化资金;短板=自建海外商业化经验不足。</p>
+<h2>四、竞争格局</h2><p>国内研发管线最深、销售网络最广的创新药龙头，但技术非'唯一'，百济/信达/翰森在PD-1/ADC/BTK贴身追赶，可被复制→护城河黄灯。</p><p>出海:百济(Brukinsa全球自建商业化)已在'海外赚终端钱'领先且市值反超恒瑞;恒瑞走BD授权=变现快但天花板受制于MNC，尚未成全球王。</p>
+
+<h2>王超七问评分</h2>
+<table><tr><th style="width:32%">维度</th><th style="width:14%">判定</th><th>依据</th></tr>
+<tr><td>1 商业模式</td><td class='v-pass'>Pass</td><td>处方药卖医院(医保/集采定价)+创新药授权MNC收首付/里程碑，模式清晰但B端议价受医保压制</td></tr>
+<tr><td>2 市场空间</td><td class='v-pass'>Pass</td><td>中国创新药+全球授权双引擎，创新药占比仅六成仍有提升+海外增量，天花板高</td></tr>
+<tr><td>3 盈利逻辑</td><td class='v-pass'>Pass</td><td>净利率24%、创新药高毛利，但研发87亿侵蚀利润、ROE约12-13%中等</td></tr>
+<tr><td>4 护城河</td><td class='v-warn'>黄灯</td><td>管线+资金+渠道领先，但技术壁垒非不可复制，百济/信达/翰森贴身追赶</td></tr>
+<tr><td>5 粘性</td><td class='v-pass'>Pass</td><td>专利期内独占+医院处方粘性，但专利到期与集采削弱粘性</td></tr>
+<tr><td>6 致命风险</td><td class='v-warn'>黄灯</td><td>集采压仿制药'正在发生'(慢性侵蚀)+创新药研发/BD不及预期，风险真实但可对冲</td></tr>
+<tr><td>7 管理层</td><td class='v-pass'>Pass</td><td>实控人专注、无失信、分红稳定、治理规范，国际化经验待补</td></tr></table>
+<div class="verdict"><b>终判：</b><b>B档(本土创新药龙头，由旧A档下修)</b>：本土难替√，但'全球能打且海外自己赚钱'未兑现——出海靠BD授权变现而非自建终端。1黄灯(护城河)+2黄灯倾向(粘性/致命风险)，无Fail。升A档判据=BD里程碑持续兑现+自建海外商业化跑通终端收入。<br><br><b>2B 制造阶段判据：</b>创新药转型/出海判据:仿制药处集采'挤出期'(结构性萎缩)，创新药处放量'早期'(占比58%→61.69%上行)。出海=续命第二曲线，现靠BD首付款吃时间差(卖青苗)，须过竞争坎(海外MNC自有管线密集)+政治坎(未来做大或遇地缘/定价狙击)。转型成功信号=创新药占比持续升+GSK/默沙东里程碑兑现。</div>
+
+<h2>估值三线 · 计算过程（第2步·瑕疵全量化）</h2>
+
+<div class="step"><span class="sn">1</span><b>完美 PE 起点 = 55 x</b><div class="sd">对标全球创新药龙头(Vertex/再生元约25-35x)叠加中国创新药高增速溢价(创新药收入+26%)与BD出海期权，零瑕疵可给约55x天花板</div></div>
+<div class="step"><span class="sn">2</span><b>每股收益 EPS</b>
+<div class="sd">EPS-TTM：53.68 ÷ 43.88 = <b>1.22 元</b><br>NTM EPS：1.22 ×（1+20%）≈ <b>1.46 元</b><br><span class="dim">归母净利增速20%+(2026Q1+21.78%)、创新药占比升至61.69%驱动结构性提利，给约+20%</span></div></div>
+<div class="step"><span class="sn">3</span><b>逐项瑕疵扣 PE（从 55 x 往下扣）</b>
+<table class="calc"><tr><th>瑕疵</th><th>类型</th><th>扣减</th><th>依据</th></tr><tr><td>集采压仿制药、存量萎缩</td><td>结构</td><td class='dx'>−8.0 x</td><td>仿制药仍占约40%，集采持续降价、存量永久性收缩</td></tr><tr><td>研发投入高企侵蚀利润</td><td>周期(半扣)</td><td class='dx'>−4.0 x</td><td>2025研发投入87.24亿压制当期利润</td></tr><tr><td>出海未自建商业化+估值已高</td><td>结构</td><td class='dx'>−6.0 x</td><td>海外靠BD授权而非终端销售;PE43.88已price in转型</td></tr><tr><td>BD首付款非经常性</td><td>周期</td><td class='dx'>−3.0 x</td><td>License-out首付一次性、里程碑不确定，收入质量弱</td></tr>
+<tr class="sum"><td><b>合计</b></td><td></td><td class="dx"><b>−21.0 x</b></td><td><b>扣后 PE = 55 − 21 = 34 x</b></td></tr></table></div>
+<div class="step"><span class="sn">4</span><b>三条线 = PE × NTM EPS</b>
+<table class="calc"><tr><th>线</th><th>算式</th><th>目标价</th><th>含义</th></tr><tr><td><b>超额卖出线</b></td><td>完美PE 55 × NTM 1.46</td><td class='pv'>¥80.3</td><td>泡沫区</td></tr><tr><td><b>正常买入线</b></td><td>扣后PE 34 × NTM 1.46</td><td class='pv'>¥49.6</td><td>A线</td></tr><tr><td><b>大底线</b></td><td>正常买入 49.6×0.7</td><td class='pv'>¥34.75</td><td>恐慌重仓</td></tr></table></div>
+<div class="val3">
+<div class="b sell"><div class="k">超额卖出线</div><div class="p">¥80.3</div></div>
+<div class="b buy"><div class="k">正常买入线(A线)</div><div class="p">¥49.6</div></div>
+<div class="b bot"><div class="k">大底线</div><div class="p">¥34.75</div></div>
+</div>
+<div class="step"><span class="sn">5</span><b>现价定位</b><div class="sd">现价53.68 ÷ NTM 1.46 = 前瞻PE <b>36.8 x</b> vs 扣后 34 x<br>→现价高于A线49.6约8%，PE43.88已price in转型，纪律=不追高、等回调（非建仓指令）</div></div>
+
+
+<h2>四家 UP 主怎么看（原话/区间，不自算）</h2>
+<div class='up jj'><div class='who'>江江小可爱</div><div>合理市值区间反算：<b>买 ¥42.97 / 卖 ¥68.04</b>；当前<b>区间内</b>。</div></div>
+<div class='up td nocov'><div class='who'>土豆(看财报)</div><div>未覆盖——不自算。</div></div>
+<div class='up ts nocov'><div class='who'>土斯土耶夫斯基</div><div>未覆盖——不自算。</div></div>
+<div class='up mg nocov'><div class='who'>复利芒果</div><div>未检索到复利芒果讲过本标的——未覆盖，不自算。</div></div>
+
+<div class="foot"><b>数据来源：</b><a href='https://wallstreetcn.com/articles/3768384' target='_blank'>2025营收316亿/创新药163亿</a><a href='https://www.pharnexcloud.com/zixun/sx_299347' target='_blank'>2026Q1营收81.41亿/占比61.69%</a><a href='https://www.cls.cn/detail/2097860' target='_blank'>GSK 125亿美元/默沙东19.7亿</a><br>行情 qt.gtimg.cn 实时 · 财报/竞争数据现搜带源 · 本页为事实与概率判断，非建仓指令。</div>
+</div>
+<script>
+function refresh(){
+ var box=document.querySelector('[data-c]');var code=box.getAttribute('data-c');
+ fetch('https://qt.gtimg.cn/q='+code).then(r=>r.arrayBuffer()).then(b=>{
+  var t=new TextDecoder('gbk').decode(b);var m=t.match(/"([^"]*)"/);if(!m)return;
+  var f=m[1].split('~');
+  document.getElementById('px').textContent=f[3];
+  var c=parseFloat(f[32]);var el=document.getElementById('chg');
+  el.textContent=(c>=0?'+':'')+f[32]+'%';el.style.color=c>=0?'#a23a3a':'#1f6b3a';
+  document.getElementById('pe').textContent=f[39];
+  document.getElementById('cap').textContent=f[45];
+  var d=f[30]||'';document.getElementById('upd').textContent='更新 '+(d.length>=12?d.slice(0,4)+'-'+d.slice(4,6)+'-'+d.slice(6,8)+' '+d.slice(8,10)+':'+d.slice(10,12):d);
+ }).catch(e=>{document.getElementById('upd').textContent='行情源暂不可用';});
+}
+refresh();setInterval(refresh,30000);
+</script></body></html>
