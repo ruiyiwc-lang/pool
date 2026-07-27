@@ -1,0 +1,120 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>宁德时代 · 基石深度</title><style>
+:root{--bg:#eef2e6;--card:#f7faf0;--ink:#26301f;--dim:#5a6b4d;--line:#d3ddc2;--accent:#2f7d4f;--warn:#8a5a1a;--buy:#1f6b3a;--sell:#a23a3a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.85 -apple-system,'PingFang SC','Microsoft YaHei',sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:22px 18px 80px}
+a{color:var(--accent)}
+.top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+h1{font-size:30px;margin:6px 0 2px}
+.seg{color:var(--dim);font-size:16px}
+.crown{background:#f3e4a8;color:#7a5c10;border:1px solid #e0cd7a;border-radius:6px;padding:1px 8px;font-size:15px}
+.qbar{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0 8px;display:flex;flex-wrap:wrap;gap:18px;align-items:baseline;font-size:17px}
+.qbar b{font-size:26px;color:var(--accent)}
+.qbar .lbl{color:var(--dim);font-size:14px;margin-right:4px}
+#upd{color:var(--dim);font-size:13px}
+.rbtn{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:5px 12px;font-size:14px;cursor:pointer}
+h2{font-size:22px;margin:30px 0 10px;padding-left:10px;border-left:5px solid var(--accent)}
+p{margin:10px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;background:var(--card);font-size:16px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#e3ead4}
+.v-passx{color:#1f6b3a;font-weight:700}
+.v-pass{color:#2f7d4f;font-weight:600}
+.v-warn{color:#8a5a1a;font-weight:600}
+.v-fail{color:#a23a3a;font-weight:700}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:12px 0}
+.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px 12px 46px;margin:10px 0;position:relative}
+.step>b{font-size:17px}
+.sn{position:absolute;left:12px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sd{margin-top:6px}
+.dim{color:var(--dim);font-size:14px}
+table.calc{margin:10px 0 2px;font-size:15px}
+table.calc .dx{color:var(--sell);font-weight:700;white-space:nowrap}
+table.calc .pv{color:var(--buy);font-weight:700;font-size:17px;white-space:nowrap}
+table.calc tr.sum td{background:#eef3e2}
+.verdict{background:#e6f0e0;border:1px solid #bcd3a8;border-radius:12px;padding:14px 18px;font-size:18px;margin:12px 0}
+.val3{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.val3 .b{flex:1;min-width:150px;border-radius:10px;padding:12px 14px;text-align:center;border:1px solid var(--line)}
+.val3 .sell{background:#f6e4e4;border-color:#e0bcbc}
+.val3 .buy{background:#e4f0e6;border-color:#bcd8c2}
+.val3 .bot{background:#eae4f0;border-color:#cbbce0}
+.val3 .k{font-size:14px;color:var(--dim)}
+.val3 .p{font-size:26px;font-weight:700;margin-top:2px}
+.up{border-left:5px solid #c9b6e0;margin:12px 0;background:var(--card);border-radius:0 10px 10px 0;padding:12px 16px}
+.up.jj{border-color:#e0a6c0}.up.td{border-color:#c9a06a}.up.ts{border-color:#7aa6c9}.up.mg{border-color:#e0b46a}
+.up .who{font-weight:700;font-size:17px}
+.up.nocov{opacity:.7}
+.nav{margin:8px 0 4px}
+.foot{color:var(--dim);font-size:14px;margin-top:26px;border-top:1px dashed var(--line);padding-top:12px}
+.foot a{display:inline-block;margin:2px 10px 2px 0}
+</style></head><body><div class="wrap">
+<div class="nav"><a href="../bedrock.html">← 返回中国高端制造基石</a></div>
+<div class="top"><h1>宁德时代</h1><span class="seg">动力/储能电池</span><span class='crown'>👑 皇冠</span></div>
+<div class="qbar" data-c="sz300750">
+<span><span class="lbl">现价</span><b id="px">—</b></span>
+<span><span class="lbl">涨跌</span><span id="chg">—</span></span>
+<span><span class="lbl">PE-TTM</span><span id="pe">—</span></span>
+<span><span class="lbl">总市值(亿)</span><span id="cap">—</span></span>
+<button class="rbtn" onclick="refresh()">↻ 刷新</button><span id="upd">加载中…</span>
+</div>
+
+<h2>一、财报与增长</h2><p>2025营收4237.02亿(+17.04%)/归母净利722.01亿(+42.28%)，销售净利率18.12%(+3.2pp)，全年锂电池销量661GWh(+39%)</p><p>2026Q1归母净利207.38亿(+48.52%)；2026H1归母净利432.84亿(+41.98%)/营收2769.17亿(+54.80%)——近端仍高增</p><p>综合毛利率26.27%(+1.83pp)：动力23.84%/储能26.71%；加权ROE24.91%；经营现金流净额1332亿(+37.4%)</p><p>股东回报：2026中报抛A股史上最大200–400亿回购(上限573元)全部注销减资；2025全年分红361亿(派息率50%)+2026中期分红64.93亿</p>
+<h2>二、业务状况</h2><p>动力电池：2025全球份额39.2%(+1.2pp)9连冠、海外份额升至30.0%；国内2026Q1仍第一但被车厂去宁德化侵蚀，独供格局已破</p><p>储能第二曲线爆发：2025储能电池收入624.4亿(+8.99%)、系统集成出货同比+160%；2026H1储能收入532.61亿(+87.54%)，储能出货连续5年全球第一</p><p>出海高毛利：2025境外收入1296.41亿占比30.60%，海外储能报价约1.8元/Wh高于国内均价60%、海外毛利显著高于国内；德国/匈牙利/印尼产能推进</p><p>技术拳头：麒麟电池+神行超充LFP构成差异化，支撑高端与快充定价，是'半垄断'的技术侧支点</p>
+<h2>三、管理层</h2><p>曾毓群经厦门瑞庭实控、治理稳定；2025研发投入186亿；2025分红361亿(派息率50%)；2026中报推200–400亿全额注销式回购，股东回报诚意足</p>
+<h2>四、竞争格局</h2><p>全球动力第一39.2% vs 比亚迪/LG新能源/松下；2025中企合计占全球动力超七成，宁德储能出货连续5年全球第一——全球规则制定者地位稳固</p><p>去宁德化事实核查：理想L8新款改用欣旺达电芯、鸿蒙问界M6用国轩LFP、小鹏/小米/零跑/埃安引入二三四供；国内'独供'被打破、份额从高位回落，但非单边跌至40%——2026Q1国内份额仍达48.1%，呈拉锯而非崩塌</p>
+
+<h2>王超七问评分</h2>
+<table><tr><th style="width:32%">维度</th><th style="width:14%">判定</th><th>依据</th></tr>
+<tr><td>1 商业模式</td><td class='v-passx'>Pass★</td><td>卖动力+储能电池给车厂/储能集成商的2B制造；全球规模第一+垂直整合+经营现金流1332亿，现金牛极强，但本质非'收费站式'唯一垄断</td></tr>
+<tr><td>2 市场空间</td><td class='v-warn'>黄灯</td><td>后期(挤出期)信号明确：全球动力39.2%已高位、国内进入车厂二供/自研挤出期，增量已从动力切向储能(+87%)与出海(30%)，不能拿当前高增速外推</td></tr>
+<tr><td>3 盈利逻辑</td><td class='v-pass'>Pass</td><td>毛利率26.27%、净利率18.12%、ROE24.91%可持续性强；储能毛利>动力、海外享溢价对冲价格战，但国内电芯降价长期压制上行</td></tr>
+<tr><td>4 护城河</td><td class='v-pass'>Pass</td><td>技术(麒麟/神行)+规模+垂直整合构成'半垄断'，非物理级唯一——理想/鸿蒙/小鹏已能上二供或自研，国内份额从高位回落，壁垒可被逐步追赶</td></tr>
+<tr><td>5 粘性</td><td class='v-pass'>Pass</td><td>长协+车规认证+换电/底盘生态提高转换成本，但车厂主动多元化供应、'标准由主机厂主导'淡化电池品牌，粘性正被系统性削弱</td></tr>
+<tr><td>6 致命风险</td><td class='v-warn'>黄灯</td><td>改变命运级但可对冲：美国IRA排除+欧美潜在双反/关税(政治坎)、国内价格战与份额挤出、锂价周期；靠欧洲/印尼本地化与储能出海对冲</td></tr>
+<tr><td>7 管理层</td><td class='v-passx'>Pass★</td><td>曾毓群治理稳、研发186亿、361亿分红+A股史上最大200–400亿注销式回购，资本运作与股东回报诚意强，无失信记录</td></tr></table>
+<div class="verdict"><b>终判：</b>全球动力+储能双料王，双层终判=<b>全球王A档</b>(本土难替+海外30%份额且高毛利能打能赚)；但阶段偏后——2B制造无绝对垄断，处挤出期，属'A档但顶部弹性受限'<br><br><b>2B 制造阶段判据：</b>2B制造阶段判据：<b>⚠后期(挤出期)</b>。全球份额高位、国内车厂普遍上二供/自研(理想L8→欣旺达、问界M6→国轩、小鹏/小米/零跑/埃安引二三四供)，续命靠半垄断(自造电芯+规模+麒麟/神行技术)+出海30%高毛利吃时间差；但出海两坎俱在——竞争坎(LG/比亚迪也在出海)+政治坎(IRA排除、欧美潜在双反)，非ASML级'唯一'，禁止用+48%近端增速外推终局</div>
+
+<h2>估值三线 · 计算过程（第2步·瑕疵全量化）</h2>
+
+<div class="step"><span class="sn">1</span><b>完美 PE 起点 = 28 x</b><div class="sd">全球动力9连冠+储能5连冠、销量661GWh、经营现金流1332亿的制造现金牛，海外30%份额享溢价；但属2B制造、非'唯一'收费站且已从高增速切换，对标台积电(25–30x)取28x作零瑕疵天花板</div></div>
+<div class="step"><span class="sn">2</span><b>每股收益 EPS</b>
+<div class="sd">EPS-TTM：396.02 ÷ 21.56 = <b>18.37 元</b><br>NTM EPS：18.37 ×（1+22%）≈ <b>22.41 元</b><br><span class="dim">2026Q1+48.5%/H1+42%近端强劲，但按后期2B判据不外推高增速；储能+87%与出海30%高毛利托底，国内电芯价格战压制，取中性+22%</span></div></div>
+<div class="step"><span class="sn">3</span><b>逐项瑕疵扣 PE（从 28 x 往下扣）</b>
+<table class="calc"><tr><th>瑕疵</th><th>类型</th><th>扣减</th><th>依据</th></tr><tr><td>车厂去宁德化/国内份额挤出</td><td>结构</td><td class='dx'>−5 x</td><td>理想L8转欣旺达、鸿蒙问界M6用国轩、小鹏/小米/零跑/埃安上二三四供，独供格局破、份额从高位回落</td></tr><tr><td>锂价/电池价格战周期</td><td>周期(半扣)</td><td class='dx'>−3 x</td><td>碳酸锂价格与电芯持续降价周期，实际约-6x，有景气修复路径故折半计</td></tr>
+<tr class="sum"><td><b>合计</b></td><td></td><td class="dx"><b>−8 x</b></td><td><b>扣后 PE = 28 − 8 = 20 x</b></td></tr></table></div>
+<div class="step"><span class="sn">4</span><b>三条线 = PE × NTM EPS</b>
+<table class="calc"><tr><th>线</th><th>算式</th><th>目标价</th><th>含义</th></tr><tr><td><b>超额卖出线</b></td><td>完美PE 28 × NTM 22.41</td><td class='pv'>¥627</td><td>泡沫区</td></tr><tr><td><b>正常买入线</b></td><td>扣后PE 20 × NTM 22.41</td><td class='pv'>¥448</td><td>A线</td></tr><tr><td><b>大底线</b></td><td>正常买入 448×0.7</td><td class='pv'>¥314</td><td>恐慌重仓</td></tr></table></div>
+<div class="val3">
+<div class="b sell"><div class="k">超额卖出线</div><div class="p">¥627</div></div>
+<div class="b buy"><div class="k">正常买入线(A线)</div><div class="p">¥448</div></div>
+<div class="b bot"><div class="k">大底线</div><div class="p">¥314</div></div>
+</div>
+<div class="step"><span class="sn">5</span><b>现价定位</b><div class="sd">现价396.02 ÷ NTM 22.41 = 前瞻PE <b>17.7 x</b> vs 扣后 20 x<br>→现价已低于正常买入线448、前瞻PE17.7x＜扣后20x，落在A线下方偏低区（非建仓指令，须每季重跑七问）</div></div>
+
+
+<h2>四家 UP 主怎么看（原话/区间，不自算）</h2>
+<div class='up jj'><div class='who'>江江小可爱</div><div>合理市值区间反算：<b>买 ¥260 / 卖 ¥399</b>（原法20xPE+ROE法代入新H1）；现价383近PE法上沿399。</div></div>
+<div class='up td'><div class='who'>土豆(看财报)</div><div><b>「我都没法挑刺，伟大的公司无需多言」</b>——前瞻消化法：现价便宜(3年后前瞻仅12.4x/PEG0.66)，合理 <b>520-620</b>，深安全垫~310；透支线 770-930(3年后前瞻>25-30x)。今日新视频一边倒看多。</div></div>
+<div class='up ts'><div class='who'>土斯土耶夫斯基</div><div>⚠全稿仅3次当高毛利/锂电龙头举例、未亲口估值；套其 PE≈ROE(24.5x)公式→低点 360-407/合理 450-509（<b>推演，非亲口</b>）。</div></div>
+<div class='up mg'><div class='who'>复利芒果</div><div>动力+储能双龙头，技术壁垒与战略定力极强，但技术迭代随时可能重新洗牌；A股滚动PE约22.6倍、净利722亿增42%、毛利26%现金流充沛。<b>中性偏正面：能看懂技术路线则便宜，超出能力圈就别碰。</b></div></div>
+
+<div class="foot"><b>数据来源：</b><a href='https://www.cls.cn/detail/2307584' target='_blank'>宁德时代2025年报·净利722亿(财联社)</a><a href='https://www.donews.com/article/detail/6749/98181.html' target='_blank'>宁德时代2025财报·储能/海外/现金流(DoNews)</a><a href='https://wap.eastmoney.com/a/202604153706170110.html' target='_blank'>宁德时代2026Q1净利207.38亿(东方财富)</a><a href='https://www.nbd.com.cn/articles/2026-07-09/4464665.html' target='_blank'>车厂去宁德化(每日经济新闻)</a><br>行情 qt.gtimg.cn 实时 · 财报/竞争数据现搜带源 · 本页为事实与概率判断，非建仓指令。</div>
+</div>
+<script>
+function refresh(){
+ var box=document.querySelector('[data-c]');var code=box.getAttribute('data-c');
+ fetch('https://qt.gtimg.cn/q='+code).then(r=>r.arrayBuffer()).then(b=>{
+  var t=new TextDecoder('gbk').decode(b);var m=t.match(/"([^"]*)"/);if(!m)return;
+  var f=m[1].split('~');
+  document.getElementById('px').textContent=f[3];
+  var c=parseFloat(f[32]);var el=document.getElementById('chg');
+  el.textContent=(c>=0?'+':'')+f[32]+'%';el.style.color=c>=0?'#a23a3a':'#1f6b3a';
+  document.getElementById('pe').textContent=f[39];
+  document.getElementById('cap').textContent=f[45];
+  var d=f[30]||'';document.getElementById('upd').textContent='更新 '+(d.length>=12?d.slice(0,4)+'-'+d.slice(4,6)+'-'+d.slice(6,8)+' '+d.slice(8,10)+':'+d.slice(10,12):d);
+ }).catch(e=>{document.getElementById('upd').textContent='行情源暂不可用';});
+}
+refresh();setInterval(refresh,30000);
+</script></body></html>
