@@ -1,0 +1,120 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>海天味业 · 基石深度</title><style>
+:root{--bg:#eef2e6;--card:#f7faf0;--ink:#26301f;--dim:#5a6b4d;--line:#d3ddc2;--accent:#2f7d4f;--warn:#8a5a1a;--buy:#1f6b3a;--sell:#a23a3a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.85 -apple-system,'PingFang SC','Microsoft YaHei',sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:22px 18px 80px}
+a{color:var(--accent)}
+.top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+h1{font-size:30px;margin:6px 0 2px}
+.seg{color:var(--dim);font-size:16px}
+.crown{background:#f3e4a8;color:#7a5c10;border:1px solid #e0cd7a;border-radius:6px;padding:1px 8px;font-size:15px}
+.qbar{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0 8px;display:flex;flex-wrap:wrap;gap:18px;align-items:baseline;font-size:17px}
+.qbar b{font-size:26px;color:var(--accent)}
+.qbar .lbl{color:var(--dim);font-size:14px;margin-right:4px}
+#upd{color:var(--dim);font-size:13px}
+.rbtn{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:5px 12px;font-size:14px;cursor:pointer}
+h2{font-size:22px;margin:30px 0 10px;padding-left:10px;border-left:5px solid var(--accent)}
+p{margin:10px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;background:var(--card);font-size:16px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#e3ead4}
+.v-passx{color:#1f6b3a;font-weight:700}
+.v-pass{color:#2f7d4f;font-weight:600}
+.v-warn{color:#8a5a1a;font-weight:600}
+.v-fail{color:#a23a3a;font-weight:700}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:12px 0}
+.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px 12px 46px;margin:10px 0;position:relative}
+.step>b{font-size:17px}
+.sn{position:absolute;left:12px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sd{margin-top:6px}
+.dim{color:var(--dim);font-size:14px}
+table.calc{margin:10px 0 2px;font-size:15px}
+table.calc .dx{color:var(--sell);font-weight:700;white-space:nowrap}
+table.calc .pv{color:var(--buy);font-weight:700;font-size:17px;white-space:nowrap}
+table.calc tr.sum td{background:#eef3e2}
+.verdict{background:#e6f0e0;border:1px solid #bcd3a8;border-radius:12px;padding:14px 18px;font-size:18px;margin:12px 0}
+.val3{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.val3 .b{flex:1;min-width:150px;border-radius:10px;padding:12px 14px;text-align:center;border:1px solid var(--line)}
+.val3 .sell{background:#f6e4e4;border-color:#e0bcbc}
+.val3 .buy{background:#e4f0e6;border-color:#bcd8c2}
+.val3 .bot{background:#eae4f0;border-color:#cbbce0}
+.val3 .k{font-size:14px;color:var(--dim)}
+.val3 .p{font-size:26px;font-weight:700;margin-top:2px}
+.up{border-left:5px solid #c9b6e0;margin:12px 0;background:var(--card);border-radius:0 10px 10px 0;padding:12px 16px}
+.up.jj{border-color:#e0a6c0}.up.td{border-color:#c9a06a}.up.ts{border-color:#7aa6c9}.up.mg{border-color:#e0b46a}
+.up .who{font-weight:700;font-size:17px}
+.up.nocov{opacity:.7}
+.nav{margin:8px 0 4px}
+.foot{color:var(--dim);font-size:14px;margin-top:26px;border-top:1px dashed var(--line);padding-top:12px}
+.foot a{display:inline-block;margin:2px 10px 2px 0}
+</style></head><body><div class="wrap">
+<div class="nav"><a href="../bedrock.html">← 返回中国高端制造基石</a></div>
+<div class="top"><h1>海天味业</h1><span class="seg">调味品·品类王</span></div>
+<div class="qbar" data-c="sh603288">
+<span><span class="lbl">现价</span><b id="px">—</b></span>
+<span><span class="lbl">涨跌</span><span id="chg">—</span></span>
+<span><span class="lbl">PE-TTM</span><span id="pe">—</span></span>
+<span><span class="lbl">总市值(亿)</span><span id="cap">—</span></span>
+<button class="rbtn" onclick="refresh()">↻ 刷新</button><span id="upd">加载中…</span>
+</div>
+
+<h2>一、财报与增长</h2><p><b>2025</b>营收288.73亿(+7.32%)、归母净利70.38亿(+10.95%)、扣非68.45亿(+12.81%)；社区团购价盘冲击后主业重回正增长、利润快于营收。</p><p>2026Q1营收90.29亿(+8.57%)、归母净利24.44亿(+11%)、净利率27.1%——多品类扩张驱动双增。</p><p>毛利/分红:2025主业毛利率41.78%(+3.15pct)、2026Q1毛利率42.0%(大豆/白糖降价成本红利);2025派现79.5亿、分红率112.95%创新高。</p>
+<h2>二、业务状况</h2><p>酱油149.34亿(+8.55%)/蚝油48.68亿(+5.48%)/调味酱29.17亿(+9.29%)——三大核心品类国内第一；营养健康品类+48.3%成新增长极。</p><p>渠道:线下257.6亿(+7.85%)基本盘、餐饮B端粘性强，线上+31.87%修复；出海弱——海外收入占比极低，A+H上市谋全球化但尚未打出。</p>
+<h2>三、管理层</h2><p>庞康掌舵、程雪挂帅赴港，2025.6完成H股上市(募资约百亿港元、首日盘中破发)，治理规范、分红慷慨(112.95%)、无失信。</p>
+<h2>四、竞争格局</h2><p>vs千禾/中炬/李锦记:海天规模碾压(288亿vs千禾数十亿)，全国渠道+成本优势，但高端/零添加被千禾、李锦记分食。</p><p>零添加/社区团购冲击:千禾'零添加'翻车(2025少卖约5亿)，健康化趋势真实但对手自伤退潮；社区团购价盘扰动已过峰值。</p>
+
+<h2>王超七问评分</h2>
+<table><tr><th style="width:32%">维度</th><th style="width:14%">判定</th><th>依据</th></tr>
+<tr><td>1 商业模式</td><td class='v-passx'>Pass★</td><td>卖酱油/蚝油/酱给餐饮+家庭，全国分销、快消刚需高频复购，现金流极稳</td></tr>
+<tr><td>2 市场空间</td><td class='v-pass'>Pass</td><td>5000亿调味品市场，但酱油渗透率已高、增速降至个位数(+7~9%)，增量转存量</td></tr>
+<tr><td>3 盈利逻辑</td><td class='v-pass'>Pass</td><td>毛利率41~42%回升、净利率27%、100%+分红可持续；2026Q1毛利含大豆白糖降价周期性红利</td></tr>
+<tr><td>4 护城河</td><td class='v-pass'>Pass</td><td>品牌+全国渠道规模+成本三重壁垒，本土难替；但可被细分追赶(千禾/李锦记)，非不可逆</td></tr>
+<tr><td>5 粘性</td><td class='v-pass'>Pass</td><td>家庭口味习惯+餐饮后厨标准化带来转换成本；但健康化偏好可缓慢迁移</td></tr>
+<tr><td>6 致命风险</td><td class='v-warn'>黄灯</td><td>'零添加'健康趋势、社区团购价盘、增长降档是真实趋势威胁，暂未变现</td></tr>
+<tr><td>7 管理层</td><td class='v-pass'>Pass</td><td>庞康长期掌舵、程雪推A+H双上市，分红率112.95%、无失信</td></tr></table>
+<div class="verdict"><b>终判：</b><b>B档·本土调味品品类王(确认)</b>：酱油/蚝油/酱国内第一，品牌+渠道+成本护城河真实但可被细分追赶(非不可逆)；内需刚需赛道四基础稳、无代际断层，但增量转存量、出海几乎为零、全球未打出→封顶B档。<br><br><b>2B 制造阶段判据：</b>赛道基础:酱油为中式厨房刚需，人口/场景/偏好/技术四基础均稳、无白酒式代际断层→赛道不塌。护城河:品牌+全国渠道+成本规模本土难替但可被追赶。出海判据:海外占比极低、全球打不出=B档本土王；续命需出海，但强竞对(李锦记/龟甲万)海外已在位、窗口未证明。</div>
+
+<h2>估值三线 · 计算过程（第2步·瑕疵全量化）</h2>
+
+<div class="step"><span class="sn">1</span><b>完美 PE 起点 = 35 x</b><div class="sd">对标全球调味龙头(龟甲万)，零瑕疵下品牌+刚需+40%+毛利+100%+派息可支撑约35x天花板</div></div>
+<div class="step"><span class="sn">2</span><b>每股收益 EPS</b>
+<div class="sd">EPS-TTM：36.02 ÷ 28.95 = <b>1.24 元</b><br>NTM EPS：1.24 ×（1+11%）≈ <b>1.38 元</b><br><span class="dim">35家机构一致2026归母+11.87%、EPS1.34，NTM取约1.38</span></div></div>
+<div class="step"><span class="sn">3</span><b>逐项瑕疵扣 PE（从 35 x 往下扣）</b>
+<table class="calc"><tr><th>瑕疵</th><th>类型</th><th>扣减</th><th>依据</th></tr><tr><td>全球化缺失</td><td>结构</td><td class='dx'>−4.0 x</td><td>海外占比极低、出海弱、强竞对李锦记/龟甲万在位，全球打不出→封B档</td></tr><tr><td>增量转存量</td><td>结构</td><td class='dx'>−3.0 x</td><td>增速由历史15~20%降至7~9%，酱油渗透见顶、成长熄火</td></tr><tr><td>成本红利+竞争扰动</td><td>周期(半扣)</td><td class='dx'>−1.5 x</td><td>2026Q1毛利提升含大豆/白糖降价红利不可持续；零添加/社区团购扰动仍在</td></tr>
+<tr class="sum"><td><b>合计</b></td><td></td><td class="dx"><b>−8.5 x</b></td><td><b>扣后 PE = 35 − 8.5 = 26.5 x</b></td></tr></table></div>
+<div class="step"><span class="sn">4</span><b>三条线 = PE × NTM EPS</b>
+<table class="calc"><tr><th>线</th><th>算式</th><th>目标价</th><th>含义</th></tr><tr><td><b>超额卖出线</b></td><td>完美PE 35 × NTM 1.38</td><td class='pv'>¥48.3</td><td>泡沫区</td></tr><tr><td><b>正常买入线</b></td><td>扣后PE 26.5 × NTM 1.38</td><td class='pv'>¥36.6</td><td>A线</td></tr><tr><td><b>大底线</b></td><td>正常买入 36.6×0.7</td><td class='pv'>¥25.6</td><td>恐慌重仓</td></tr></table></div>
+<div class="val3">
+<div class="b sell"><div class="k">超额卖出线</div><div class="p">¥48.3</div></div>
+<div class="b buy"><div class="k">正常买入线(A线)</div><div class="p">¥36.6</div></div>
+<div class="b bot"><div class="k">大底线</div><div class="p">¥25.6</div></div>
+</div>
+<div class="step"><span class="sn">5</span><b>现价定位</b><div class="sd">现价36.02 ÷ NTM 1.38 = 前瞻PE <b>26.1 x</b> vs 扣后 26.5 x<br>→现价落在正常买入线附近，无折价无泡沫，距大底¥25.6约30%（非建仓指令）</div></div>
+
+
+<h2>四家 UP 主怎么看（原话/区间，不自算）</h2>
+<div class='up jj'><div class='who'>江江小可爱</div><div>合理市值区间反算：<b>买 ¥37.94 / 卖 ¥41.32</b>；当前<b>低于区间（低估）</b>。</div></div>
+<div class='up td'><div class='who'>土豆(看财报)</div><div><b>「好公司但被消费行业影响太深」</b>——调味品龙头财务健康，但被消费大环境拖累。</div></div>
+<div class='up ts nocov'><div class='who'>土斯土耶夫斯基</div><div>未覆盖——不自算。</div></div>
+<div class='up mg'><div class='who'>复利芒果</div><div>400 年调味品龙头，护城河=规模成本/毛细血管渠道/品牌心智锁死/全品类；约 30 倍 PE、毛利 40%+、净利 27%+、承诺分红 80%+。<b>中性偏看好：唯一双增长龙头、配置窗口，但防餐饮复苏与原料反弹。</b></div></div>
+
+<div class="foot"><b>数据来源：</b><a href='https://www.stcn.com/article/detail/3703463.html' target='_blank'>海天2025营收288亿三大品类稳中有进</a><a href='https://www.lanjinger.com/d/1774874426578768268' target='_blank'>79.5亿分红分红率112.95%</a><a href='https://www.donews.com/news/detail/4/6617143.html' target='_blank'>2026Q1营收90.29亿净利24.44亿</a><a href='https://www.huxiu.com/article/4861220.html' target='_blank'>千禾零添加翻车一年少卖5亿</a><br>行情 qt.gtimg.cn 实时 · 财报/竞争数据现搜带源 · 本页为事实与概率判断，非建仓指令。</div>
+</div>
+<script>
+function refresh(){
+ var box=document.querySelector('[data-c]');var code=box.getAttribute('data-c');
+ fetch('https://qt.gtimg.cn/q='+code).then(r=>r.arrayBuffer()).then(b=>{
+  var t=new TextDecoder('gbk').decode(b);var m=t.match(/"([^"]*)"/);if(!m)return;
+  var f=m[1].split('~');
+  document.getElementById('px').textContent=f[3];
+  var c=parseFloat(f[32]);var el=document.getElementById('chg');
+  el.textContent=(c>=0?'+':'')+f[32]+'%';el.style.color=c>=0?'#a23a3a':'#1f6b3a';
+  document.getElementById('pe').textContent=f[39];
+  document.getElementById('cap').textContent=f[45];
+  var d=f[30]||'';document.getElementById('upd').textContent='更新 '+(d.length>=12?d.slice(0,4)+'-'+d.slice(4,6)+'-'+d.slice(6,8)+' '+d.slice(8,10)+':'+d.slice(10,12):d);
+ }).catch(e=>{document.getElementById('upd').textContent='行情源暂不可用';});
+}
+refresh();setInterval(refresh,30000);
+</script></body></html>
