@@ -1,0 +1,120 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>海天国际 · 基石深度</title><style>
+:root{--bg:#eef2e6;--card:#f7faf0;--ink:#26301f;--dim:#5a6b4d;--line:#d3ddc2;--accent:#2f7d4f;--warn:#8a5a1a;--buy:#1f6b3a;--sell:#a23a3a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.85 -apple-system,'PingFang SC','Microsoft YaHei',sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:22px 18px 80px}
+a{color:var(--accent)}
+.top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+h1{font-size:30px;margin:6px 0 2px}
+.seg{color:var(--dim);font-size:16px}
+.crown{background:#f3e4a8;color:#7a5c10;border:1px solid #e0cd7a;border-radius:6px;padding:1px 8px;font-size:15px}
+.qbar{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0 8px;display:flex;flex-wrap:wrap;gap:18px;align-items:baseline;font-size:17px}
+.qbar b{font-size:26px;color:var(--accent)}
+.qbar .lbl{color:var(--dim);font-size:14px;margin-right:4px}
+#upd{color:var(--dim);font-size:13px}
+.rbtn{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:5px 12px;font-size:14px;cursor:pointer}
+h2{font-size:22px;margin:30px 0 10px;padding-left:10px;border-left:5px solid var(--accent)}
+p{margin:10px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;background:var(--card);font-size:16px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#e3ead4}
+.v-passx{color:#1f6b3a;font-weight:700}
+.v-pass{color:#2f7d4f;font-weight:600}
+.v-warn{color:#8a5a1a;font-weight:600}
+.v-fail{color:#a23a3a;font-weight:700}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:12px 0}
+.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px 12px 46px;margin:10px 0;position:relative}
+.step>b{font-size:17px}
+.sn{position:absolute;left:12px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sd{margin-top:6px}
+.dim{color:var(--dim);font-size:14px}
+table.calc{margin:10px 0 2px;font-size:15px}
+table.calc .dx{color:var(--sell);font-weight:700;white-space:nowrap}
+table.calc .pv{color:var(--buy);font-weight:700;font-size:17px;white-space:nowrap}
+table.calc tr.sum td{background:#eef3e2}
+.verdict{background:#e6f0e0;border:1px solid #bcd3a8;border-radius:12px;padding:14px 18px;font-size:18px;margin:12px 0}
+.val3{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.val3 .b{flex:1;min-width:150px;border-radius:10px;padding:12px 14px;text-align:center;border:1px solid var(--line)}
+.val3 .sell{background:#f6e4e4;border-color:#e0bcbc}
+.val3 .buy{background:#e4f0e6;border-color:#bcd8c2}
+.val3 .bot{background:#eae4f0;border-color:#cbbce0}
+.val3 .k{font-size:14px;color:var(--dim)}
+.val3 .p{font-size:26px;font-weight:700;margin-top:2px}
+.up{border-left:5px solid #c9b6e0;margin:12px 0;background:var(--card);border-radius:0 10px 10px 0;padding:12px 16px}
+.up.jj{border-color:#e0a6c0}.up.td{border-color:#c9a06a}.up.ts{border-color:#7aa6c9}.up.mg{border-color:#e0b46a}
+.up .who{font-weight:700;font-size:17px}
+.up.nocov{opacity:.7}
+.nav{margin:8px 0 4px}
+.foot{color:var(--dim);font-size:14px;margin-top:26px;border-top:1px dashed var(--line);padding-top:12px}
+.foot a{display:inline-block;margin:2px 10px 2px 0}
+</style></head><body><div class="wrap">
+<div class="nav"><a href="../bedrock.html">← 返回中国高端制造基石</a></div>
+<div class="top"><h1>海天国际</h1><span class="seg">注塑机</span></div>
+<div class="qbar" data-c="hk01882">
+<span><span class="lbl">现价</span><b id="px">—</b></span>
+<span><span class="lbl">涨跌</span><span id="chg">—</span></span>
+<span><span class="lbl">PE-TTM</span><span id="pe">—</span></span>
+<span><span class="lbl">总市值(亿)</span><span id="cap">—</span></span>
+<button class="rbtn" onclick="refresh()">↻ 刷新</button><span id="upd">加载中…</span>
+</div>
+
+<h2>一、财报与增长</h2><p>2025全年:营收RMB177.33亿(+10.0%)，股东应占净利33.01亿(+7.2%)，净利率18.6%，毛利率32.7%；末期派息合计每股0.80港元(现价股息率约3.9%)</p><p>结构:内销101.32亿(仅+0.2%,国内制造业资本开支疲弱)/海外76.02亿(+26.4%,成主增长引擎，海外占比升至约42.9%)；注塑机本体销售额168.97亿(+9.7%)；2025H1营收与净利同比均+12.6%(下半年内需转弱拖累全年)</p>
+<h2>二、业务状况</h2><p>全球注塑机销量断崖第一，2025营收177亿级规模；下游覆盖家电/汽车/3C/包装/日用，受益全球制造业产能再分布与出海；长飞亚(Zhafir)电动/伺服系列切入中高端</p><p>海外为核心变量:2025海外+26.4%，产业链向东南亚/墨西哥/印度转移带动出口；但海外仍以性价比中端机型走量为主，高端电动/精密仍需向恩格尔学习</p>
+<h2>三、管理层</h2><p>张剑鸣家族控股，总部宁波，深耕注塑机数十年；治理稳健、持续现金分红(2025每股0.80港元)，无重大失信记录；中信证券维持买入、目标价29港元(给2025年12倍PE)</p>
+<h2>四、竞争格局</h2><p>全球销量第一断崖领先，规模+成本+全球渠道构成护城河；性价比+电动化(长飞亚)向上打，吃产业链转移时间差</p><p>bear:定位偏中端走量，非技术垄断；高端有恩格尔ENGEL/克劳斯玛菲KraussMaffei/发那科压制，国内伊之密/友嘉/泰瑞在中端追赶，B端理性买家必找二供→长期价格战风险</p>
+
+<h2>王超七问评分</h2>
+<table><tr><th style="width:32%">维度</th><th style="width:14%">判定</th><th>依据</th></tr>
+<tr><td>1 商业模式</td><td class='v-pass'>Pass</td><td>卖注塑机整机+配件+后市场给制造业客户，一次性设备销售为主；全球销量第一，2025营收177亿、净利33亿，商业模式清晰稳健</td></tr>
+<tr><td>2 市场空间</td><td class='v-pass'>Pass</td><td>全球注塑机千亿级市场，产业链向新兴市场转移打开出口空间，海外2025+26.4%；但整体随制造业资本开支波动，非高速赛道</td></tr>
+<tr><td>3 盈利逻辑</td><td class='v-pass'>Pass</td><td>毛利率32.7%、净利率18.6%，规模效应+供应链一体化支撑；性价比路线下毛利偏中端但可持续</td></tr>
+<tr><td>4 护城河</td><td class='v-pass'>Pass</td><td>全球销量断崖第一+规模成本+全球服务渠道=真实壁垒，但属可追赶型(中端非技术垄断)，故Pass非Pass★</td></tr>
+<tr><td>5 粘性</td><td class='v-pass'>Pass</td><td>庞大装机基数+后市场配件/服务+切换成本中等；但B端理性采购，大客户会引二供，粘性不及消费品</td></tr>
+<tr><td>6 致命风险</td><td class='v-warn'>黄灯</td><td>下游家电/汽车/包装制造业资本开支周期，内需2025仅+0.2%；中端竞争加剧价格战→增收不增利风险，属真实周期性威胁需监控</td></tr>
+<tr><td>7 管理层</td><td class='v-pass'>Pass</td><td>张剑鸣家族/宁波实业出身，治理规范、连续分红、无失信；经营专注注塑机主业</td></tr></table>
+<div class="verdict"><b>终判：</b><b>全球王(注塑机销量断崖第一)</b>+本土难替+海外能赚钱(海外+26%)，但档位=成熟龙头+周期，中端走量、无技术垄断，给A档偏周期定性<br><br><b>2B 制造阶段判据：</b>2B制造阶段判据:海天是2B制造且无技术垄断(高端受恩格尔/克劳斯玛菲压制)，中端靠性价比走量；当前靠出海(海外+26.4%)吃产业链转移时间差续命，但恩格尔等海外强、国内伊之密/友嘉在中端追赶——判<b>成熟龙头+周期</b>，PE8.85=市场给周期股的低估值，禁止用短期增速外推长期。</div>
+
+<h2>估值三线 · 计算过程（第2步·瑕疵全量化）</h2>
+
+<div class="step"><span class="sn">1</span><b>完美 PE 起点 = 15 x</b><div class="sd">全球注塑机销量断崖第一、净利率18.6%、海外高增，应享龙头溢价；但属中端走量、下游周期、无技术垄断，给周期机械龙头的完美天花板15x(非科技级25x，亦高于中信保守的12x)</div></div>
+<div class="step"><span class="sn">2</span><b>每股收益 EPS</b>
+<div class="sd">EPS-TTM：20.26 ÷ 8.85 = <b>2.29 港元</b><br>NTM EPS：2.29 ×（1+9%）≈ <b>2.50 港元</b><br><span class="dim">2025净利+7.2%、海外+26.4%驱动；中信预测2025-27净利35.0/38.5/41.7亿(2025实际33.01亿略低)，据此取约+9%的温和一致预期，不外推高增速</span></div></div>
+<div class="step"><span class="sn">3</span><b>逐项瑕疵扣 PE（从 15 x 往下扣）</b>
+<table class="calc"><tr><th>瑕疵</th><th>类型</th><th>扣减</th><th>依据</th></tr><tr><td>制造业周期</td><td>周期(半扣)</td><td class='dx'>−3 x</td><td>下游家电/汽车/包装资本开支周期，内销2025仅+0.2%、H2转弱，有退出路径故半扣</td></tr><tr><td>中端竞争/技术垄断弱</td><td>结构</td><td class='dx'>−3 x</td><td>中端走量、性价比路线，高端受恩格尔/克劳斯玛菲压制，国内伊之密/友嘉追赶，长期价格战压毛利，永久性扣</td></tr>
+<tr class="sum"><td><b>合计</b></td><td></td><td class="dx"><b>−6 x</b></td><td><b>扣后 PE = 15 − 6 = 9 x</b></td></tr></table></div>
+<div class="step"><span class="sn">4</span><b>三条线 = PE × NTM EPS</b>
+<table class="calc"><tr><th>线</th><th>算式</th><th>目标价</th><th>含义</th></tr><tr><td><b>超额卖出线</b></td><td>完美PE 15 × NTM 2.50</td><td class='pv'>HK$37.5</td><td>泡沫区</td></tr><tr><td><b>正常买入线</b></td><td>扣后PE 9 × NTM 2.50</td><td class='pv'>HK$22.5</td><td>A线</td></tr><tr><td><b>大底线</b></td><td>正常买入 22.5×0.7</td><td class='pv'>HK$15.75</td><td>恐慌重仓</td></tr></table></div>
+<div class="val3">
+<div class="b sell"><div class="k">超额卖出线</div><div class="p">HK$37.5</div></div>
+<div class="b buy"><div class="k">正常买入线(A线)</div><div class="p">HK$22.5</div></div>
+<div class="b bot"><div class="k">大底线</div><div class="p">HK$15.75</div></div>
+</div>
+<div class="step"><span class="sn">5</span><b>现价定位</b><div class="sd">现价20.26 ÷ NTM 2.50 = 前瞻PE <b>8.1 x</b> vs 扣后 9 x<br>→前瞻PE8.1x已低于扣后9x、现价20.26低于买入线22.5=便宜区，市场按周期股折价定价；但周期未见内需拐点，属'便宜但需等基本面确认'而非无脑建仓（非建仓指令）</div></div>
+
+
+<h2>四家 UP 主怎么看（原话/区间，不自算）</h2>
+<div class='up jj nocov'><div class='who'>江江小可爱</div><div>未覆盖——不自算。</div></div>
+<div class='up td nocov'><div class='who'>土豆(看财报)</div><div>未覆盖——不自算。</div></div>
+<div class='up ts nocov'><div class='who'>土斯土耶夫斯基</div><div>未覆盖——不自算。</div></div>
+<div class='up mg nocov'><div class='who'>复利芒果</div><div>未检索到复利芒果讲过本标的——未覆盖，不自算。</div></div>
+
+<div class="foot"><b>数据来源：</b><a href='https://wap.eastmoney.com/a/202603173674226397.html' target='_blank'>海天国际2025净利+7.2%至33.01亿(东财)</a><a href='https://finance.sina.com.cn/stock/hkstock/ggscyd/2026-03-16/doc-inhrezkh5828809.shtml' target='_blank'>发布2025年度业绩股东应占利润33.01亿(新浪)</a><a href='https://www.adsalecprj.com/news/article_details/85976.html' target='_blank'>营收177亿净利33亿:毛利32.7%/海外+26.4%(Adsale)</a><a href='https://www.cls.cn/detail/2174410' target='_blank'>中信证券维持买入目标价29港元(财联社)</a><br>行情 qt.gtimg.cn 实时 · 财报/竞争数据现搜带源 · 本页为事实与概率判断，非建仓指令。</div>
+</div>
+<script>
+function refresh(){
+ var box=document.querySelector('[data-c]');var code=box.getAttribute('data-c');
+ fetch('https://qt.gtimg.cn/q='+code).then(r=>r.arrayBuffer()).then(b=>{
+  var t=new TextDecoder('gbk').decode(b);var m=t.match(/"([^"]*)"/);if(!m)return;
+  var f=m[1].split('~');
+  document.getElementById('px').textContent=f[3];
+  var c=parseFloat(f[32]);var el=document.getElementById('chg');
+  el.textContent=(c>=0?'+':'')+f[32]+'%';el.style.color=c>=0?'#a23a3a':'#1f6b3a';
+  document.getElementById('pe').textContent=f[39];
+  document.getElementById('cap').textContent=f[45];
+  var d=f[30]||'';document.getElementById('upd').textContent='更新 '+(d.length>=12?d.slice(0,4)+'-'+d.slice(4,6)+'-'+d.slice(6,8)+' '+d.slice(8,10)+':'+d.slice(10,12):d);
+ }).catch(e=>{document.getElementById('upd').textContent='行情源暂不可用';});
+}
+refresh();setInterval(refresh,30000);
+</script></body></html>
