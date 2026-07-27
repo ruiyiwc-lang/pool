@@ -1,0 +1,120 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特变电工 · 基石深度</title><style>
+:root{--bg:#eef2e6;--card:#f7faf0;--ink:#26301f;--dim:#5a6b4d;--line:#d3ddc2;--accent:#2f7d4f;--warn:#8a5a1a;--buy:#1f6b3a;--sell:#a23a3a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.85 -apple-system,'PingFang SC','Microsoft YaHei',sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:22px 18px 80px}
+a{color:var(--accent)}
+.top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+h1{font-size:30px;margin:6px 0 2px}
+.seg{color:var(--dim);font-size:16px}
+.crown{background:#f3e4a8;color:#7a5c10;border:1px solid #e0cd7a;border-radius:6px;padding:1px 8px;font-size:15px}
+.qbar{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0 8px;display:flex;flex-wrap:wrap;gap:18px;align-items:baseline;font-size:17px}
+.qbar b{font-size:26px;color:var(--accent)}
+.qbar .lbl{color:var(--dim);font-size:14px;margin-right:4px}
+#upd{color:var(--dim);font-size:13px}
+.rbtn{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:5px 12px;font-size:14px;cursor:pointer}
+h2{font-size:22px;margin:30px 0 10px;padding-left:10px;border-left:5px solid var(--accent)}
+p{margin:10px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;background:var(--card);font-size:16px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#e3ead4}
+.v-passx{color:#1f6b3a;font-weight:700}
+.v-pass{color:#2f7d4f;font-weight:600}
+.v-warn{color:#8a5a1a;font-weight:600}
+.v-fail{color:#a23a3a;font-weight:700}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:12px 0}
+.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px 12px 46px;margin:10px 0;position:relative}
+.step>b{font-size:17px}
+.sn{position:absolute;left:12px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sd{margin-top:6px}
+.dim{color:var(--dim);font-size:14px}
+table.calc{margin:10px 0 2px;font-size:15px}
+table.calc .dx{color:var(--sell);font-weight:700;white-space:nowrap}
+table.calc .pv{color:var(--buy);font-weight:700;font-size:17px;white-space:nowrap}
+table.calc tr.sum td{background:#eef3e2}
+.verdict{background:#e6f0e0;border:1px solid #bcd3a8;border-radius:12px;padding:14px 18px;font-size:18px;margin:12px 0}
+.val3{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.val3 .b{flex:1;min-width:150px;border-radius:10px;padding:12px 14px;text-align:center;border:1px solid var(--line)}
+.val3 .sell{background:#f6e4e4;border-color:#e0bcbc}
+.val3 .buy{background:#e4f0e6;border-color:#bcd8c2}
+.val3 .bot{background:#eae4f0;border-color:#cbbce0}
+.val3 .k{font-size:14px;color:var(--dim)}
+.val3 .p{font-size:26px;font-weight:700;margin-top:2px}
+.up{border-left:5px solid #c9b6e0;margin:12px 0;background:var(--card);border-radius:0 10px 10px 0;padding:12px 16px}
+.up.jj{border-color:#e0a6c0}.up.td{border-color:#c9a06a}.up.ts{border-color:#7aa6c9}.up.mg{border-color:#e0b46a}
+.up .who{font-weight:700;font-size:17px}
+.up.nocov{opacity:.7}
+.nav{margin:8px 0 4px}
+.foot{color:var(--dim);font-size:14px;margin-top:26px;border-top:1px dashed var(--line);padding-top:12px}
+.foot a{display:inline-block;margin:2px 10px 2px 0}
+</style></head><body><div class="wrap">
+<div class="nav"><a href="../bedrock.html">← 返回中国高端制造基石</a></div>
+<div class="top"><h1>特变电工</h1><span class="seg">变压器/特高压+多晶硅</span></div>
+<div class="qbar" data-c="sh600089">
+<span><span class="lbl">现价</span><b id="px">—</b></span>
+<span><span class="lbl">涨跌</span><span id="chg">—</span></span>
+<span><span class="lbl">PE-TTM</span><span id="pe">—</span></span>
+<span><span class="lbl">总市值(亿)</span><span id="cap">—</span></span>
+<button class="rbtn" onclick="refresh()">↻ 刷新</button><span id="upd">加载中…</span>
+</div>
+
+<h2>一、财报与增长</h2><p><b>2025</b>营收972.3亿(−0.61%)、归母净利59.54亿(+43.69%)、营业利润81.6亿(+67.18%)——增收不增利反转，主要靠多晶硅大幅减亏+输变电放量。</p><p>2026Q1营收249.46亿(+6.8%)、归母净利18.15亿(+13.4%);子公司新特能源Q1归母约2.28亿，多晶硅当季大幅减亏转正。</p><p>分部:输变电国内签约562亿(+14.47%)/国际签约20亿美元(+68%);多晶硅高库存弱需求深度亏损但全年大幅减亏;煤炭供需宽松均价降拖累;2025每10股派3.6元。</p>
+<h2>二、业务状况</h2><p>变压器/特高压全球领先:柔直换流阀中标藏粤直流工程突破;出海加速——2026Q1输变电国际单机订单6.21亿美元(+30%)，沙特项目落地，'十五五'末海外该业务收入30%+目标。</p><p>多晶硅(新特能源)+煤电铝一体化:2025光伏多晶硅深度下行周期底，新特能源亏损暂不满足A股IPO;煤电155亿度+高纯铝5.53万吨+新材料多元协同。</p>
+<h2>三、管理层</h2><p>张新长期实控，战略'输变电高端装备+新能源+新材料+能源'四大产业协同、数智化转型;多晶硅自律控产减亏;2025每10股派3.6元;无失信。</p>
+<h2>四、竞争格局</h2><p>变压器/特高压vs中国西电/平高(国内)、ABB(Hitachi Energy)/西门子能源(全球):国内龙头，受益全球电网投资超级周期出海放量(国际签约+68%)，但2B装备可被追赶。</p><p>多晶硅vs通威/大全/协鑫:全行业2025深度产能过剩普遍亏损处周期底;2026Q1边际减亏(新特转正2.28亿)，结构性出清需数年。</p>
+
+<h2>王超七问评分</h2>
+<table><tr><th style="width:32%">维度</th><th style="width:14%">判定</th><th>依据</th></tr>
+<tr><td>1 商业模式</td><td class='v-pass'>Pass</td><td>输变电装备卖电网+海外(刚需长周期资质)，多晶硅卖光伏，煤电铝一体化多元收费，核心输变电稳定</td></tr>
+<tr><td>2 市场空间</td><td class='v-pass'>Pass</td><td>全球电网投资超级周期+特高压/柔直+出海，天花板高;但多晶硅赛道产能过剩空间受限</td></tr>
+<tr><td>3 盈利逻辑</td><td class='v-warn'>黄灯</td><td>多重周期:输变电毛利改善但多晶硅深亏、煤炭均价降;2025营收−0.61%而净利+43.69%全靠多晶硅减亏——波动大、增收不增利风险</td></tr>
+<tr><td>4 护城河</td><td class='v-pass'>Pass</td><td>变压器/特高压技术+电网资质+规模，藏粤直流柔直突破;但2B可追赶(西电/平高在追)，非物理级</td></tr>
+<tr><td>5 粘性</td><td class='v-pass'>Pass</td><td>电网客户认证壁垒高、资质周期长、切换成本大，国内外招标绑定强</td></tr>
+<tr><td>6 致命风险</td><td class='v-warn'>黄灯</td><td>多晶硅持续过剩/子公司持续亏损拖累+出海政治/关税/中东运输成本+煤炭价格下行——真实'改变命运'级=多晶硅深度拖累</td></tr>
+<tr><td>7 管理层</td><td class='v-pass'>Pass</td><td>张新长期实控战略清晰、自律控产减亏、持续分红、无失信</td></tr></table>
+<div class="verdict"><b>终判：</b><b>B档(输变电出海+多重周期复合，确认)</b>：七问无Fail、2黄灯(盈利逻辑/致命风险=多晶硅拖累顶部);输变电本土难替+全球能打(海外签约+68%、订单+30%)但海外仍处放量早期，未成全球规则制定者。<br><br><b>2B 制造阶段判据：</b>输变电出海=享受期(早期):全球电网超级周期窗口大，但西电/平高同场，窗口有限;多晶硅=周期底判据:2025深度亏损底部，2026Q1新特转正2.28亿边际减亏，全行业出清需数年、IPO暂搁置。</div>
+
+<h2>估值三线 · 计算过程（第2步·瑕疵全量化）</h2>
+
+<div class="step"><span class="sn">1</span><b>完美 PE 起点 = 22 x</b><div class="sd">输变电(变压器/特高压)全球领先，受益电网投资超级周期+特高压柔直突破+出海放量，对标全球T&D龙头(ABB/Hitachi Energy/西门子能源)给22x起点</div></div>
+<div class="step"><span class="sn">2</span><b>每股收益 EPS</b>
+<div class="sd">EPS-TTM：20.65 ÷ 16.91 = <b>1.22 元</b><br>NTM EPS：1.22 ×（1+18%）≈ <b>1.44 元</b><br><span class="dim">2026Q1归母+13.4%，多晶硅减亏(新特Q1转正2.28亿)+输变电出海订单+30%驱动，取+18%</span></div></div>
+<div class="step"><span class="sn">3</span><b>逐项瑕疵扣 PE（从 22 x 往下扣）</b>
+<table class="calc"><tr><th>瑕疵</th><th>类型</th><th>扣减</th><th>依据</th></tr><tr><td>多晶硅/煤炭周期</td><td>周期(半扣)</td><td class='dx'>−4 x</td><td>2025多晶硅深度亏损、煤炭均价降，2026Q1减亏但未完全修复</td></tr><tr><td>多晶硅产能过剩</td><td>结构</td><td class='dx'>−2 x</td><td>行业严重产能过剩，新特亏损不满足IPO，结构性出清需数年</td></tr>
+<tr class="sum"><td><b>合计</b></td><td></td><td class="dx"><b>−6 x</b></td><td><b>扣后 PE = 22 − 6 = 16 x</b></td></tr></table></div>
+<div class="step"><span class="sn">4</span><b>三条线 = PE × NTM EPS</b>
+<table class="calc"><tr><th>线</th><th>算式</th><th>目标价</th><th>含义</th></tr><tr><td><b>超额卖出线</b></td><td>完美PE 22 × NTM 1.44</td><td class='pv'>¥31.7</td><td>泡沫区</td></tr><tr><td><b>正常买入线</b></td><td>扣后PE 16 × NTM 1.44</td><td class='pv'>¥23.0</td><td>A线</td></tr><tr><td><b>大底线</b></td><td>正常买入 23.0×0.7</td><td class='pv'>¥16.1</td><td>恐慌重仓</td></tr></table></div>
+<div class="val3">
+<div class="b sell"><div class="k">超额卖出线</div><div class="p">¥31.7</div></div>
+<div class="b buy"><div class="k">正常买入线(A线)</div><div class="p">¥23.0</div></div>
+<div class="b bot"><div class="k">大底线</div><div class="p">¥16.1</div></div>
+</div>
+<div class="step"><span class="sn">5</span><b>现价定位</b><div class="sd">现价20.65 ÷ NTM 1.44 = 前瞻PE <b>14.3 x</b> vs 扣后 16 x<br>→前瞻PE14.3x略低于扣后16x，处合理买入区间下沿（非建仓指令）</div></div>
+
+
+<h2>四家 UP 主怎么看（原话/区间，不自算）</h2>
+<div class='up jj'><div class='who'>江江小可爱</div><div>合理市值区间反算：<b>买 ¥13.46 / 卖 ¥34.56</b>；当前<b>区间内</b>。</div></div>
+<div class='up td'><div class='who'>土豆(看财报)</div><div><b>「买变压器送煤炭黄金，买一送一不香吗」</b>——变压器铲子好但业务太杂拖累，一半周期一半成长。</div></div>
+<div class='up ts nocov'><div class='who'>土斯土耶夫斯基</div><div>未覆盖——不自算。</div></div>
+<div class='up mg'><div class='who'>复利芒果</div><div>变压器全球第一份额 12%，横跨输变电/煤炭/新能源/黄金，产业链打通、海外订单爆发、多晶硅拖累；前三季净利+27.62% 但扣非-3.41% 靠非经常损益，滚动 PE 约 28 倍/动态约 21 倍。<b>中性：多业务共振+海外加速，但业务太杂、管理难、印度子公司风险。</b></div></div>
+
+<div class="foot"><b>数据来源：</b><a href='https://www.stcn.com/article/detail/3752176.html' target='_blank'>特变2025净利59.54亿+43.69%</a><a href='https://www.stcn.com/article/detail/3871070.html' target='_blank'>2026Q1营收249.46亿归母+13.4%</a><a href='https://www.21jingji.com/article/20260519/herald/bc3e76d96557b10cebd1467d2a8fb345.html' target='_blank'>2026营收目标/新特IPO</a><br>行情 qt.gtimg.cn 实时 · 财报/竞争数据现搜带源 · 本页为事实与概率判断，非建仓指令。</div>
+</div>
+<script>
+function refresh(){
+ var box=document.querySelector('[data-c]');var code=box.getAttribute('data-c');
+ fetch('https://qt.gtimg.cn/q='+code).then(r=>r.arrayBuffer()).then(b=>{
+  var t=new TextDecoder('gbk').decode(b);var m=t.match(/"([^"]*)"/);if(!m)return;
+  var f=m[1].split('~');
+  document.getElementById('px').textContent=f[3];
+  var c=parseFloat(f[32]);var el=document.getElementById('chg');
+  el.textContent=(c>=0?'+':'')+f[32]+'%';el.style.color=c>=0?'#a23a3a':'#1f6b3a';
+  document.getElementById('pe').textContent=f[39];
+  document.getElementById('cap').textContent=f[45];
+  var d=f[30]||'';document.getElementById('upd').textContent='更新 '+(d.length>=12?d.slice(0,4)+'-'+d.slice(4,6)+'-'+d.slice(6,8)+' '+d.slice(8,10)+':'+d.slice(10,12):d);
+ }).catch(e=>{document.getElementById('upd').textContent='行情源暂不可用';});
+}
+refresh();setInterval(refresh,30000);
+</script></body></html>
