@@ -1,0 +1,120 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>药明康德 · 基石深度</title><style>
+:root{--bg:#eef2e6;--card:#f7faf0;--ink:#26301f;--dim:#5a6b4d;--line:#d3ddc2;--accent:#2f7d4f;--warn:#8a5a1a;--buy:#1f6b3a;--sell:#a23a3a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.85 -apple-system,'PingFang SC','Microsoft YaHei',sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:22px 18px 80px}
+a{color:var(--accent)}
+.top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+h1{font-size:30px;margin:6px 0 2px}
+.seg{color:var(--dim);font-size:16px}
+.crown{background:#f3e4a8;color:#7a5c10;border:1px solid #e0cd7a;border-radius:6px;padding:1px 8px;font-size:15px}
+.qbar{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0 8px;display:flex;flex-wrap:wrap;gap:18px;align-items:baseline;font-size:17px}
+.qbar b{font-size:26px;color:var(--accent)}
+.qbar .lbl{color:var(--dim);font-size:14px;margin-right:4px}
+#upd{color:var(--dim);font-size:13px}
+.rbtn{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:5px 12px;font-size:14px;cursor:pointer}
+h2{font-size:22px;margin:30px 0 10px;padding-left:10px;border-left:5px solid var(--accent)}
+p{margin:10px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;background:var(--card);font-size:16px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#e3ead4}
+.v-passx{color:#1f6b3a;font-weight:700}
+.v-pass{color:#2f7d4f;font-weight:600}
+.v-warn{color:#8a5a1a;font-weight:600}
+.v-fail{color:#a23a3a;font-weight:700}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:12px 0}
+.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px 12px 46px;margin:10px 0;position:relative}
+.step>b{font-size:17px}
+.sn{position:absolute;left:12px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sd{margin-top:6px}
+.dim{color:var(--dim);font-size:14px}
+table.calc{margin:10px 0 2px;font-size:15px}
+table.calc .dx{color:var(--sell);font-weight:700;white-space:nowrap}
+table.calc .pv{color:var(--buy);font-weight:700;font-size:17px;white-space:nowrap}
+table.calc tr.sum td{background:#eef3e2}
+.verdict{background:#e6f0e0;border:1px solid #bcd3a8;border-radius:12px;padding:14px 18px;font-size:18px;margin:12px 0}
+.val3{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.val3 .b{flex:1;min-width:150px;border-radius:10px;padding:12px 14px;text-align:center;border:1px solid var(--line)}
+.val3 .sell{background:#f6e4e4;border-color:#e0bcbc}
+.val3 .buy{background:#e4f0e6;border-color:#bcd8c2}
+.val3 .bot{background:#eae4f0;border-color:#cbbce0}
+.val3 .k{font-size:14px;color:var(--dim)}
+.val3 .p{font-size:26px;font-weight:700;margin-top:2px}
+.up{border-left:5px solid #c9b6e0;margin:12px 0;background:var(--card);border-radius:0 10px 10px 0;padding:12px 16px}
+.up.jj{border-color:#e0a6c0}.up.td{border-color:#c9a06a}.up.ts{border-color:#7aa6c9}.up.mg{border-color:#e0b46a}
+.up .who{font-weight:700;font-size:17px}
+.up.nocov{opacity:.7}
+.nav{margin:8px 0 4px}
+.foot{color:var(--dim);font-size:14px;margin-top:26px;border-top:1px dashed var(--line);padding-top:12px}
+.foot a{display:inline-block;margin:2px 10px 2px 0}
+</style></head><body><div class="wrap">
+<div class="nav"><a href="../bedrock.html">← 返回中国高端制造基石</a></div>
+<div class="top"><h1>药明康德</h1><span class="seg">CXO·CRDMO一体化</span></div>
+<div class="qbar" data-c="sh603259">
+<span><span class="lbl">现价</span><b id="px">—</b></span>
+<span><span class="lbl">涨跌</span><span id="chg">—</span></span>
+<span><span class="lbl">PE-TTM</span><span id="pe">—</span></span>
+<span><span class="lbl">总市值(亿)</span><span id="cap">—</span></span>
+<button class="rbtn" onclick="refresh()">↻ 刷新</button><span id="upd">加载中…</span>
+</div>
+
+<h2>一、财报与增长</h2><p><b>2025</b>营收454.56亿(+15.8%)、持续经营口径+21.4%;归母净利191.51亿(+102.65%)但含69.31亿一次性处置收益(出售WuXi XDC)，经调整非IFRS归母仅149.57亿(+41.3%)——归母翻倍是账面幻觉，2026失去一次性后报表利润将下滑。</p><p>2026Q1营收124.4亿(+28.8%,单季首破百亿)、扣非归母42.8亿(+83.6%)、经调整非IFRS毛利率50.4%创新高;化学业务106.2亿(+43.7%)。</p><p>在手订单backlog:2025年底580亿(+28.8%)、2026Q1末597.7亿(+23.6%)创新高;TIDES(GLP-1多肽/寡核苷酸)2025全年113.7亿(+96%)、2026指引>150亿。</p>
+<h2>二、业务状况</h2><p>TIDES(GLP-1多肽+寡核苷酸)增长引擎:2025+96%、2026指引>150亿(+40%)已提前启动常州基地;但2026Q1 TIDES收入仅23.8亿(+6.1%)骤降，全年+40%兑现存疑。</p><p>CRDMO一体化收费站:跟随药物分子全生命周期、切换成本极高、客户黏性贯穿专利期;收入地域极不平衡——2025美国客户占约72%、海外合计约87%，中国仅约13%——美国依存度高是致命风险放大器。</p>
+<h2>三、管理层</h2><p>李革(创始人)执行力强:2025剥离WuXi XDC回笼现金、维持57.1亿分红;治理硬伤——被美国国防部指'SASAC间接持有'成1260H上榜理由，公司称错误并起诉，股权可被政治化解读。</p>
+<h2>四、竞争格局</h2><p>全球CXO规模龙头:GMP产能约第二名10倍，FDA/EMA全套合规，服务全球Top20药企，成本+速度+一体化碾压Lonza/Catalent;龙头地位无法对冲政治。</p><p>vs Lonza/Catalent:西方同行是BIOSECURE直接受益者，客户'去中国CDMO'评估中承接转单;切换成本高+5年祖父条款保护存量，但新增订单可能结构性流向Lonza。</p>
+
+<h2>王超七问评分</h2>
+<table><tr><th style="width:32%">维度</th><th style="width:14%">判定</th><th>依据</th></tr>
+<tr><td>1 商业模式</td><td class='v-passx'>Pass★</td><td>CRDMO一体化收费站、跟随分子全生命周期，2025持续经营+21.4%，客户黏性强</td></tr>
+<tr><td>2 市场空间</td><td class='v-passx'>Pass★</td><td>全球医学CXO千亿美元级+GLP-1/TIDES超级周期，backlog 597.7亿锁2-3年</td></tr>
+<tr><td>3 盈利逻辑</td><td class='v-pass'>Pass</td><td>非IFRS毛利率50.4%创高、扣非+83.6%;但归母+105%含69.3亿一次性、2026报表利润将下滑</td></tr>
+<tr><td>4 护城河</td><td class='v-pass'>Pass</td><td>GMP产能全球第一(~10x第二名)+FDA/EMA合规+切换成本，Lonza难替;但技术优势在'国籍'面前失效，故非★</td></tr>
+<tr><td>5 粘性</td><td class='v-pass'>Pass</td><td>跟随分子全生命周期+一体化锁客，切换成本极高、贯穿专利期</td></tr>
+<tr><td>6 致命风险</td><td class='v-warn'>黄灯</td><td>美国占持续经营收入~72%+BIOSECURE已2025.12签署成法+2026.6列1260H诉讼中;缓释=采购nexus才触发+FAR约3年+5年祖父条款+Medicare豁免——黄灯非死刑</td></tr>
+<tr><td>7 管理层</td><td class='v-pass'>Pass</td><td>李革长期主义+资本运作(剥离XDC)干净;股权被政治化(1260H)拖累治理透明度</td></tr></table>
+<div class="verdict"><b>终判：</b><b>A档·全球CXO基础设施支柱(地缘黄灯，确认)</b>：押的是'中国创新药+全球GLP-1能否持续繁荣'。护城河(规模+监管+黏性)完整、核心业务+21%~40%高增，但美国收入~72%叠加BIOSECURE已成法/1260H上榜，致命变量未拆除，故封顶A档、不入皇冠。<br><br><b>2B 制造阶段判据：</b>A档判据:CXO全球龙头护城河完整+CRDMO收费站黏性=够格A档基础设施;但BIOSECURE地缘黄灯(法案已签署但采购nexus触发+FAR约3年+5年祖父条款+Medicare豁免=非即刻死刑)+1260H诉讼中=不得升S/皇冠。核心变量=美国客户脱钩节奏与法案执行。</div>
+
+<h2>估值三线 · 计算过程（第2步·瑕疵全量化）</h2>
+
+<div class="step"><span class="sn">1</span><b>完美 PE 起点 = 26 x</b><div class="sd">全球CXO规模龙头(产能~10x第二名)+CRDMO全生命周期锁客+TIDES/GLP-1引擎，核心增速20-40%的稀缺全球基础设施;但危机压制下取26x(危机解除方回归更高)</div></div>
+<div class="step"><span class="sn">2</span><b>每股收益 EPS</b>
+<div class="sd">EPS-TTM：124.10 ÷ 18.39 = <b>6.75 元</b><br>NTM EPS：经调整前瞻 ≈ <b>7.1 元</b><br><span class="dim">TTM报表6.75被69.3亿一次性虚增，2026将失去;以2025经调整EPS×核心增长得前瞻~7.1元(剔一次性后反略高于失真TTM)</span></div></div>
+<div class="step"><span class="sn">3</span><b>逐项瑕疵扣 PE（从 26 x 往下扣）</b>
+<table class="calc"><tr><th>瑕疵</th><th>类型</th><th>扣减</th><th>依据</th></tr><tr><td>BIOSECURE/1260H/NDAA地缘政治</td><td>结构</td><td class='dx'>−10 x</td><td>美国占持续经营收入~72%;BIOSECURE已2025.12签署成法、2026.6列1260H诉讼中，Top客户脱钩+新单流向Lonza结构性尾部风险</td></tr><tr><td>盈利质量(一次性收益虚增+2026报表利润下滑)</td><td>结构</td><td class='dx'>−2 x</td><td>2025归母+105%含69.3亿处置收益，2026失去后报表利润或负增</td></tr><tr><td>重资产周期(资本开支/海外建厂/产能利用率)</td><td>周期(半扣)</td><td class='dx'>−1 x</td><td>2026资本开支65-75亿，美国特拉华厂或建成即被禁用</td></tr>
+<tr class="sum"><td><b>合计</b></td><td></td><td class="dx"><b>−13 x</b></td><td><b>扣后 PE = 26 − 13 = 13 x</b></td></tr></table></div>
+<div class="step"><span class="sn">4</span><b>三条线 = PE × NTM EPS</b>
+<table class="calc"><tr><th>线</th><th>算式</th><th>目标价</th><th>含义</th></tr><tr><td><b>超额卖出线</b></td><td>完美PE 26 × NTM 7.1</td><td class='pv'>¥184.6</td><td>泡沫/危机解除区</td></tr><tr><td><b>正常买入线</b></td><td>扣后PE 13 × NTM 7.1</td><td class='pv'>¥92.3</td><td>A线/深买</td></tr><tr><td><b>大底线</b></td><td>正常买入 92.3×0.7</td><td class='pv'>¥64.6</td><td>恐慌重仓</td></tr></table></div>
+<div class="val3">
+<div class="b sell"><div class="k">超额卖出线</div><div class="p">¥184.6</div></div>
+<div class="b buy"><div class="k">正常买入线(A线)</div><div class="p">¥92.3</div></div>
+<div class="b bot"><div class="k">大底线</div><div class="p">¥64.6</div></div>
+</div>
+<div class="step"><span class="sn">5</span><b>现价定位</b><div class="sd">现价124.10 ÷ NTM 7.1 = 前瞻PE <b>17.5 x</b> vs 扣后 13 x<br>→现价合理偏贵、位于合理线附近、深买线(约92)之上，未进首仓性价比区，等回调或诉讼恶化再深买（非建仓指令）</div></div>
+
+
+<h2>四家 UP 主怎么看（原话/区间，不自算）</h2>
+<div class='up jj'><div class='who'>江江小可爱</div><div>合理市值区间反算：<b>买 ¥73.63 / 卖 ¥117.3</b>；当前<b>高于区间（高估）</b>。</div></div>
+<div class='up td'><div class='who'>土豆(看财报)</div><div><b>「市场太恐慌，迟早展现药明价值」</b>——医药界台积电，护城河极深，估值被地缘极度压制。</div></div>
+<div class='up ts nocov'><div class='who'>土斯土耶夫斯基</div><div>未覆盖——不自算。</div></div>
+<div class='up mg'><div class='who'>复利芒果</div><div>全球唯一端到端 CRDMO 漏斗平台，多肽/GLP-1 卡位、580 亿在手订单、客户黏性强；2026 预期 24-26 倍 PE，归母翻倍含 56 亿卖资产、扣非仅+32.6%。<b>中性：主业修复+多肽高增，但 70% 美国收入受生物安全法案地缘风险。</b></div></div>
+
+<div class="foot"><b>数据来源：</b><a href='https://www.cls.cn/detail/2321935' target='_blank'>药明2025年报营收454.56亿归母191.51亿</a><a href='https://www.guancha.cn/economy/2026_04_28_815286.shtml' target='_blank'>2026Q1营收124.4亿扣非+83.6%</a><a href='https://wallstreetcn.com/articles/3768173' target='_blank'>美国客户312.5亿占~72%</a><a href='https://www.thefdalawblog.com/2026/06/wuxi-apptecs-1260h-listing-brings-the-biosecure-act-back-to-center-stage/' target='_blank'>1260H上榜BIOSECURE回归</a><br>行情 qt.gtimg.cn 实时 · 财报/竞争数据现搜带源 · 本页为事实与概率判断，非建仓指令。</div>
+</div>
+<script>
+function refresh(){
+ var box=document.querySelector('[data-c]');var code=box.getAttribute('data-c');
+ fetch('https://qt.gtimg.cn/q='+code).then(r=>r.arrayBuffer()).then(b=>{
+  var t=new TextDecoder('gbk').decode(b);var m=t.match(/"([^"]*)"/);if(!m)return;
+  var f=m[1].split('~');
+  document.getElementById('px').textContent=f[3];
+  var c=parseFloat(f[32]);var el=document.getElementById('chg');
+  el.textContent=(c>=0?'+':'')+f[32]+'%';el.style.color=c>=0?'#a23a3a':'#1f6b3a';
+  document.getElementById('pe').textContent=f[39];
+  document.getElementById('cap').textContent=f[45];
+  var d=f[30]||'';document.getElementById('upd').textContent='更新 '+(d.length>=12?d.slice(0,4)+'-'+d.slice(4,6)+'-'+d.slice(6,8)+' '+d.slice(8,10)+':'+d.slice(10,12):d);
+ }).catch(e=>{document.getElementById('upd').textContent='行情源暂不可用';});
+}
+refresh();setInterval(refresh,30000);
+</script></body></html>
