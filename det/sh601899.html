@@ -35,6 +35,9 @@ table.calc .dx{color:var(--sell);font-weight:700;white-space:nowrap}
 table.calc .pv{color:var(--buy);font-weight:700;font-size:17px;white-space:nowrap}
 table.calc tr.sum td{background:#eef3e2}
 .verdict{background:#e6f0e0;border:1px solid #bcd3a8;border-radius:12px;padding:14px 18px;font-size:18px;margin:12px 0}
+.prem{background:#fbf1e0;border:1px solid #e6cfa0;border-left:5px solid #c8942e;border-radius:12px;padding:10px 16px 12px;margin:12px 0}
+.prem>b{font-size:16px;color:#7a5a12}
+.prem .sd{margin-top:6px;font-size:15.5px;line-height:1.75}
 .expect{background:#eef1f7;border:1px solid #c6d0e4;border-radius:12px;padding:8px 16px 14px;margin:12px 0}
 .exrow{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed #cdd6e8}
 .exrow:last-child{border-bottom:none}
@@ -86,6 +89,7 @@ table.calc tr.sum td{background:#eef3e2}
 
 <div class="step"><span class="sn">法</span><b>估值法 = 周期股·正常化中枢PE</b><div class="sd">周期股禁用当期高EPS×低PE的假便宜；用穿越周期正常化EPS×历史中枢PE定位（金价高位不外推、产量放量对冲）。</div></div>
 <div class="step"><span class="sn">1</span><b>计算锚（NTM EPS × 该类合理 PE → 三线）</b><div class="sd">正常化EPS≈1.9（2025归母517.77亿/265.9亿股=1.95，金价高位不外推、按中枢金铜价小幅下修 + 铜金产量真实放量对冲）× 中枢PE 15（成长型矿企历史13–16x）→ 正常买入 28.5；完美中枢18x×1.9≈34.2=超额卖出；大底=买入×0.7≈20。</div></div>
+<div class="prem"><b>⚖ 为什么敢给这个 PE（溢价来源 × 风险敞口）</b><div class="sd"><b>溢价来源：</b>几乎不给溢价——矿企历史13–16x取中枢15x，成长溢价只体现在铜金产量真实放量。</div><div class="sd"><b>风险有多大：</b>风险中低：靠正常化EPS≈1.9而非当期高金价EPS。若金铜价大幅回落或产量不及，中枢EPS下修；但产量放量是硬支撑。最忌用2026高金价×当期低PE当便宜。</div></div>
 <div class="step"><span class="sn">2</span><b>三条线</b>
 <div class="val3">
 <div class="b sell"><div class="k">超额卖出线</div><div class="p">¥34.2</div></div>
