@@ -1,0 +1,120 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>联影医疗 · 基石深度</title><style>
+:root{--bg:#eef2e6;--card:#f7faf0;--ink:#26301f;--dim:#5a6b4d;--line:#d3ddc2;--accent:#2f7d4f;--warn:#8a5a1a;--buy:#1f6b3a;--sell:#a23a3a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.85 -apple-system,'PingFang SC','Microsoft YaHei',sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:22px 18px 80px}
+a{color:var(--accent)}
+.top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+h1{font-size:30px;margin:6px 0 2px}
+.seg{color:var(--dim);font-size:16px}
+.crown{background:#f3e4a8;color:#7a5c10;border:1px solid #e0cd7a;border-radius:6px;padding:1px 8px;font-size:15px}
+.qbar{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0 8px;display:flex;flex-wrap:wrap;gap:18px;align-items:baseline;font-size:17px}
+.qbar b{font-size:26px;color:var(--accent)}
+.qbar .lbl{color:var(--dim);font-size:14px;margin-right:4px}
+#upd{color:var(--dim);font-size:13px}
+.rbtn{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:5px 12px;font-size:14px;cursor:pointer}
+h2{font-size:22px;margin:30px 0 10px;padding-left:10px;border-left:5px solid var(--accent)}
+p{margin:10px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;background:var(--card);font-size:16px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#e3ead4}
+.v-passx{color:#1f6b3a;font-weight:700}
+.v-pass{color:#2f7d4f;font-weight:600}
+.v-warn{color:#8a5a1a;font-weight:600}
+.v-fail{color:#a23a3a;font-weight:700}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:12px 0}
+.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px 12px 46px;margin:10px 0;position:relative}
+.step>b{font-size:17px}
+.sn{position:absolute;left:12px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sd{margin-top:6px}
+.dim{color:var(--dim);font-size:14px}
+table.calc{margin:10px 0 2px;font-size:15px}
+table.calc .dx{color:var(--sell);font-weight:700;white-space:nowrap}
+table.calc .pv{color:var(--buy);font-weight:700;font-size:17px;white-space:nowrap}
+table.calc tr.sum td{background:#eef3e2}
+.verdict{background:#e6f0e0;border:1px solid #bcd3a8;border-radius:12px;padding:14px 18px;font-size:18px;margin:12px 0}
+.val3{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.val3 .b{flex:1;min-width:150px;border-radius:10px;padding:12px 14px;text-align:center;border:1px solid var(--line)}
+.val3 .sell{background:#f6e4e4;border-color:#e0bcbc}
+.val3 .buy{background:#e4f0e6;border-color:#bcd8c2}
+.val3 .bot{background:#eae4f0;border-color:#cbbce0}
+.val3 .k{font-size:14px;color:var(--dim)}
+.val3 .p{font-size:26px;font-weight:700;margin-top:2px}
+.up{border-left:5px solid #c9b6e0;margin:12px 0;background:var(--card);border-radius:0 10px 10px 0;padding:12px 16px}
+.up.jj{border-color:#e0a6c0}.up.td{border-color:#c9a06a}.up.ts{border-color:#7aa6c9}.up.mg{border-color:#e0b46a}
+.up .who{font-weight:700;font-size:17px}
+.up.nocov{opacity:.7}
+.nav{margin:8px 0 4px}
+.foot{color:var(--dim);font-size:14px;margin-top:26px;border-top:1px dashed var(--line);padding-top:12px}
+.foot a{display:inline-block;margin:2px 10px 2px 0}
+</style></head><body><div class="wrap">
+<div class="nav"><a href="../bedrock.html">← 返回中国高端制造基石</a></div>
+<div class="top"><h1>联影医疗</h1><span class="seg">医学影像</span></div>
+<div class="qbar" data-c="sh688271">
+<span><span class="lbl">现价</span><b id="px">—</b></span>
+<span><span class="lbl">涨跌</span><span id="chg">—</span></span>
+<span><span class="lbl">PE-TTM</span><span id="pe">—</span></span>
+<span><span class="lbl">总市值(亿)</span><span id="cap">—</span></span>
+<button class="rbtn" onclick="refresh()">↻ 刷新</button><span id="upd">加载中…</span>
+</div>
+
+<h2>一、财报与增长</h2><p>2025营收138.00亿(+33.98%)、归母净利18.69亿(+48.14%)、扣非17.70亿(+75.18%)；经营性现金流由2024年-6.19亿转正至26.79亿；毛利率~48-50%</p><p>2026Q1营收29.08亿(+17.34%)、归母净利3.99亿(+7.78%,利润增速明显放缓)、Q1经营现金流-9.59亿(承压)；2025研发投入~26.2亿占营收~19%</p>
+<h2>二、业务状况</h2><p>医学影像全线登顶：MR国内综合市占率首次第一、PET/CT连续十年第一、PET/MR第一、CT新增市占率连续三年第一、放疗首次登顶；5T全身磁共振/双源CT全球首创</p><p>海外收入34.31亿(+51.39%)，占比升至24.86%；欧洲+49.61%至5.85亿、亚太+40%、新兴市场+80%；向车载/移动影像延伸</p>
+<h2>三、管理层</h2><p>创始人薛敏(MR技术出身)主导，科创板治理规范无重大失信；研发强度~19%高投入，前瞻布局脑机接口(uIGS/联影智能)</p>
+<h2>四、竞争格局</h2><p>国内高端影像第一，MR/PET/CT全面登顶，加速国产替代GPS(GE/飞利浦/西门子)；5T MR、双源CT等高端CT/MR技术突破</p><p>全球GPS仍主导高端存量市场，联影海外仅24.86%起步、尚未坐实全球王；集采/医疗反腐扰动国内采购、地缘(实体清单/关税)为主要外部变量</p>
+
+<h2>王超七问评分</h2>
+<table><tr><th style="width:32%">维度</th><th style="width:14%">判定</th><th>依据</th></tr>
+<tr><td>1 商业模式</td><td class='v-passx'>Pass★</td><td>卖高端影像设备(MR/CT/PET-CT/PET-MR/RT/DR)给医院，一次性大额设备+后续服务/软件/耗材，医院与政府付费；高值2B，单机数百万至千万</td></tr>
+<tr><td>2 市场空间</td><td class='v-passx'>Pass★</td><td>全球医学影像千亿美元级；国内高端国产替代(GPS存量替换)+海外仅24.86%，双空间叠加，天花板高、增长可见多年</td></tr>
+<tr><td>3 盈利逻辑</td><td class='v-pass'>Pass</td><td>毛利率~48-50%，经营杠杆显现(2025归母+48%>营收+34%)，现金流由负转正26.79亿；但2026Q1利润仅+7.78%放缓、研发占营收~19%侵蚀，盈利爬坡非线性</td></tr>
+<tr><td>4 护城河</td><td class='v-pass'>Pass</td><td>技术(5T MR/双源CT全球首创)+品牌+装机基数+售后网络+采购认证壁垒；但GPS全球仍强，非物理/数学级垄断，给Pass非Pass★</td></tr>
+<tr><td>5 粘性</td><td class='v-pass'>Pass</td><td>装机后绑定耗材/软件升级/维保服务+医生操作习惯+医院招标认证壁垒，切换成本高、复购与服务收入递延</td></tr>
+<tr><td>6 致命风险</td><td class='v-warn'>黄灯</td><td>国内医疗反腐/集采压价扰动采购节奏；海外地缘(实体清单/关税/本地化)狙击；PE-TTM47.69估值高+Q1利润放缓；属'改变节奏'级威胁而非一夜杀死</td></tr>
+<tr><td>7 管理层</td><td class='v-pass'>Pass</td><td>创始人薛敏技术出身、长期研发导向，科创板治理规范、无失信记录，前瞻布局脑机接口/AI</td></tr></table>
+<div class="verdict"><b>终判：</b><b>本土王冲全球王·B+档</b>：国内高端影像难替(装机+品牌+技术+认证四重壁垒、MR/PET/CT全面登顶)，全球仅24.86%高增(+51%)但尚未证明能持续打赢GPS→全球王在途、未坐实<br><br><b>2B 制造阶段判据：</b>2B医疗阶段判据：<b>早期(享受期)</b>——竞对(国产)未追上、份额上升、毛利高位、量利齐升，海外破20%(24.86%)高增(+51%)；续命靠出海但需过两坎：①竞争坎(GPS海外仍强势)②政治坎(实体清单/关税/地缘)；技术+装机壁垒较硬但非ASML级唯一，须警惕后期国产二供起量与集采压毛利。</div>
+
+<h2>估值三线 · 计算过程（第2步·瑕疵全量化）</h2>
+
+<div class="step"><span class="sn">1</span><b>完美 PE 起点 = 45 x</b><div class="sd">高端影像成长龙头，国产替代GPS+海外24.86%高增(+51%)，2025归母+48%；给成长医疗设备龙头PE上沿45x。但2B制造无GPS级全球垄断、Q1利润放缓，不给更高</div></div>
+<div class="step"><span class="sn">2</span><b>每股收益 EPS</b>
+<div class="sd">EPS-TTM：109.83 ÷ 47.69 = <b>2.30 元</b><br>NTM EPS：2.30 ×（1+18%）≈ <b>2.72 元</b><br><span class="dim">NTM增速取18%：营收Q1+17.34%、2025归母+48%但2026Q1归母仅+7.78%，增速换挡下行→取营收增速与利润回暖之间的保守值18%</span></div></div>
+<div class="step"><span class="sn">3</span><b>逐项瑕疵扣 PE（从 45 x 往下扣）</b>
+<table class="calc"><tr><th>瑕疵</th><th>类型</th><th>扣减</th><th>依据</th></tr><tr><td>集采/反腐</td><td>周期(半扣)</td><td class='dx'>−6 x</td><td>医疗反腐扰动国内采购节奏、高端影像集采压价风险；属可恢复周期性，半扣</td></tr><tr><td>海外地缘/高估值</td><td>周期(半扣)</td><td class='dx'>−8 x</td><td>海外仅24.86%起步即面临GPS竞争坎+实体清单/关税地缘坎；叠加PE-TTM47.69已高、2026Q1归母仅+7.78%放缓</td></tr>
+<tr class="sum"><td><b>合计</b></td><td></td><td class="dx"><b>−14 x</b></td><td><b>扣后 PE = 45 − 14 = 31 x</b></td></tr></table></div>
+<div class="step"><span class="sn">4</span><b>三条线 = PE × NTM EPS</b>
+<table class="calc"><tr><th>线</th><th>算式</th><th>目标价</th><th>含义</th></tr><tr><td><b>超额卖出线</b></td><td>完美PE 45 × NTM 2.72</td><td class='pv'>¥122.4</td><td>泡沫区</td></tr><tr><td><b>正常买入线</b></td><td>扣后PE 31 × NTM 2.72</td><td class='pv'>¥84.3</td><td>A线</td></tr><tr><td><b>大底线</b></td><td>正常买入 84.3×0.7</td><td class='pv'>¥59.0</td><td>恐慌重仓</td></tr></table></div>
+<div class="val3">
+<div class="b sell"><div class="k">超额卖出线</div><div class="p">¥122.4</div></div>
+<div class="b buy"><div class="k">正常买入线(A线)</div><div class="p">¥84.3</div></div>
+<div class="b bot"><div class="k">大底线</div><div class="p">¥59.0</div></div>
+</div>
+<div class="step"><span class="sn">5</span><b>现价定位</b><div class="sd">现价109.83 ÷ NTM 2.72 = 前瞻PE <b>40.4 x</b> vs 扣后 31 x<br>→现价¥109.83高于正常买入线¥84.3、低于卖出线¥122.4，处偏贵持有区；前瞻PE40.4x仍显著高于扣后31x（非建仓指令）</div></div>
+
+
+<h2>四家 UP 主怎么看（原话/区间，不自算）</h2>
+<div class='up jj nocov'><div class='who'>江江小可爱</div><div>未覆盖——不自算。</div></div>
+<div class='up td nocov'><div class='who'>土豆(看财报)</div><div>未覆盖——不自算。</div></div>
+<div class='up ts nocov'><div class='who'>土斯土耶夫斯基</div><div>未覆盖——不自算。</div></div>
+<div class='up mg nocov'><div class='who'>复利芒果</div><div>未检索到复利芒果讲过本标的——未覆盖，不自算。</div></div>
+
+<div class="foot"><b>数据来源：</b><a href='https://www.cs.com.cn/ssgs/01/2026/04/29/detail_2026042910008225.html' target='_blank'>中证网:2025净利+48.14%/海外+51.39%</a><a href='https://www.jiemian.com/article/14355176.html' target='_blank'>界面新闻:2026Q1净利3.99亿+7.78%</a><a href='https://www.ofweek.com/medical/2026-05/ART-12002-11111-30686593.html' target='_blank'>OFweek:2025营收138亿/扣非+75.18%</a><a href='https://www.cls.cn/detail/2360390' target='_blank'>财联社:2025全线产品市占率登顶</a><a href='https://m.caijing.com.cn/s/202605/5162463' target='_blank'>财经网:2025海外收入34.31亿占比24.86%</a><br>行情 qt.gtimg.cn 实时 · 财报/竞争数据现搜带源 · 本页为事实与概率判断，非建仓指令。</div>
+</div>
+<script>
+function refresh(){
+ var box=document.querySelector('[data-c]');var code=box.getAttribute('data-c');
+ fetch('https://qt.gtimg.cn/q='+code).then(r=>r.arrayBuffer()).then(b=>{
+  var t=new TextDecoder('gbk').decode(b);var m=t.match(/"([^"]*)"/);if(!m)return;
+  var f=m[1].split('~');
+  document.getElementById('px').textContent=f[3];
+  var c=parseFloat(f[32]);var el=document.getElementById('chg');
+  el.textContent=(c>=0?'+':'')+f[32]+'%';el.style.color=c>=0?'#a23a3a':'#1f6b3a';
+  document.getElementById('pe').textContent=f[39];
+  document.getElementById('cap').textContent=f[45];
+  var d=f[30]||'';document.getElementById('upd').textContent='更新 '+(d.length>=12?d.slice(0,4)+'-'+d.slice(4,6)+'-'+d.slice(6,8)+' '+d.slice(8,10)+':'+d.slice(10,12):d);
+ }).catch(e=>{document.getElementById('upd').textContent='行情源暂不可用';});
+}
+refresh();setInterval(refresh,30000);
+</script></body></html>
