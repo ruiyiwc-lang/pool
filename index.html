@@ -45,10 +45,20 @@ tr:hover td{background:var(--card2)}
 .mfg{background:#efe0cf;color:#8a5a10;font-size:11px;font-weight:800;padding:1px 7px;border-radius:6px;margin-left:4px}
 .fhint{font-weight:400;font-size:12px;color:var(--dim);margin-left:8px}
 details.foldsec>summary{list-style:none} details.foldsec>summary::-webkit-details-marker{display:none}
-</style></head><body><div class="wrap">
-<h1>个人股票池 · S/A/B + 四家买卖点</h1>
+
+.sitehead{position:sticky;top:0;z-index:50;background:#eef2e6;border-bottom:1px solid #d2dac6;padding:13px 16px 11px}
+.sitehead .in{max-width:1440px;margin:0 auto}
+.sitehead a.brand{text-decoration:none}
+.sitehead h1{font-size:23px;font-weight:800;color:#233022;margin:0 0 9px;line-height:1.2}
+.sitehead .snav{display:flex;gap:8px;flex-wrap:wrap}
+.sitehead .snav a{font-size:14px;color:#3567a0;font-weight:700;text-decoration:none;border:1px solid #d2dac6;background:#f8faf3;border-radius:8px;padding:6px 13px;white-space:nowrap}
+.sitehead .snav a.cur{background:#2f7d4f;color:#fff;border-color:#2f7d4f}
+.subbar{max-width:1440px;margin:0 auto;padding:11px 16px 0;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.subbar #gq{flex:0 1 300px;padding:7px 13px;border-radius:9px;border:1px solid #c7d4bc;background:#fff;font-size:.95rem}
+</style></head><body><header class="sitehead"><div class="in"><a class="brand" href="./index.html"><h1>个人股票池 · S/A/B + 四家买卖点</h1></a><div class="snav"><a href="./index.html" class="cur">股票池</a><a href="./jiangjiang.html">江江观点</a><a href="./tudou.html">土豆观点</a><a href="./tusi.html">土斯观点</a><a href="./mango.html">复利芒果观点</a><a href="./quanji.html">逐字稿全集(四合一)</a></div></div></header>
+<div class="wrap">
 <div class="statusbar"><span id="upd">加载中…</span><button class="rbtn" onclick="refresh()">↻ 刷新行情</button>
-<span class="nav"><a href="./jiangjiang.html">江江观点</a><a href="./tudou.html">土豆观点</a><a href="./tusi.html">土斯观点</a><a href="./mango.html">复利芒果观点</a><a href="./quanji.html">逐字稿全集(四合一)</a></span></div>
+</div>
 <div class="ruler"><b>三个UP(江江/土豆/土斯)+我的池子,并集去重后分三部分:S/A/B选股表 + AI硬件板块(折叠·整体泡沫不单买) + 剔除区(见页尾)</b>。各档数量见下方彩色统计条。<b>AI硬件与B档可点击标题展开/折叠;先判段位(S/A/B)再看四家买卖点。</b>
 买卖点<b>严格用UP原话/区间,不自算</b>:区间→<span class="buy">买=下沿</span>/<span class="sell">卖=上沿</span>;UP明确给了价/PE/市值就用他的。
 <b>江江</b>=她合理市值区间反算股价(下沿买/上沿卖);<b>土豆</b>=他视频里的PE合理性/态度(多不给单股卖点);<b>土斯</b>=宏观派,单股多"未覆盖";<b>我(王超)</b>=仅池内20只有锁定阈值,其余"未纳入"。
