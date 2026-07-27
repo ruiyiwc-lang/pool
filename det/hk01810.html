@@ -1,0 +1,120 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>小米集团-W · 基石深度</title><style>
+:root{--bg:#eef2e6;--card:#f7faf0;--ink:#26301f;--dim:#5a6b4d;--line:#d3ddc2;--accent:#2f7d4f;--warn:#8a5a1a;--buy:#1f6b3a;--sell:#a23a3a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.85 -apple-system,'PingFang SC','Microsoft YaHei',sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:22px 18px 80px}
+a{color:var(--accent)}
+.top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+h1{font-size:30px;margin:6px 0 2px}
+.seg{color:var(--dim);font-size:16px}
+.crown{background:#f3e4a8;color:#7a5c10;border:1px solid #e0cd7a;border-radius:6px;padding:1px 8px;font-size:15px}
+.qbar{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0 8px;display:flex;flex-wrap:wrap;gap:18px;align-items:baseline;font-size:17px}
+.qbar b{font-size:26px;color:var(--accent)}
+.qbar .lbl{color:var(--dim);font-size:14px;margin-right:4px}
+#upd{color:var(--dim);font-size:13px}
+.rbtn{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:5px 12px;font-size:14px;cursor:pointer}
+h2{font-size:22px;margin:30px 0 10px;padding-left:10px;border-left:5px solid var(--accent)}
+p{margin:10px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;background:var(--card);font-size:16px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#e3ead4}
+.v-passx{color:#1f6b3a;font-weight:700}
+.v-pass{color:#2f7d4f;font-weight:600}
+.v-warn{color:#8a5a1a;font-weight:600}
+.v-fail{color:#a23a3a;font-weight:700}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:12px 0}
+.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px 12px 46px;margin:10px 0;position:relative}
+.step>b{font-size:17px}
+.sn{position:absolute;left:12px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sd{margin-top:6px}
+.dim{color:var(--dim);font-size:14px}
+table.calc{margin:10px 0 2px;font-size:15px}
+table.calc .dx{color:var(--sell);font-weight:700;white-space:nowrap}
+table.calc .pv{color:var(--buy);font-weight:700;font-size:17px;white-space:nowrap}
+table.calc tr.sum td{background:#eef3e2}
+.verdict{background:#e6f0e0;border:1px solid #bcd3a8;border-radius:12px;padding:14px 18px;font-size:18px;margin:12px 0}
+.val3{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.val3 .b{flex:1;min-width:150px;border-radius:10px;padding:12px 14px;text-align:center;border:1px solid var(--line)}
+.val3 .sell{background:#f6e4e4;border-color:#e0bcbc}
+.val3 .buy{background:#e4f0e6;border-color:#bcd8c2}
+.val3 .bot{background:#eae4f0;border-color:#cbbce0}
+.val3 .k{font-size:14px;color:var(--dim)}
+.val3 .p{font-size:26px;font-weight:700;margin-top:2px}
+.up{border-left:5px solid #c9b6e0;margin:12px 0;background:var(--card);border-radius:0 10px 10px 0;padding:12px 16px}
+.up.jj{border-color:#e0a6c0}.up.td{border-color:#c9a06a}.up.ts{border-color:#7aa6c9}.up.mg{border-color:#e0b46a}
+.up .who{font-weight:700;font-size:17px}
+.up.nocov{opacity:.7}
+.nav{margin:8px 0 4px}
+.foot{color:var(--dim);font-size:14px;margin-top:26px;border-top:1px dashed var(--line);padding-top:12px}
+.foot a{display:inline-block;margin:2px 10px 2px 0}
+</style></head><body><div class="wrap">
+<div class="nav"><a href="../bedrock.html">← 返回中国高端制造基石</a></div>
+<div class="top"><h1>小米集团-W</h1><span class="seg">消费电子+AIoT+汽车(新曲线)</span></div>
+<div class="qbar" data-c="hk01810">
+<span><span class="lbl">现价</span><b id="px">—</b></span>
+<span><span class="lbl">涨跌</span><span id="chg">—</span></span>
+<span><span class="lbl">PE-TTM</span><span id="pe">—</span></span>
+<span><span class="lbl">总市值(亿)</span><span id="cap">—</span></span>
+<button class="rbtn" onclick="refresh()">↻ 刷新</button><span id="upd">加载中…</span>
+</div>
+
+<h2>一、财报与增长</h2><p><b>2025</b>营收4573亿(+25.0%)、经调净利392亿(+43.8%);汽车创新业务收入1061亿(+223.8%)、交付411,082辆(+200.4%)、全年经营损益首次转正+9亿(扭亏)。</p><p>2026Q1营收991亿(-10.9%,同比转负)、经调净利60.72亿(-43.1%)、期内净利47.35亿(-56.5%)、汽车分部重回经营亏损31亿;手机毛利率由12.4%降至10.1%(内存涨价击穿)。</p><p>互联网服务95亿(+4.3%)毛利率76.1%、IoT毛利率25.2%高毛利变现盘稳健;研发90亿(+33.4%)、启动约200亿港元回购。</p>
+<h2>二、业务状况</h2><p>手机出货连续五年全球前三，HyperOS+米家AIoT互联生态形成换机粘性;但手机本质='性价比组装+生态整合'，核心元件受制上游，内存一涨毛利即塌，无定价权。</p><p>汽车新曲线成立:2025交付41万辆/+200%、收入破千亿、全年经营转正;但2026Q1交付80,856辆(环比-44.3%)且重回亏损31亿，特斯拉/比亚迪/华为围剿，规模盈利未定局。</p>
+<h2>三、管理层</h2><p>雷军诚信+执行力强(汽车三年落地并交付超41万辆)，治理规范，持续大手笔研发(未来三年AI投入600亿)、启动约200亿港元回购;创始人IP与个人流量深度绑定叙事。</p>
+<h2>四、竞争格局</h2><p>手机全球第三，性价比+生态在新兴市场对苹果/三星/荣耀有份额优势;但对苹果无高端定价权(苹果毛利>46% vs 小米手机10.1%)，荣耀/OV贴身竞争。</p><p>汽车SU7/YU7以20万+切入，性价比+智能+品牌流量差异化;但特斯拉/比亚迪/华为三面夹击，重资产烧钱换份额，生态链多为整合非独占技术。</p>
+
+<h2>王超七问评分</h2>
+<table><tr><th style="width:32%">维度</th><th style="width:14%">判定</th><th>依据</th></tr>
+<tr><td>1 商业模式</td><td class='v-pass'>Pass</td><td>硬件引流+互联网(毛利76.1%)/IoT(25.2%)变现+汽车新曲线，逻辑清晰但硬件占大头利润薄</td></tr>
+<tr><td>2 市场空间</td><td class='v-pass'>Pass</td><td>手机存量但全球份额仍有空间，AIoT+汽车打开新天花板</td></tr>
+<tr><td>3 盈利逻辑</td><td class='v-warn'>黄灯</td><td>集团毛利率仅22%、手机10.1%受内存周期冲击、净利-56.5%，盈利质量脆弱依赖上游成本</td></tr>
+<tr><td>4 护城河</td><td class='v-warn'>黄灯</td><td>生态/规模/品牌可追赶，手机无定价权，汽车护城河未建成，非物理数学级壁垒</td></tr>
+<tr><td>5 粘性</td><td class='v-pass'>Pass</td><td>HyperOS+米家AIoT互联形成跨品类留存与换机粘性</td></tr>
+<tr><td>6 致命风险</td><td class='v-warn'>黄灯</td><td>内存/元件涨价周期(正在发生，击穿手机毛利)+汽车重资产烧钱+竞争，但非一夜致死、周期性可对冲</td></tr>
+<tr><td>7 管理层</td><td class='v-pass'>Pass</td><td>雷军诚信+执行力强，治理规范，无失信</td></tr></table>
+<div class="verdict"><b>终判：</b><b>B档(规则参与者，由旧A档下修)</b>：手机全球第三但靠性价比非苹果式定价权，内存周期一来毛利从12.4%塌到10.1%，是生态整合者而非规则制定者;汽车是真新曲线(2025收入破千亿/交付41万辆且经营转正)但2026Q1重回亏损31亿、重资产+三巨头围剿终局未定;海外与汽车出海尚未成规模。无Fail不否决(有全球第三份额+真实生态)，但3个黄灯压顶够不上A档。<br><br><b>2B 制造阶段判据：</b>手机=2C品牌而非2B制造，生态有网络效应粘性但硬件本质'组装+性价比'、核心元件受制上游→非定价权品类王，是'生态整合者'。汽车曲线成立(收入1061亿/交付41万+，2025经营转正+9亿)但2026Q1重回亏损31亿、交付环比-44.3%、竞争白热化→'未定局的第二曲线'，综合判B档。</div>
+
+<h2>估值三线 · 计算过程（第2步·瑕疵全量化）</h2>
+
+<div class="step"><span class="sn">1</span><b>完美 PE 起点 = 28 x</b><div class="sd">对标全球同类最优苹果(约28-30x)。假设小米达成'手机定价权+汽车规模持续盈利+高端占比提升'的零瑕疵天花板才配这一起点;此为上限，扣后只会更低</div></div>
+<div class="step"><span class="sn">2</span><b>每股收益 EPS</b>
+<div class="sd">EPS-TTM：28.88 ÷ 16.19 = <b>1.78 港元</b><br>NTM EPS：1.78 ×（1−13%）≈ <b>1.55 港元</b><br><span class="dim">内存涨价压制手机毛利+汽车重回亏损使2026盈利入谷，一致预期NTM较TTM下移约13%至~1.55</span></div></div>
+<div class="step"><span class="sn">3</span><b>逐项瑕疵扣 PE（从 28 x 往下扣）</b>
+<table class="calc"><tr><th>瑕疵</th><th>类型</th><th>扣减</th><th>依据</th></tr><tr><td>手机无定价权+内存/元件涨价击穿毛利</td><td>周期(半扣)</td><td class='dx'>−5 x</td><td>2026Q1手机毛利12.4%→10.1%，核心元件涨价+大陆竞争</td></tr><tr><td>汽车重资产+竞争白热化+重回亏损</td><td>结构</td><td class='dx'>−6 x</td><td>2025经营刚转正+9亿，2026Q1又亏31亿，特斯拉/比亚迪/华为围剿</td></tr><tr><td>非定价权品类王(生态整合/组装属性)+盈利大幅下滑</td><td>结构</td><td class='dx'>−5 x</td><td>手机靠性价比全球第三非定价权;2026Q1净利-56.5%/经调-43.1%</td></tr>
+<tr class="sum"><td><b>合计</b></td><td></td><td class="dx"><b>−16 x</b></td><td><b>扣后 PE = 28 − 16 = 12 x</b></td></tr></table></div>
+<div class="step"><span class="sn">4</span><b>三条线 = PE × NTM EPS</b>
+<table class="calc"><tr><th>线</th><th>算式</th><th>目标价</th><th>含义</th></tr><tr><td><b>超额卖出线</b></td><td>完美PE 28 × NTM 1.55</td><td class='pv'>HK$43.4</td><td>泡沫区</td></tr><tr><td><b>正常买入线</b></td><td>扣后PE 12 × NTM 1.55</td><td class='pv'>HK$18.6</td><td>A线</td></tr><tr><td><b>大底线</b></td><td>正常买入 18.6×0.7</td><td class='pv'>HK$13.02</td><td>恐慌重仓</td></tr></table></div>
+<div class="val3">
+<div class="b sell"><div class="k">超额卖出线</div><div class="p">HK$43.4</div></div>
+<div class="b buy"><div class="k">正常买入线(A线)</div><div class="p">HK$18.6</div></div>
+<div class="b bot"><div class="k">大底线</div><div class="p">HK$13.02</div></div>
+</div>
+<div class="step"><span class="sn">5</span><b>现价定位</b><div class="sd">现价28.88 ÷ NTM 1.55 = 前瞻PE <b>18.6 x</b> vs 扣后 12 x<br>→现价高于正常买入线18.6约55%，处持有观察、未到A线;买点需等内存周期见底+汽车规模盈利双验证（非建仓指令）</div></div>
+
+
+<h2>四家 UP 主怎么看（原话/区间，不自算）</h2>
+<div class='up jj'><div class='who'>江江小可爱</div><div>合理市值区间反算：<b>买 HK$26.87 / 卖 HK$48.3</b>；当前<b>低于区间（低估）</b>。</div></div>
+<div class='up td'><div class='who'>土豆(看财报)</div><div><b>「好公司不等于好股票，是为故事买单」</b>——双赛道无定价权，现价为故事买单，等信号。</div></div>
+<div class='up ts nocov'><div class='who'>土斯土耶夫斯基</div><div>未覆盖——不自算。</div></div>
+<div class='up mg nocov'><div class='who'>复利芒果</div><div>未检索到复利芒果讲过本标的——未覆盖，不自算。</div></div>
+
+<div class="foot"><b>数据来源：</b><a href='https://www.xinhuanet.com/finance/20260325/b8715fcd6f814721a9b4ee2593a5e65c/c.html' target='_blank'>小米2025营收4573亿汽车AI引擎</a><a href='https://www.guancha.cn/economy/2026_05_27_818480.shtml' target='_blank'>Q1净利下滑43%内存涨价致手机承压</a><a href='http://auto.news18a.com/news/storys_260520.html' target='_blank'>Q1汽车亏损31亿交付环比-44.3%</a><br>行情 qt.gtimg.cn 实时 · 财报/竞争数据现搜带源 · 本页为事实与概率判断，非建仓指令。</div>
+</div>
+<script>
+function refresh(){
+ var box=document.querySelector('[data-c]');var code=box.getAttribute('data-c');
+ fetch('https://qt.gtimg.cn/q='+code).then(r=>r.arrayBuffer()).then(b=>{
+  var t=new TextDecoder('gbk').decode(b);var m=t.match(/"([^"]*)"/);if(!m)return;
+  var f=m[1].split('~');
+  document.getElementById('px').textContent=f[3];
+  var c=parseFloat(f[32]);var el=document.getElementById('chg');
+  el.textContent=(c>=0?'+':'')+f[32]+'%';el.style.color=c>=0?'#a23a3a':'#1f6b3a';
+  document.getElementById('pe').textContent=f[39];
+  document.getElementById('cap').textContent=f[45];
+  var d=f[30]||'';document.getElementById('upd').textContent='更新 '+(d.length>=12?d.slice(0,4)+'-'+d.slice(4,6)+'-'+d.slice(6,8)+' '+d.slice(8,10)+':'+d.slice(10,12):d);
+ }).catch(e=>{document.getElementById('upd').textContent='行情源暂不可用';});
+}
+refresh();setInterval(refresh,30000);
+</script></body></html>
