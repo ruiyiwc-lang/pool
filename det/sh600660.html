@@ -25,6 +25,15 @@ th{background:#e3ead4}
 .v-warn{color:#8a5a1a;font-weight:600}
 .v-fail{color:#a23a3a;font-weight:700}
 .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:12px 0}
+.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px 12px 46px;margin:10px 0;position:relative}
+.step>b{font-size:17px}
+.sn{position:absolute;left:12px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sd{margin-top:6px}
+.dim{color:var(--dim);font-size:14px}
+table.calc{margin:10px 0 2px;font-size:15px}
+table.calc .dx{color:var(--sell);font-weight:700;white-space:nowrap}
+table.calc .pv{color:var(--buy);font-weight:700;font-size:17px;white-space:nowrap}
+table.calc tr.sum td{background:#eef3e2}
 .verdict{background:#e6f0e0;border:1px solid #bcd3a8;border-radius:12px;padding:14px 18px;font-size:18px;margin:12px 0}
 .val3{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
 .val3 .b{flex:1;min-width:150px;border-radius:10px;padding:12px 14px;text-align:center;border:1px solid var(--line)}
@@ -67,14 +76,23 @@ th{background:#e3ead4}
 <tr><td>7 管理层</td><td class='v-passx'>Pass★</td><td>曹德旺口碑+曹晖平稳接班+58.85%分红+零失信</td></tr></table>
 <div class="verdict"><b>终判：</b>本土难替（国内 70%）＋全球能打且海外赚钱（海外 45.6%、毛利 32.6%）＝ <b>全球王·A 档偏上</b>，皇冠地位坐实。<br><br><b>2B 制造阶段判据：</b>出海龙头型，且<b>已过两道坎</b>——竞争坎（日欧对手持续退、信义体量小）、政治坎（美国本地化产能对冲关税/反倾销；历史上福耀确实吃过海外反倾销诉讼，2026.2 美媒还炒作它"重创美国本土对手"，政治关注是长期尾部风险）。因此它不是享受短期窗口的普通 2B 制造，而是少数续命成功、接近收费站属性、可长期收税的<b>成熟享受期</b>龙头（份额还在 37→45% 爬升，非挤出期）。</div>
 
-<h2>估值三线（第2步·瑕疵量化）</h2>
-<div class="card">完美 PE 起点 22x（全球垄断级制造+高分红+ROE25%，但汽玻行业周期封顶，不给消费级）<br>瑕疵扣减：汇率波动 −1.5x（周期半扣）／行业天花板+需求周期 −2x（结构）／海外政治 −1.5x（结构但已对冲）／资本开支高峰 −1x（周期）→ 扣后约 16x<br>EPS-TTM ≈ 3.45，NTM EPS 取约 3.8（约 +10% 增长）</div>
+<h2>估值三线 · 计算过程（第2步·瑕疵全量化）</h2>
+
+<div class="step"><span class="sn">1</span><b>完美 PE 起点 = 22x</b><div class="sd">零瑕疵市场该给多少？福耀是全球垄断级制造（份额 37% 一超多强）+ 高分红（58.85%）+ ROE≈25%。但汽玻是<b>存量替换</b>市场、行业天花板=全球车产（平稳），周期封顶，不能给消费白马 30x+。对标优质工业龙头，起点取 <b>22x</b>。</div></div>
+<div class="step"><span class="sn">2</span><b>每股收益 EPS</b>
+<div class="sd">EPS-TTM：现价 55.70 ÷ PE-TTM 16.16 = <b>3.45 元</b><br>NTM EPS：3.45 ×（1+10%）≈ <b>3.80 元</b><br><span class="dim">NTM 增速取约 +10%：2026Q1 剔除汇兑后核心利润总额 +9.63%，经营端稳，用其作前瞻增速基准。</span></div></div>
+<div class="step"><span class="sn">3</span><b>逐项瑕疵扣 PE（从 22x 往下扣）</b>
+<table class="calc"><tr><th>瑕疵</th><th>类型</th><th>扣减</th><th>依据</th></tr><tr><td>汇率波动</td><td>周期(半扣)</td><td class='dx'>−1.5x</td><td>Q1 汇兑损失 4.39 亿、去年同期收益 2.36 亿，摆动近 6.8 亿；会摆回，半扣</td></tr><tr><td>行业天花板+需求周期</td><td>结构</td><td class='dx'>−2.0x</td><td>汽车产量平稳，靠抢份额+ASP 而非行业扩张，成长中等</td></tr><tr><td>海外贸易政治</td><td>结构(已对冲)</td><td class='dx'>−1.5x</td><td>反倾销/关税/美媒炒作；已用美国本地化产能对冲，故只扣一半力度</td></tr><tr><td>资本开支高峰</td><td>周期</td><td class='dx'>−1.0x</td><td>2026 capex 计划 77.3 亿，短期压自由现金流</td></tr>
+<tr class="sum"><td><b>合计</b></td><td></td><td class="dx"><b>−6.0x</b></td><td><b>扣后 PE = 22 − 6 = 16x</b></td></tr></table></div>
+<div class="step"><span class="sn">4</span><b>三条线 = PE × NTM EPS</b>
+<table class="calc"><tr><th>线</th><th>算式</th><th>目标价</th><th>含义</th></tr><tr><td><b>超额卖出线</b></td><td>完美PE 22 × NTM EPS 3.80</td><td class='pv'>¥83.6</td><td>泡沫区，别人接盘才卖</td></tr><tr><td><b>正常买入线</b></td><td>扣后PE 16 × NTM EPS 3.80</td><td class='pv'>¥60.8</td><td>合理价首仓上沿（A线）</td></tr><tr><td><b>大底线</b></td><td>正常买入 60.8 ×（1−30% 恐慌折扣）</td><td class='pv'>¥42.6</td><td>系统性恐慌才重仓</td></tr></table></div>
 <div class="val3">
 <div class="b sell"><div class="k">超额卖出线</div><div class="p">¥83.6</div></div>
-<div class="b buy"><div class="k">正常买入线</div><div class="p">¥60.8</div></div>
+<div class="b buy"><div class="k">正常买入线(A线)</div><div class="p">¥60.8</div></div>
 <div class="b bot"><div class="k">大底线</div><div class="p">¥42.6</div></div>
 </div>
-<div class="card">现价 ¥55.70 已略低于正常买入线（60.8），处于合理偏低区，可作首仓区间；距大底（42.6）还有约 23% 空间。（事实与概率判断，非建仓指令）</div>
+<div class="step"><span class="sn">5</span><b>现价定位</b><div class="sd">现价 55.70 ÷ NTM EPS 3.80 = 前瞻 PE <b>14.7x</b> ＜ 扣后 16x<br>→ 现价<b>已略低于正常买入线（60.8）</b>，处合理偏低区，可作首仓区间；距大底（42.6）还有约 <b>23%</b> 空间。（事实与概率判断，非建仓指令）</div></div>
+
 
 <h2>四家 UP 主怎么看（原话/区间，不自算）</h2>
 <div class='up jj'><div class='who'>江江小可爱</div><div>合理市值区间反算：<b>买 ¥59.39 / 卖 ¥93.34</b>；当前<b>低于区间（低估）</b>。</div></div>
