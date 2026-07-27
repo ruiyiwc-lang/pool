@@ -1,0 +1,120 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>泡泡玛特 · 基石深度</title><style>
+:root{--bg:#eef2e6;--card:#f7faf0;--ink:#26301f;--dim:#5a6b4d;--line:#d3ddc2;--accent:#2f7d4f;--warn:#8a5a1a;--buy:#1f6b3a;--sell:#a23a3a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.85 -apple-system,'PingFang SC','Microsoft YaHei',sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:22px 18px 80px}
+a{color:var(--accent)}
+.top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+h1{font-size:30px;margin:6px 0 2px}
+.seg{color:var(--dim);font-size:16px}
+.crown{background:#f3e4a8;color:#7a5c10;border:1px solid #e0cd7a;border-radius:6px;padding:1px 8px;font-size:15px}
+.qbar{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0 8px;display:flex;flex-wrap:wrap;gap:18px;align-items:baseline;font-size:17px}
+.qbar b{font-size:26px;color:var(--accent)}
+.qbar .lbl{color:var(--dim);font-size:14px;margin-right:4px}
+#upd{color:var(--dim);font-size:13px}
+.rbtn{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:5px 12px;font-size:14px;cursor:pointer}
+h2{font-size:22px;margin:30px 0 10px;padding-left:10px;border-left:5px solid var(--accent)}
+p{margin:10px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;background:var(--card);font-size:16px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#e3ead4}
+.v-passx{color:#1f6b3a;font-weight:700}
+.v-pass{color:#2f7d4f;font-weight:600}
+.v-warn{color:#8a5a1a;font-weight:600}
+.v-fail{color:#a23a3a;font-weight:700}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:12px 0}
+.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px 12px 46px;margin:10px 0;position:relative}
+.step>b{font-size:17px}
+.sn{position:absolute;left:12px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sd{margin-top:6px}
+.dim{color:var(--dim);font-size:14px}
+table.calc{margin:10px 0 2px;font-size:15px}
+table.calc .dx{color:var(--sell);font-weight:700;white-space:nowrap}
+table.calc .pv{color:var(--buy);font-weight:700;font-size:17px;white-space:nowrap}
+table.calc tr.sum td{background:#eef3e2}
+.verdict{background:#e6f0e0;border:1px solid #bcd3a8;border-radius:12px;padding:14px 18px;font-size:18px;margin:12px 0}
+.val3{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.val3 .b{flex:1;min-width:150px;border-radius:10px;padding:12px 14px;text-align:center;border:1px solid var(--line)}
+.val3 .sell{background:#f6e4e4;border-color:#e0bcbc}
+.val3 .buy{background:#e4f0e6;border-color:#bcd8c2}
+.val3 .bot{background:#eae4f0;border-color:#cbbce0}
+.val3 .k{font-size:14px;color:var(--dim)}
+.val3 .p{font-size:26px;font-weight:700;margin-top:2px}
+.up{border-left:5px solid #c9b6e0;margin:12px 0;background:var(--card);border-radius:0 10px 10px 0;padding:12px 16px}
+.up.jj{border-color:#e0a6c0}.up.td{border-color:#c9a06a}.up.ts{border-color:#7aa6c9}.up.mg{border-color:#e0b46a}
+.up .who{font-weight:700;font-size:17px}
+.up.nocov{opacity:.7}
+.nav{margin:8px 0 4px}
+.foot{color:var(--dim);font-size:14px;margin-top:26px;border-top:1px dashed var(--line);padding-top:12px}
+.foot a{display:inline-block;margin:2px 10px 2px 0}
+</style></head><body><div class="wrap">
+<div class="nav"><a href="../bedrock.html">← 返回中国高端制造基石</a></div>
+<div class="top"><h1>泡泡玛特</h1><span class="seg">潮玩IP·全球化品类定义者</span></div>
+<div class="qbar" data-c="hk09992">
+<span><span class="lbl">现价</span><b id="px">—</b></span>
+<span><span class="lbl">涨跌</span><span id="chg">—</span></span>
+<span><span class="lbl">PE-TTM</span><span id="pe">—</span></span>
+<span><span class="lbl">总市值(亿)</span><span id="cap">—</span></span>
+<button class="rbtn" onclick="refresh()">↻ 刷新</button><span id="upd">加载中…</span>
+</div>
+
+<h2>一、财报与增长</h2><p><b>2025</b>营收371.2亿(+184.7%)、经调净利130.8亿(+284.5%)、毛利率72.1%、净利率~35%;海外收入162.7亿占比43.8%(美洲68.1亿+748.4%/亚太80.1亿+157.6%/欧洲14.5亿+506.3%)——出海真爆发。</p><p>THE MONSTERS(LABUBU)营收141.6亿(+365.7%)占约38.1%成首个百亿IP——单IP集中度风险;Molly 29亿/DIMOO 27.8亿增速远低于Labubu。</p><p>2026'休整年':营收增长目标从+184.7%大幅下修至'不低于20%'，2026Q1 LABUBU销售已现回落=增速断崖+基数效应。</p>
+<h2>二、业务状况</h2><p>IP矩阵:2025年6个过10亿IP(THE MONSTERS/Molly/SKULLPANDA/CRYBABY/DIMOO/星星人)，'IP发现-孵化-放大'系统可复制;毛绒2025首超手办成第一品类。</p><p>出海+渠道:海外占比43.8%、630+门店+2637台机器人+59M会员，美洲+748%/欧洲+506%可跨文化输出;盲盒机制可被抄，真正壁垒在'设计师网络+会员分发+数据闭环'。</p>
+<h2>三、管理层</h2><p>王宁创始/控股，治理稳健、无失信;2026主动定调'休整年'下修预期(务实非画饼);监控项:王宁减持>5%为认错信号。</p>
+<h2>四、竞争格局</h2><p>品类定义者:定义'设计师玩具作为全球年轻人身份符号'新品类，对标三丽鸥(组合IP)+爱马仕(身份信号);自有IP+盲盒复购+自控零售，海外竞对稀少、时间差窗口仍在。</p><p>IP生命周期(核心风险):Labubu会不会退潮=命门，2026Q1已回落;'可复制性'10亿级已证6个，百亿级只1个未证。</p>
+
+<h2>王超七问评分</h2>
+<table><tr><th style="width:32%">维度</th><th style="width:14%">判定</th><th>依据</th></tr>
+<tr><td>1 商业模式</td><td class='v-passx'>Pass★</td><td>自有IP+盲盒+自营零售，毛利72.1%/净利率~35%，年轻人情感消费、复购50.8%</td></tr>
+<tr><td>2 市场空间</td><td class='v-pass'>Pass</td><td>全球年轻人情感消费基础设施，海外仅起步(43.8%)、美洲+748%，天花板远未见顶</td></tr>
+<tr><td>3 盈利逻辑</td><td class='v-pass'>Pass</td><td>毛利72.1%、净利率~35%、规模化后增收更增利，由品牌溢价支撑</td></tr>
+<tr><td>4 护城河</td><td class='v-pass'>Pass</td><td>350+设计师网络+59M会员分发+630店/2637机器人+数据闭环=系统级壁垒;但盲盒机制单点可抄，非物理级不可逆→非★</td></tr>
+<tr><td>5 粘性</td><td class='v-pass'>Pass</td><td>复购率50.8%、会员59M、盲盒系列化收集习惯，平台习惯>单一IP依赖</td></tr>
+<tr><td>6 致命风险</td><td class='v-warn'>黄灯</td><td>IP生命周期——Labubu退潮(占营收38.1%)是真实'改变命运'级威胁，2026Q1已回落;系统能否再造百亿IP未证</td></tr>
+<tr><td>7 管理层</td><td class='v-pass'>Pass</td><td>王宁控股、治理稳健、无失信、务实下修预期，减持>5%为反转信号</td></tr></table>
+<div class="verdict"><b>终判：</b><b>A档·全球化品类定义者(确认)</b>：本土难替+全球能打且海外真赚钱(占比43.8%/美洲+748%)，稀缺中国消费出海品类王。底部硬(1个黄灯)但顶部受IP生命周期压制:致命风险第6问黄灯=IP周期黄灯，非Pass★满格，属VC赌注型A档。<br><br><b>2B 制造阶段判据：</b>IP周期=黄灯/出海=续命且尚在窗口。出海双坎:①强竞对稀少(海外潮玩无对等玩家)竞争坎暂过;②政治坎较低。IP周期判据:2025 THE MONSTERS+365.7%属早期享受期末段，2026Q1回落+休整年目标≥20%=进入减速时刻，禁用185%高增外推;认错线=连续2季Labubu负增长+非Labubu IP同减速+毛利率跌破55%。</div>
+
+<h2>估值三线 · 计算过程（第2步·瑕疵全量化）</h2>
+
+<div class="step"><span class="sn">1</span><b>完美 PE 起点 = 30 x</b><div class="sd">稀缺中国消费出海品类王/全球年轻人情感消费基础设施，对标三丽鸥+爱马仕给高PE;但2026减速至≥20%，不给爱马仕级50x，封顶30x</div></div>
+<div class="step"><span class="sn">2</span><b>每股收益 EPS</b>
+<div class="sd">EPS-TTM：165.9 ÷ 15.62 = <b>10.62 港元</b><br>NTM EPS：10.62 ×（1+20%）≈ <b>12.8 港元</b><br><span class="dim">2026'休整年'营收增长目标≥20%、净利率稳定~35%，按~20%外推(不敢用2025+184.7%高增外推)</span></div></div>
+<div class="step"><span class="sn">3</span><b>逐项瑕疵扣 PE（从 30 x 往下扣）</b>
+<table class="calc"><tr><th>瑕疵</th><th>类型</th><th>扣减</th><th>依据</th></tr><tr><td>IP生命周期+单IP集中度</td><td>结构</td><td class='dx'>−8.0 x</td><td>THE MONSTERS占营收38.1%、2026Q1 LABUBU回落;百亿级IP仅1个未证第二个</td></tr><tr><td>增速断崖/高基数</td><td>结构</td><td class='dx'>−6.0 x</td><td>2026休整年目标≥20% vs 2025 +184.7%，185%高增不可复制</td></tr><tr><td>潮玩热度+港股流动性周期</td><td>周期(半扣)</td><td class='dx'>−1.5 x</td><td>3月业绩会后市场不满20%指引股价暴跌;潮玩情绪波动大</td></tr>
+<tr class="sum"><td><b>合计</b></td><td></td><td class="dx"><b>−15.5 x</b></td><td><b>扣后 PE = 30 − 15.5 = 14.5 x</b></td></tr></table></div>
+<div class="step"><span class="sn">4</span><b>三条线 = PE × NTM EPS</b>
+<table class="calc"><tr><th>线</th><th>算式</th><th>目标价</th><th>含义</th></tr><tr><td><b>超额卖出线</b></td><td>完美PE 30 × NTM 12.8</td><td class='pv'>HK$384</td><td>泡沫区</td></tr><tr><td><b>正常买入线</b></td><td>扣后PE 14.5 × NTM 12.8</td><td class='pv'>HK$185.6</td><td>A线</td></tr><tr><td><b>大底线</b></td><td>正常买入 185.6×0.7</td><td class='pv'>HK$130</td><td>恐慌重仓</td></tr></table></div>
+<div class="val3">
+<div class="b sell"><div class="k">超额卖出线</div><div class="p">HK$384</div></div>
+<div class="b buy"><div class="k">正常买入线(A线)</div><div class="p">HK$185.6</div></div>
+<div class="b bot"><div class="k">大底线</div><div class="p">HK$130</div></div>
+</div>
+<div class="step"><span class="sn">5</span><b>现价定位</b><div class="sd">现价165.9 ÷ NTM 12.8 = 前瞻PE <b>13.0 x</b> vs 扣后 14.5 x<br>→现价<A线185.6且>大底130，已进A档首仓区(近段永平成本上沿)，非追高（非建仓指令）</div></div>
+
+
+<h2>四家 UP 主怎么看（原话/区间，不自算）</h2>
+<div class='up jj'><div class='who'>江江小可爱</div><div>合理市值区间反算(池外补算)：<b>买 HK$260 / 卖 HK$366</b>。</div></div>
+<div class='up td'><div class='who'>土豆(看财报)</div><div><b>「从爆款走向平台的 IP 公司，还是退潮后露原型」</b>——IP 帝国还是爆款幻觉的辩论。</div></div>
+<div class='up ts nocov'><div class='who'>土斯土耶夫斯基</div><div>未覆盖——不自算。</div></div>
+<div class='up mg nocov'><div class='who'>复利芒果</div><div>未检索到复利芒果讲过本标的——未覆盖，不自算。</div></div>
+
+<div class="foot"><b>数据来源：</b><a href='https://www.21jingji.com/article/20260325/herald/6229eb4dbcb491339ed0ed85aa06f33d.html' target='_blank'>泡泡玛特2025营收371.2亿LABUBU百亿IP</a><a href='https://www.cls.cn/detail/2324402' target='_blank'>2026目标增速不低于20%</a><a href='https://stcn.com/article/detail/3908912.html' target='_blank'>2026Q1 LABUBU销售回落</a><br>行情 qt.gtimg.cn 实时 · 财报/竞争数据现搜带源 · 本页为事实与概率判断，非建仓指令。</div>
+</div>
+<script>
+function refresh(){
+ var box=document.querySelector('[data-c]');var code=box.getAttribute('data-c');
+ fetch('https://qt.gtimg.cn/q='+code).then(r=>r.arrayBuffer()).then(b=>{
+  var t=new TextDecoder('gbk').decode(b);var m=t.match(/"([^"]*)"/);if(!m)return;
+  var f=m[1].split('~');
+  document.getElementById('px').textContent=f[3];
+  var c=parseFloat(f[32]);var el=document.getElementById('chg');
+  el.textContent=(c>=0?'+':'')+f[32]+'%';el.style.color=c>=0?'#a23a3a':'#1f6b3a';
+  document.getElementById('pe').textContent=f[39];
+  document.getElementById('cap').textContent=f[45];
+  var d=f[30]||'';document.getElementById('upd').textContent='更新 '+(d.length>=12?d.slice(0,4)+'-'+d.slice(4,6)+'-'+d.slice(6,8)+' '+d.slice(8,10)+':'+d.slice(10,12):d);
+ }).catch(e=>{document.getElementById('upd').textContent='行情源暂不可用';});
+}
+refresh();setInterval(refresh,30000);
+</script></body></html>
