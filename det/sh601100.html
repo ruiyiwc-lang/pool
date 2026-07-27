@@ -1,0 +1,120 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>恒立液压 · 基石深度</title><style>
+:root{--bg:#eef2e6;--card:#f7faf0;--ink:#26301f;--dim:#5a6b4d;--line:#d3ddc2;--accent:#2f7d4f;--warn:#8a5a1a;--buy:#1f6b3a;--sell:#a23a3a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.85 -apple-system,'PingFang SC','Microsoft YaHei',sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:22px 18px 80px}
+a{color:var(--accent)}
+.top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+h1{font-size:30px;margin:6px 0 2px}
+.seg{color:var(--dim);font-size:16px}
+.crown{background:#f3e4a8;color:#7a5c10;border:1px solid #e0cd7a;border-radius:6px;padding:1px 8px;font-size:15px}
+.qbar{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0 8px;display:flex;flex-wrap:wrap;gap:18px;align-items:baseline;font-size:17px}
+.qbar b{font-size:26px;color:var(--accent)}
+.qbar .lbl{color:var(--dim);font-size:14px;margin-right:4px}
+#upd{color:var(--dim);font-size:13px}
+.rbtn{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:5px 12px;font-size:14px;cursor:pointer}
+h2{font-size:22px;margin:30px 0 10px;padding-left:10px;border-left:5px solid var(--accent)}
+p{margin:10px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;background:var(--card);font-size:16px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#e3ead4}
+.v-passx{color:#1f6b3a;font-weight:700}
+.v-pass{color:#2f7d4f;font-weight:600}
+.v-warn{color:#8a5a1a;font-weight:600}
+.v-fail{color:#a23a3a;font-weight:700}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:12px 0}
+.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px 12px 46px;margin:10px 0;position:relative}
+.step>b{font-size:17px}
+.sn{position:absolute;left:12px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sd{margin-top:6px}
+.dim{color:var(--dim);font-size:14px}
+table.calc{margin:10px 0 2px;font-size:15px}
+table.calc .dx{color:var(--sell);font-weight:700;white-space:nowrap}
+table.calc .pv{color:var(--buy);font-weight:700;font-size:17px;white-space:nowrap}
+table.calc tr.sum td{background:#eef3e2}
+.verdict{background:#e6f0e0;border:1px solid #bcd3a8;border-radius:12px;padding:14px 18px;font-size:18px;margin:12px 0}
+.val3{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.val3 .b{flex:1;min-width:150px;border-radius:10px;padding:12px 14px;text-align:center;border:1px solid var(--line)}
+.val3 .sell{background:#f6e4e4;border-color:#e0bcbc}
+.val3 .buy{background:#e4f0e6;border-color:#bcd8c2}
+.val3 .bot{background:#eae4f0;border-color:#cbbce0}
+.val3 .k{font-size:14px;color:var(--dim)}
+.val3 .p{font-size:26px;font-weight:700;margin-top:2px}
+.up{border-left:5px solid #c9b6e0;margin:12px 0;background:var(--card);border-radius:0 10px 10px 0;padding:12px 16px}
+.up.jj{border-color:#e0a6c0}.up.td{border-color:#c9a06a}.up.ts{border-color:#7aa6c9}.up.mg{border-color:#e0b46a}
+.up .who{font-weight:700;font-size:17px}
+.up.nocov{opacity:.7}
+.nav{margin:8px 0 4px}
+.foot{color:var(--dim);font-size:14px;margin-top:26px;border-top:1px dashed var(--line);padding-top:12px}
+.foot a{display:inline-block;margin:2px 10px 2px 0}
+</style></head><body><div class="wrap">
+<div class="nav"><a href="../bedrock.html">← 返回中国高端制造基石</a></div>
+<div class="top"><h1>恒立液压</h1><span class="seg">挖机液压件</span><span class='crown'>👑 皇冠</span></div>
+<div class="qbar" data-c="sh601100">
+<span><span class="lbl">现价</span><b id="px">—</b></span>
+<span><span class="lbl">涨跌</span><span id="chg">—</span></span>
+<span><span class="lbl">PE-TTM</span><span id="pe">—</span></span>
+<span><span class="lbl">总市值(亿)</span><span id="cap">—</span></span>
+<button class="rbtn" onclick="refresh()">↻ 刷新</button><span id="upd">加载中…</span>
+</div>
+
+<h2>一、财报与增长</h2><p><b>2025</b>营收<b>109.41亿</b>(+16.52%)、归母净利<b>27.34亿</b>(+8.99%)，典型'增收不增利'；毛利率<b>41.58%</b>(-2.92pct)、<b>ROE 15.48%</b>(下滑)。警示：合同负债同比<b>暴跌93.65%</b>、应收账款+39.31%、经营现金流-26.95%，盈利质量走弱。资产负债率仅~18%，财务仍稳健。</p><p><b>2026Q1</b>营收<b>32.1亿</b>(+32.52%)、归母净利6.52亿(+5.59%)，但<b>扣非净利仅5.57亿(-18.33%)</b>——收入强复苏(液压回暖+丝杠放量)，利润被汇兑与费用侵蚀，'增收不增利'尚未扭转。</p><p>分红：2025拟每10股派现5.60元，比例约27.5%、股息率仅~0.53%；长城证券(2026.7)预测2026E归母<b>35.44亿(+~30%)</b>、2027E 42.46亿、2028E 50.66亿。</p>
+<h2>二、业务状况</h2><p><b>挖机油缸国内份额约77%</b>(绝对龙头，进口替代基本完成)，主业增量已见天花板并受挖机内需强周期约束；非挖业务发力(新能源工程机械油缸+157%)。</p><p><b>泵阀国产替代=真正弹性</b>：中大挖高端泵阀更接近整机性能中枢、技术壁垒更高，从'挖机销量弹性'切向'高端液压核心元件平台化扩张'，对标博世力士乐仍有替代空间。</p><p><b>第二曲线</b>：精密磨削丝杠、直线导轨、电动缸等线性执行器已批量供货(中长期打开<b>人形机器人</b>场景)；海外靠<b>墨西哥基地</b>释放产能出海。</p>
+<h2>三、管理层</h2><p>实控人/董事长<b>汪立平</b>：2026年3月被<b>江苏省监察委员会立案留置</b>，原因至今未公布，公司称经营由高管团队负责——悬顶的治理黑天鹅。</p><p>汪立平家族合计持股<b>64.34%</b>一股独大；2018年以来家族<b>累计减持套现超50亿</b>，减持史+留置事件叠加，治理与信任度承压。</p>
+<h2>四、竞争格局</h2><p><b>油缸 vs 川崎/KYB/力士乐</b>：把挖机油缸做到国内77%、完成进口替代，是全球少数具备缸/泵/阀/马达全产业链的液压平台，油缸环节已由被替代方转为定价方。</p><p><b>泵阀 vs 博世力士乐</b>：高端液压泵阀仍是外资主场，恒立处于国产替代进行时——这是未来估值弹性核心，也意味着高端技术壁垒尚未完全攻克。</p>
+
+<h2>王超七问评分</h2>
+<table><tr><th style="width:32%">维度</th><th style="width:14%">判定</th><th>依据</th></tr>
+<tr><td>1 商业模式</td><td class='v-passx'>Pass★</td><td>2B液压核心元件收费站，主机厂配套认证壁垒高，油缸国内77%垄断+全产业链稀缺。</td></tr>
+<tr><td>2 市场空间</td><td class='v-pass'>Pass</td><td>挖机主业见顶，靠泵阀替代+非挖+机器人丝杠打开增量，但整体天花板不及消费龙头。</td></tr>
+<tr><td>3 盈利逻辑</td><td class='v-warn'>黄灯</td><td>2025增收不增利、毛利率/净利率双降、Q1扣非-18%、现金流与合同负债恶化，赚钱质量走弱。</td></tr>
+<tr><td>4 护城河</td><td class='v-passx'>Pass★</td><td>精密加工/重载工况Know-how+验证体系，油缸替代完成、泵阀技术壁垒高，可迁移到丝杠。</td></tr>
+<tr><td>5 粘性</td><td class='v-pass'>Pass</td><td>与三一/徐工/卡特等主机厂深度绑定，配套认证周期长、切换成本高。</td></tr>
+<tr><td>6 致命风险</td><td class='v-warn'>黄灯</td><td>董事长被监察委留置(原因未明)叠加挖机强周期，机器人丝杠预期已被提前透支。</td></tr>
+<tr><td>7 管理层</td><td class='v-warn'>黄灯</td><td>汪立平被留置、家族持股64%且累计套现50亿+，治理不确定性显著。</td></tr></table>
+<div class="verdict"><b>终判：</b><b>本土王</b>(挖机油缸国内77%垄断)、正冲刺全球液压平台(泵阀替代+丝杠新曲线)；但因<b>治理黑天鹅+现价透支成长</b>，列<b>观察档</b>——否决现价而非否决公司，暂不建仓。<br><br><b>2B 制造阶段判据：</b>2B制造阶段判据：<b>主业(挖机油缸)已进入成熟/后期</b>(替代完成77%、随挖机周期波动)，<b>整体处于第二成长曲线早期</b>——泵阀国产替代进入享受期、机器人丝杠是尚未兑现的新曲线。续命靠两道坎：①<b>技术垄断</b>(高端泵阀对标博世力士乐、丝杠攻克)兑现中；②<b>出海</b>(墨西哥基地)刚起步。技术垄断是主线，出海是保险。</div>
+
+<h2>估值三线 · 计算过程（第2步·瑕疵全量化）</h2>
+
+<div class="step"><span class="sn">1</span><b>完美 PE 起点 = 45 x</b><div class="sd">恒立是全球少数掌握缸/泵/阀/马达全产业链的液压平台，油缸国内垄断+泵阀替代+机器人丝杠第二曲线赋予期权溢价，历史牛市PE高点达50-60x；作为高确定性护城河的成长期制造龙头，无瑕疵理想中枢给到45x。</div></div>
+<div class="step"><span class="sn">2</span><b>每股收益 EPS</b>
+<div class="sd">EPS-TTM：105.99 ÷ 51.33 = <b>2.06 元</b><br>NTM EPS：2.06 ×（1+25%）≈ <b>2.58 元</b><br><span class="dim">增速取+25%：券商一致预期2026E归母+30%，但2026Q1扣非-18%、增收不增利尚未扭转，故对券商预期打折至+25%偏保守。</span></div></div>
+<div class="step"><span class="sn">3</span><b>逐项瑕疵扣 PE（从 45 x 往下扣）</b>
+<table class="calc"><tr><th>瑕疵</th><th>类型</th><th>扣减</th><th>依据</th></tr><tr><td>挖机内需强周期</td><td>周期(半扣)</td><td class='dx'>−7 x</td><td>主业挖机油缸随工程机械周期大幅波动，虽复苏但周期属性未消。</td></tr><tr><td>治理黑天鹅</td><td>结构</td><td class='dx'>−10 x</td><td>董事长汪立平被监察委留置原因未明+家族持股64%且累计减持套现50亿+，治理重大不确定性。</td></tr><tr><td>盈利质量恶化</td><td>结构</td><td class='dx'>−6 x</td><td>增收不增利、毛利率-2.92pct、合同负债-93.65%、经营现金流-26.95%、Q1扣非-18.33%。</td></tr>
+<tr class="sum"><td><b>合计</b></td><td></td><td class="dx"><b>−23 x</b></td><td><b>扣后 PE = 45 − 23 = 22 x</b></td></tr></table></div>
+<div class="step"><span class="sn">4</span><b>三条线 = PE × NTM EPS</b>
+<table class="calc"><tr><th>线</th><th>算式</th><th>目标价</th><th>含义</th></tr><tr><td><b>超额卖出线</b></td><td>完美PE 45 × NTM EPS 2.58</td><td class='pv'>¥116</td><td>泡沫区</td></tr><tr><td><b>正常买入线</b></td><td>扣后PE 22 × NTM EPS 2.58</td><td class='pv'>¥57</td><td>A线首仓上沿</td></tr><tr><td><b>大底线</b></td><td>正常买入 57 ×0.7</td><td class='pv'>¥40</td><td>恐慌重仓</td></tr></table></div>
+<div class="val3">
+<div class="b sell"><div class="k">超额卖出线</div><div class="p">¥116</div></div>
+<div class="b buy"><div class="k">正常买入线(A线)</div><div class="p">¥57</div></div>
+<div class="b bot"><div class="k">大底线</div><div class="p">¥40</div></div>
+</div>
+<div class="step"><span class="sn">5</span><b>现价定位</b><div class="sd">现价 105.99 ÷ NTM EPS 2.58 = 前瞻PE <b>41 x</b> 对比扣后 22 x<br>→ 现价几近顶到超额卖出线(¥116)、前瞻PE(41x)近扣后合理PE(22x)的2倍，透支泵阀替代与机器人丝杠预期，属偏贵区间（非建仓指令）</div></div>
+
+
+<h2>四家 UP 主怎么看（原话/区间，不自算）</h2>
+<div class='up jj nocov'><div class='who'>江江小可爱</div><div>未覆盖——不自算。</div></div>
+<div class='up td nocov'><div class='who'>土豆(看财报)</div><div>未覆盖——不自算。</div></div>
+<div class='up ts nocov'><div class='who'>土斯土耶夫斯基</div><div>未覆盖——不自算。</div></div>
+<div class='up mg nocov'><div class='who'>复利芒果</div><div>未检索到复利芒果讲过本标的——未覆盖，不自算。</div></div>
+
+<div class="foot"><b>数据来源：</b><a href='https://www.cls.cn/detail/2349518' target='_blank'>恒立液压2025净利27.34亿+8.99%(财联社)</a><a href='https://www.100est.com/res/avi/601100sh2025/601100sh2025.html' target='_blank'>恒立液压2025年度价值洞察</a><a href='https://finance.eastmoney.com/a/202605013727106422.html' target='_blank'>恒立液压2026Q1净利6.52亿(东方财富)</a><a href='https://stock.10jqka.com.cn/20260323/c675475254.shtml' target='_blank'>常州首富汪立平被留置 家族持股64%(同花顺)</a><a href='https://www.fxbaogao.com/detail/5535224' target='_blank'>长城证券:从工程机械到机器人国产替代之光</a><br>行情 qt.gtimg.cn 实时 · 财报/竞争数据现搜带源 · 本页为事实与概率判断，非建仓指令。</div>
+</div>
+<script>
+function refresh(){
+ var box=document.querySelector('[data-c]');var code=box.getAttribute('data-c');
+ fetch('https://qt.gtimg.cn/q='+code).then(r=>r.arrayBuffer()).then(b=>{
+  var t=new TextDecoder('gbk').decode(b);var m=t.match(/"([^"]*)"/);if(!m)return;
+  var f=m[1].split('~');
+  document.getElementById('px').textContent=f[3];
+  var c=parseFloat(f[32]);var el=document.getElementById('chg');
+  el.textContent=(c>=0?'+':'')+f[32]+'%';el.style.color=c>=0?'#a23a3a':'#1f6b3a';
+  document.getElementById('pe').textContent=f[39];
+  document.getElementById('cap').textContent=f[45];
+  var d=f[30]||'';document.getElementById('upd').textContent='更新 '+(d.length>=12?d.slice(0,4)+'-'+d.slice(4,6)+'-'+d.slice(6,8)+' '+d.slice(8,10)+':'+d.slice(10,12):d);
+ }).catch(e=>{document.getElementById('upd').textContent='行情源暂不可用';});
+}
+refresh();setInterval(refresh,30000);
+</script></body></html>
