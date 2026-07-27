@@ -1,0 +1,120 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>贵州茅台 · 基石深度</title><style>
+:root{--bg:#eef2e6;--card:#f7faf0;--ink:#26301f;--dim:#5a6b4d;--line:#d3ddc2;--accent:#2f7d4f;--warn:#8a5a1a;--buy:#1f6b3a;--sell:#a23a3a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.85 -apple-system,'PingFang SC','Microsoft YaHei',sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:22px 18px 80px}
+a{color:var(--accent)}
+.top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+h1{font-size:30px;margin:6px 0 2px}
+.seg{color:var(--dim);font-size:16px}
+.crown{background:#f3e4a8;color:#7a5c10;border:1px solid #e0cd7a;border-radius:6px;padding:1px 8px;font-size:15px}
+.qbar{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0 8px;display:flex;flex-wrap:wrap;gap:18px;align-items:baseline;font-size:17px}
+.qbar b{font-size:26px;color:var(--accent)}
+.qbar .lbl{color:var(--dim);font-size:14px;margin-right:4px}
+#upd{color:var(--dim);font-size:13px}
+.rbtn{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:5px 12px;font-size:14px;cursor:pointer}
+h2{font-size:22px;margin:30px 0 10px;padding-left:10px;border-left:5px solid var(--accent)}
+p{margin:10px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;background:var(--card);font-size:16px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#e3ead4}
+.v-passx{color:#1f6b3a;font-weight:700}
+.v-pass{color:#2f7d4f;font-weight:600}
+.v-warn{color:#8a5a1a;font-weight:600}
+.v-fail{color:#a23a3a;font-weight:700}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:12px 0}
+.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px 12px 46px;margin:10px 0;position:relative}
+.step>b{font-size:17px}
+.sn{position:absolute;left:12px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sd{margin-top:6px}
+.dim{color:var(--dim);font-size:14px}
+table.calc{margin:10px 0 2px;font-size:15px}
+table.calc .dx{color:var(--sell);font-weight:700;white-space:nowrap}
+table.calc .pv{color:var(--buy);font-weight:700;font-size:17px;white-space:nowrap}
+table.calc tr.sum td{background:#eef3e2}
+.verdict{background:#e6f0e0;border:1px solid #bcd3a8;border-radius:12px;padding:14px 18px;font-size:18px;margin:12px 0}
+.val3{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.val3 .b{flex:1;min-width:150px;border-radius:10px;padding:12px 14px;text-align:center;border:1px solid var(--line)}
+.val3 .sell{background:#f6e4e4;border-color:#e0bcbc}
+.val3 .buy{background:#e4f0e6;border-color:#bcd8c2}
+.val3 .bot{background:#eae4f0;border-color:#cbbce0}
+.val3 .k{font-size:14px;color:var(--dim)}
+.val3 .p{font-size:26px;font-weight:700;margin-top:2px}
+.up{border-left:5px solid #c9b6e0;margin:12px 0;background:var(--card);border-radius:0 10px 10px 0;padding:12px 16px}
+.up.jj{border-color:#e0a6c0}.up.td{border-color:#c9a06a}.up.ts{border-color:#7aa6c9}.up.mg{border-color:#e0b46a}
+.up .who{font-weight:700;font-size:17px}
+.up.nocov{opacity:.7}
+.nav{margin:8px 0 4px}
+.foot{color:var(--dim);font-size:14px;margin-top:26px;border-top:1px dashed var(--line);padding-top:12px}
+.foot a{display:inline-block;margin:2px 10px 2px 0}
+</style></head><body><div class="wrap">
+<div class="nav"><a href="../bedrock.html">← 返回中国高端制造基石</a></div>
+<div class="top"><h1>贵州茅台</h1><span class="seg">高端白酒·消费定价权</span></div>
+<div class="qbar" data-c="sh600519">
+<span><span class="lbl">现价</span><b id="px">—</b></span>
+<span><span class="lbl">涨跌</span><span id="chg">—</span></span>
+<span><span class="lbl">PE-TTM</span><span id="pe">—</span></span>
+<span><span class="lbl">总市值(亿)</span><span id="cap">—</span></span>
+<button class="rbtn" onclick="refresh()">↻ 刷新</button><span id="upd">加载中…</span>
+</div>
+
+<h2>一、财报与增长</h2><p><b>2025</b>(上市25年首次营收净利双降):营收1688.38亿(-1.21%)、归母净利823.20亿(-4.53%)、经营现金流615.22亿(-33.46%);茅台酒毛利率93.53%、系列酒收入222.75亿(-9.76%,中低端更脆弱);全年分红650.33亿占归母79%。</p><p>2026Q1(降速企稳):营收547.03亿(+6.34%)、归母272.43亿(+1.47%,主动降速);i茅台酒类收入215.53亿(+267.16%,直销转型放量)。</p><p>批价(定价权核心·松动):飞天散瓶批价2025年12月创1485元历史新低、2026年初失守8年1499指导价，较2021峰值约3000元近乎腰斩。</p>
+<h2>二、业务状况</h2><p>茅台酒占营收约87%(1465亿)绝对核心;出厂价1169→1269元(2026.3.31)、自营零售指导价1499→1539元，持续8年的1499官方指导价落幕;i茅台直销2026Q1+267%推进渠道市场化。</p><p>系列酒222.75亿(-9.76%)显示茅台在中低端护城河明显更薄;全行业高端集体价格战(五粮液/国窖失守千元线)。</p>
+<h2>三、管理层</h2><p>张德芹掌舵约500余天:修复经销商关系、'以消费者为中心+市场化转型'、淡季调价平抑炒作;国企治理规范、分红比例提至79%;主动降速本身即需求端压力的诚实反映。</p>
+<h2>四、竞争格局</h2><p>高端定价权:茅台仍是绝对价格锚，品牌+赤水河产地+老酒陈化+社交/金融货币属性物理级不可复制;但2025八代五粮液、国窖1573集体失守千元线，高端集体价格战，茅台批价韧性最强但难独善。</p>
+
+<h2>王超七问评分</h2>
+<table><tr><th style="width:32%">维度</th><th style="width:14%">判定</th><th>依据</th></tr>
+<tr><td>1 商业模式</td><td class='v-passx'>Pass★</td><td>极致印钞机，经销商先款后货、毛利91%+、几乎零应收，现金奶牛物理级</td></tr>
+<tr><td>2 市场空间</td><td class='v-warn'>黄灯</td><td>天花板已现，上市25年首次营收净利双降;人口/场景/偏好三基础同时弱化，增量转存量</td></tr>
+<tr><td>3 盈利逻辑</td><td class='v-passx'>Pass★</td><td>整体毛利约91.6%、ROE长期约30%可持续;唯系列酒毛利-3.76pct、经营现金流-33.46%露裂缝</td></tr>
+<tr><td>4 护城河</td><td class='v-passx'>Pass★</td><td>品牌+产地+老酒+社交货币不可复制(S级基因)，但金融/囤货溢价正被批价腰斩持续侵蚀</td></tr>
+<tr><td>5 粘性</td><td class='v-pass'>Pass</td><td>品牌忠诚+收藏+商务社交刚需支撑复购;'年轻人不接棒'是长期粘性隐患</td></tr>
+<tr><td>6 致命风险</td><td class='v-warn'>黄灯</td><td>非一夜暴毙，而是'代际不接棒+批价腰斩'的慢性结构性干涸——真实'改变命运'级，需连续同行同衰确认</td></tr>
+<tr><td>7 管理层</td><td class='v-pass'>Pass</td><td>张德芹市场化改革、修复渠道、高分红、治理规范可信;国企体制重稳定</td></tr></table>
+<div class="verdict"><b>终判：</b><b>S-档(赛道见顶的定价权王，由旧S降级)</b>：品牌/产地/老酒护城河物理级不可复制=S级基因，但赛道人口(50-70岁客群缩)、场景(商务/政务+反腐)、偏好(年轻人转精酿/威士忌)三基础同时缓慢弱化，叠加飞天批价从约3000腰斩至约1490、失守8年1499指导价、上市25年首次营收净利双降——定价权仍在但赛道在缓慢干涸，故S→S-。<br><br><b>2B 制造阶段判据：</b>赛道四基础判据:人口(客群缩)/场景(宴请/反腐)/偏好(年轻人不接棒)三条同时弱化→赛道未塌但在干涸;批价从3000腰斩至1490是最直接的定价权松动信号。尚未触发全出(需代际不接棒确认+同行连续3季同衰)，但足以将段位由S压至S-，禁止用当前分红/PE外推'永续'。</div>
+
+<h2>估值三线 · 计算过程（第2步·瑕疵全量化）</h2>
+
+<div class="step"><span class="sn">1</span><b>完美 PE 起点 = 30 x</b><div class="sd">对标全球消费/奢侈定价权王(爱马仕、历史牛市茅台曾享30-40x)零瑕疵天花板;因赛道已见顶，取保守下沿30x作完美起点</div></div>
+<div class="step"><span class="sn">2</span><b>每股收益 EPS</b>
+<div class="sd">EPS-TTM：1290.08 ÷ 19.50 = <b>66.16 元</b><br>NTM EPS：66.16 ×（1+3%）≈ <b>68.0 元</b><br><span class="dim">2026Q1营收+6.34%但归母仅+1.47%(主动降速)，全年预计低个位数增长，取约+3%</span></div></div>
+<div class="step"><span class="sn">3</span><b>逐项瑕疵扣 PE（从 30 x 往下扣）</b>
+<table class="calc"><tr><th>瑕疵</th><th>类型</th><th>扣减</th><th>依据</th></tr><tr><td>赛道基础结构性弱化(人口/场景/偏好三基础同衰)</td><td>结构</td><td class='dx'>−6.0 x</td><td>行业深度调整、上市25年首次营收净利双降、系列酒-9.76%</td></tr><tr><td>定价权松动(批价腰斩、失守1499)</td><td>结构</td><td class='dx'>−3.5 x</td><td>飞天散瓶批价创1485历史新低、从峰值约3000腰斩，拼多多乱价1399</td></tr><tr><td>增长熄火</td><td>周期</td><td class='dx'>−2.0 x</td><td>归母-4.53%、经营现金流-33.46%，2026Q1净利仅+1.47%</td></tr><tr><td>渠道/需求疲软</td><td>周期</td><td class='dx'>−1.0 x</td><td>商务与礼品需求低迷、渠道去库存、次高端承压</td></tr>
+<tr class="sum"><td><b>合计</b></td><td></td><td class="dx"><b>−12.5 x</b></td><td><b>扣后 PE = 30 − 12.5 = 17.5 x</b></td></tr></table></div>
+<div class="step"><span class="sn">4</span><b>三条线 = PE × NTM EPS</b>
+<table class="calc"><tr><th>线</th><th>算式</th><th>目标价</th><th>含义</th></tr><tr><td><b>超额卖出线</b></td><td>完美PE 30 × NTM 68.0</td><td class='pv'>¥2040</td><td>泡沫区</td></tr><tr><td><b>正常买入线</b></td><td>扣后PE 17.5 × NTM 68.0</td><td class='pv'>¥1190</td><td>A线</td></tr><tr><td><b>大底线</b></td><td>正常买入 1190×0.7</td><td class='pv'>¥833</td><td>恐慌重仓</td></tr></table></div>
+<div class="val3">
+<div class="b sell"><div class="k">超额卖出线</div><div class="p">¥2040</div></div>
+<div class="b buy"><div class="k">正常买入线(A线)</div><div class="p">¥1190</div></div>
+<div class="b bot"><div class="k">大底线</div><div class="p">¥833</div></div>
+</div>
+<div class="step"><span class="sn">5</span><b>现价定位</b><div class="sd">现价1290.08 ÷ NTM 68.0 = 前瞻PE <b>19.0 x</b> vs 扣后 17.5 x<br>→现价高于正常买入线1190约+8%，处合理偏上区、未到A线，价格纪律下不开仓;需盯'代际不接棒+同行连续3季同衰'（非建仓指令）</div></div>
+
+
+<h2>四家 UP 主怎么看（原话/区间，不自算）</h2>
+<div class='up jj'><div class='who'>江江小可爱</div><div>合理市值区间反算：<b>买 ¥1360 / 卖 ¥1722</b>；当前<b>低于区间（低估）</b>。</div></div>
+<div class='up td nocov'><div class='who'>土豆(看财报)</div><div>未覆盖——不自算。</div></div>
+<div class='up ts'><div class='who'>土斯土耶夫斯基</div><div>仅提及未给估值；讨论白酒长期增速，把茅台列为具品牌提价能力、能达 5%-8% 增长的少数标的之一——<b>非亲口估值</b>。</div></div>
+<div class='up mg'><div class='who'>复利芒果</div><div>强大品牌定价权=消费品中最真实的护城河，类比喜诗糖果；毛利>91%、净利约 50%、约 20 倍 PE 处历史偏低、股息 3.6-3.8%。<b>中性偏欣赏：好公司但增长放缓、文化壁垒难外延。</b></div></div>
+
+<div class="foot"><b>数据来源：</b><a href='https://www.cnr.cn/mspd/spcy/20260417/t20260417_527589392.shtml' target='_blank'>茅台上市首次营收净利双降(央广网)</a><a href='http://www.news.cn/enterprise/20260424/2c5a81efc8ad4110840f7f48a83fe2ef/c.html' target='_blank'>2026Q1营收547.03亿+6.34%</a><a href='https://www.21jingji.com/article/20260104/herald/f8f4cfca18e2eb8d6a2825ac93cab6aa.html' target='_blank'>散瓶批价1485历史新低/失守1499</a><br>行情 qt.gtimg.cn 实时 · 财报/竞争数据现搜带源 · 本页为事实与概率判断，非建仓指令。</div>
+</div>
+<script>
+function refresh(){
+ var box=document.querySelector('[data-c]');var code=box.getAttribute('data-c');
+ fetch('https://qt.gtimg.cn/q='+code).then(r=>r.arrayBuffer()).then(b=>{
+  var t=new TextDecoder('gbk').decode(b);var m=t.match(/"([^"]*)"/);if(!m)return;
+  var f=m[1].split('~');
+  document.getElementById('px').textContent=f[3];
+  var c=parseFloat(f[32]);var el=document.getElementById('chg');
+  el.textContent=(c>=0?'+':'')+f[32]+'%';el.style.color=c>=0?'#a23a3a':'#1f6b3a';
+  document.getElementById('pe').textContent=f[39];
+  document.getElementById('cap').textContent=f[45];
+  var d=f[30]||'';document.getElementById('upd').textContent='更新 '+(d.length>=12?d.slice(0,4)+'-'+d.slice(4,6)+'-'+d.slice(6,8)+' '+d.slice(8,10)+':'+d.slice(10,12):d);
+ }).catch(e=>{document.getElementById('upd').textContent='行情源暂不可用';});
+}
+refresh();setInterval(refresh,30000);
+</script></body></html>
