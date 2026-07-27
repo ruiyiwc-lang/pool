@@ -27,10 +27,71 @@ tr.cr td{background:var(--goldbg)} tr.cr:hover td{background:#efe6c2}
 .px{font-weight:800;font-size:16px} .chg{display:block;font-size:12px;font-weight:700} .up{color:var(--up)} .down{color:var(--down)}
 .cell{font-size:13px;color:var(--txt);min-width:140px;line-height:1.55} .stage{color:var(--sub)}
 .foot{color:var(--sub);font-size:13.5px;margin-top:26px;line-height:1.9;border-top:2px solid var(--line);padding-top:16px} .foot b{color:#a5601a}
+.tabs{display:flex;gap:8px;margin-top:16px}
+.tabs button{font-size:14.5px;font-weight:700;color:var(--sub);background:var(--card);border:1px solid var(--line);border-radius:10px 10px 0 0;padding:9px 18px;cursor:pointer;border-bottom:none}
+.tabs button.on{color:#fff;background:var(--acc);border-color:var(--acc)}
+.cfg{background:var(--card);border:1px solid var(--line);border-radius:0 12px 12px 12px;padding:13px 16px;font-size:14px;line-height:1.9;color:var(--sub)}
+.cfg b{color:#233022}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;min-width:130px}
+.chip .k{font-size:12px;color:var(--dim);font-weight:600} .chip .v{font-size:20px;font-weight:800;color:#233022;margin-top:2px}
+.chip .v.up{color:var(--up)} .chip .v.down{color:var(--down)}
+.tier{font-size:11px;font-weight:800;padding:1px 8px;border-radius:6px;white-space:nowrap}
+.t-core{background:var(--gold);color:#fff} .t-sat{background:#dfe6d3;color:#5a6650}
+td.q .sh{font-weight:800;font-size:15px} td.q .mv{display:block;font-size:12px;color:var(--sub)}
+.dev{font-weight:800;font-size:14px} .dev.hi{color:var(--up)} .dev.ok{color:var(--sub)}
+.navwrap{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 16px 8px;margin-top:16px}
+.navwrap h3{font-size:16px;color:#233022;margin-bottom:2px}
+.navwrap .lg{font-size:13px;color:var(--sub);margin:6px 0 10px} .navwrap .lg i{font-style:normal;font-weight:800}
+.navwrap .lg .p{color:var(--up)} .navwrap .lg .h{color:var(--dim)}
+.navnote{font-size:12.5px;color:var(--dim);line-height:1.8;margin-top:8px}
 </style></head><body><div class="wrap">
 <h1>中国高端制造基石 · 2B 出海龙头(三问筛)</h1>
 <div class="statusbar"><span id="upd">加载中…</span><button class="rbtn" onclick="refresh()">↻ 刷新行情</button>
 <span class="nav"><a href="./index.html">← 返回股票池</a></span></div>
+
+<div class="tabs">
+<button data-t="etf" class="on">自建 ETF 组合</button>
+<button data-t="screen">三问筛选明细</button>
+</div>
+
+<section id="tab-etf">
+<div class="cfg"><b>自建 ETF · 分档加权</b>(核心 + 卫星)　把这 17 只按两档权重"攒"成一只自制指数。<b>规则</b>:核心档=★皇冠 6 只(三问全齐)各 <b>10%</b>(合 60%);卫星档=其余 11 只各 <b>≈3.6%</b>(合 40%),档内等权。
+<br><b>参数(可改)</b>:总资金 <b>¥300 万</b> · 港元→人民币 <b>0.92</b> · 每手 A股 100 股 / 创科 500 / 海天 1000 / 泉峰 100。建议股数=按当前价把目标金额凑到最接近的整手,故会有小幅偏离。
+<br><b>再平衡</b>:核心单只偏离目标 &gt;±2pct(相对 &gt;20%)、卫星单只 &gt;±0.7pct 触发调回;否则每季度末拉回目标权重。基本面坏了(七问不过)则该只清零、其权重按档内等权补给同档其余标的。</div>
+
+<div class="chips">
+<div class="chip"><div class="k">今日组合涨跌</div><div class="v" id="c-day">–</div></div>
+<div class="chip"><div class="k">已配置市值</div><div class="v" id="c-dep">–</div></div>
+<div class="chip"><div class="k">剩余现金</div><div class="v" id="c-cash">–</div></div>
+<div class="chip"><div class="k">核心档实配</div><div class="v" id="c-core">–</div></div>
+<div class="chip"><div class="k">卫星档实配</div><div class="v" id="c-sat">–</div></div>
+</div>
+
+<div class="twrap"><table>
+<thead><tr><th>标的 · 细分</th><th>档位</th><th class="r">目标权重</th><th class="r">现价</th><th class="r">今日</th><th class="r">建议股数(整手)</th><th class="r">建议市值</th><th class="r">实时权重</th><th class="r">偏离</th></tr></thead>
+<tbody id="etfbody"><tr><td colspan="9" style="padding:20px;color:var(--sub)">加载行情中…</td></tr></tbody>
+</table></div>
+
+<div class="navwrap">
+<h3>近一年组合净值回测(基准 100)</h3>
+<div class="lg"><i class="p">■ 分档加权组合 +33.4%</i>　　<i class="h">■ 沪深300 +16.0%</i>　　区间峰值 148.9 / 最低 100.0(2025-07-15 → 2026-07-27)</div>
+<svg viewBox="0 0 1120 340" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto">
+<rect x="0" y="0" width="1120" height="340" fill="#f8faf3"/>
+<line x1="52" y1="306.0" x2="1104" y2="306.0" stroke="#d2dac6" stroke-width="1"/><text x="44" y="310.0" text-anchor="end" font-size="11" fill="#879480">97</text><line x1="52" y1="235.0" x2="1104" y2="235.0" stroke="#d2dac6" stroke-width="1"/><text x="44" y="239.0" text-anchor="end" font-size="11" fill="#879480">111</text><line x1="52" y1="164.0" x2="1104" y2="164.0" stroke="#d2dac6" stroke-width="1"/><text x="44" y="168.0" text-anchor="end" font-size="11" fill="#879480">124</text><line x1="52" y1="93.0" x2="1104" y2="93.0" stroke="#d2dac6" stroke-width="1"/><text x="44" y="97.0" text-anchor="end" font-size="11" fill="#879480">138</text><line x1="52" y1="22.0" x2="1104" y2="22.0" stroke="#d2dac6" stroke-width="1"/><text x="44" y="26.0" text-anchor="end" font-size="11" fill="#879480">152</text>
+<line x1="52" y1="289.3" x2="1104" y2="289.3" stroke="#a9791a" stroke-width="1" stroke-dasharray="4 4" opacity="0.6"/>
+<text x="1104" y="284.3" text-anchor="end" font-size="10.5" fill="#a9791a">基准100</text>
+<text x="52.0" y="330" text-anchor="middle" font-size="10.5" fill="#879480">25-07-15</text><text x="262.4" y="330" text-anchor="middle" font-size="10.5" fill="#879480">25-09-23</text><text x="472.8" y="330" text-anchor="middle" font-size="10.5" fill="#879480">25-12-10</text><text x="683.2" y="330" text-anchor="middle" font-size="10.5" fill="#879480">26-03-02</text><text x="893.6" y="330" text-anchor="middle" font-size="10.5" fill="#879480">26-05-15</text><text x="1104.0" y="330" text-anchor="middle" font-size="10.5" fill="#879480">26-07-27</text>
+<path d="M52.0,289.3 L56.2,290.8 L60.4,287.3 L64.6,284.2 L68.8,280.7 L73.0,276.5 L77.2,276.4 L81.5,272.6 L85.7,275.4 L89.9,274.3 L94.1,272.2 L98.3,272.3 L102.5,282.0 L106.7,284.7 L110.9,282.6 L115.1,278.5 L119.3,277.2 L123.5,277.0 L127.7,278.3 L132.0,276.0 L136.2,273.3 L140.4,269.1 L144.6,269.5 L148.8,265.8 L153.0,261.0 L157.2,263.1 L161.4,256.9 L165.6,254.8 L169.8,243.3 L174.0,231.6 L178.2,233.7 L182.4,242.2 L186.7,232.3 L190.9,228.1 L195.1,224.6 L199.3,228.9 L203.5,232.8 L207.7,244.9 L211.9,232.7 L216.1,231.8 L220.3,235.8 L224.5,234.6 L228.7,221.5 L232.9,224.8 L237.2,223.4 L241.4,224.7 L245.6,221.1 L249.8,227.9 L254.0,227.4 L258.2,224.7 L262.4,225.1 L266.6,219.2 L270.8,215.7 L275.0,221.2 L279.2,212.3 L283.4,209.6 L287.6,200.8 L291.9,212.7 L296.1,215.6 L300.3,222.6 L304.5,214.0 L308.7,212.5 L312.9,225.8 L317.1,222.7 L321.3,213.8 L325.5,215.8 L329.7,214.0 L333.9,207.1 L338.1,200.0 L342.4,203.0 L346.6,195.9 L350.8,200.7 L355.0,209.6 L359.2,208.0 L363.4,212.4 L367.6,211.3 L371.8,202.9 L376.0,204.7 L380.2,202.6 L384.4,208.1 L388.6,208.9 L392.8,201.8 L397.1,211.2 L401.3,215.1 L405.5,218.9 L409.7,216.3 L413.9,219.3 L418.1,233.6 L422.3,234.3 L426.5,228.9 L430.7,225.4 L434.9,225.7 L439.1,224.2 L443.3,217.8 L447.6,220.7 L451.8,223.7 L456.0,221.7 L460.2,216.8 L464.4,212.0 L468.6,215.1 L472.8,215.9 L477.0,221.0 L481.2,217.3 L485.4,221.0 L489.6,228.0 L493.8,217.4 L498.0,220.9 L502.3,218.9 L506.5,213.3 L510.7,212.2 L514.9,210.5 L519.1,209.4 L523.3,207.5 L527.5,209.8 L531.7,208.3 L535.9,211.0 L540.1,199.7 L544.3,190.4 L548.5,192.2 L552.8,197.2 L557.0,194.5 L561.2,190.5 L565.4,194.2 L569.6,196.6 L573.8,195.4 L578.0,197.9 L582.2,197.6 L586.4,199.6 L590.6,199.1 L594.8,199.0 L599.0,201.7 L603.2,201.1 L607.5,201.3 L611.7,199.7 L615.9,195.1 L620.1,201.2 L624.3,214.1 L628.5,207.1 L632.7,202.2 L636.9,205.8 L641.1,209.2 L645.3,199.6 L649.5,198.9 L653.7,200.2 L658.0,199.5 L662.2,207.1 L666.4,201.0 L670.6,197.4 L674.8,198.6 L679.0,200.7 L683.2,198.3 L687.4,207.7 L691.6,214.5 L695.8,208.7 L700.0,207.1 L704.2,212.8 L708.4,205.2 L712.7,201.4 L716.9,203.6 L721.1,206.0 L725.3,205.7 L729.5,210.0 L733.7,207.4 L737.9,217.0 L742.1,219.1 L746.3,238.1 L750.5,230.9 L754.7,222.8 L758.9,230.5 L763.2,227.3 L767.4,228.7 L771.6,234.0 L775.8,224.3 L780.0,230.3 L784.2,235.2 L788.4,235.3 L792.6,215.4 L796.8,219.2 L801.0,210.1 L805.2,208.9 L809.4,201.9 L813.6,203.9 L817.9,197.3 L822.1,198.3 L826.3,194.7 L830.5,193.3 L834.7,189.2 L838.9,191.0 L843.1,193.1 L847.3,192.9 L851.5,194.6 L855.7,187.9 L859.9,188.3 L864.1,179.3 L868.4,176.3 L872.6,180.0 L876.8,169.7 L881.0,170.2 L885.2,163.8 L889.4,174.5 L893.6,181.6 L897.8,184.9 L902.0,182.4 L906.2,182.7 L910.4,191.4 L914.6,183.4 L918.8,173.6 L923.1,170.3 L927.3,175.3 L931.5,174.6 L935.7,177.4 L939.9,183.5 L944.1,174.5 L948.3,171.4 L952.5,175.8 L956.7,187.0 L960.9,200.3 L965.1,189.0 L969.3,195.8 L973.6,199.1 L977.8,192.1 L982.0,177.5 L986.2,178.4 L990.4,172.4 L994.6,171.1 L998.8,155.9 L1003.0,173.9 L1007.2,170.9 L1011.4,161.0 L1015.6,180.5 L1019.8,172.9 L1024.0,166.2 L1028.3,168.8 L1032.5,187.6 L1036.7,183.8 L1040.9,183.8 L1045.1,190.2 L1049.3,194.9 L1053.5,179.4 L1057.7,191.7 L1061.9,202.6 L1066.1,189.7 L1070.3,190.9 L1074.5,202.2 L1078.8,223.9 L1083.0,215.0 L1087.2,197.0 L1091.4,199.8 L1095.6,198.4 L1099.8,208.5 L1104.0,206.8" fill="none" stroke="#879480" stroke-width="1.6" opacity="0.85"/>
+<path d="M52.0,289.3 L56.2,286.6 L60.4,281.7 L64.6,277.5 L68.8,272.0 L73.0,260.9 L77.2,264.1 L81.5,259.6 L85.7,266.4 L89.9,267.3 L94.1,264.3 L98.3,269.9 L102.5,282.6 L106.7,284.2 L110.9,282.2 L115.1,278.0 L119.3,271.9 L123.5,272.0 L127.7,270.8 L132.0,266.7 L136.2,265.2 L140.4,254.4 L144.6,257.6 L148.8,248.6 L153.0,244.2 L157.2,245.2 L161.4,236.0 L165.6,229.8 L169.8,225.2 L174.0,215.5 L178.2,213.6 L182.4,222.7 L186.7,216.7 L190.9,203.9 L195.1,200.5 L199.3,203.5 L203.5,201.0 L207.7,215.6 L211.9,194.8 L216.1,175.0 L220.3,183.1 L224.5,190.4 L228.7,173.8 L232.9,181.1 L237.2,171.4 L241.4,159.9 L245.6,142.0 L249.8,140.9 L254.0,146.4 L258.2,149.0 L262.4,146.7 L266.6,135.5 L270.8,130.0 L275.0,142.5 L279.2,119.7 L283.4,107.2 L287.6,99.6 L291.9,126.9 L296.1,141.9 L300.3,162.5 L304.5,139.7 L308.7,142.3 L312.9,167.1 L317.1,153.6 L321.3,142.8 L325.5,145.5 L329.7,142.5 L333.9,129.3 L338.1,125.2 L342.4,121.6 L346.6,105.2 L350.8,118.7 L355.0,128.0 L359.2,131.8 L363.4,146.1 L367.6,140.5 L371.8,121.0 L376.0,122.7 L380.2,136.7 L384.4,142.1 L388.6,149.6 L392.8,136.4 L397.1,150.3 L401.3,155.7 L405.5,161.5 L409.7,164.2 L413.9,167.4 L418.1,176.9 L422.3,175.6 L426.5,169.4 L430.7,161.9 L434.9,158.5 L439.1,151.7 L443.3,147.5 L447.6,151.0 L451.8,149.5 L456.0,139.6 L460.2,126.0 L464.4,124.0 L468.6,131.0 L472.8,130.0 L477.0,136.5 L481.2,130.1 L485.4,138.7 L489.6,149.4 L493.8,142.5 L498.0,151.0 L502.3,146.3 L506.5,139.6 L510.7,141.7 L514.9,140.5 L519.1,132.0 L523.3,126.1 L527.5,132.2 L531.7,116.0 L535.9,116.6 L540.1,103.6 L544.3,98.0 L548.5,96.0 L552.8,106.4 L557.0,93.5 L561.2,92.5 L565.4,94.3 L569.6,102.5 L573.8,102.7 L578.0,87.3 L582.2,85.8 L586.4,91.3 L590.6,85.7 L594.8,91.6 L599.0,93.5 L603.2,103.7 L607.5,100.6 L611.7,103.9 L615.9,112.2 L620.1,111.1 L624.3,125.0 L628.5,103.3 L632.7,85.7 L636.9,92.2 L641.1,93.1 L645.3,82.4 L649.5,73.5 L653.7,66.1 L658.0,60.6 L662.2,75.0 L666.4,66.1 L670.6,63.0 L674.8,67.5 L679.0,71.6 L683.2,71.5 L687.4,88.9 L691.6,96.1 L695.8,90.3 L700.0,88.0 L704.2,93.9 L708.4,76.1 L712.7,62.0 L716.9,69.2 L721.1,80.2 L725.3,90.8 L729.5,99.9 L733.7,98.5 L737.9,116.3 L742.1,111.5 L746.3,134.3 L750.5,128.7 L754.7,115.8 L758.9,125.2 L763.2,119.8 L767.4,127.8 L771.6,136.4 L775.8,123.1 L780.0,133.5 L784.2,141.9 L788.4,146.1 L792.6,121.0 L796.8,124.0 L801.0,107.3 L805.2,101.9 L809.4,89.4 L813.6,97.0 L817.9,87.2 L822.1,91.8 L826.3,94.9 L830.5,90.8 L834.7,89.9 L838.9,93.4 L843.1,96.8 L847.3,100.5 L851.5,99.1 L855.7,82.3 L859.9,83.5 L864.1,63.1 L868.4,47.9 L872.6,51.7 L876.8,41.4 L881.0,51.2 L885.2,48.4 L889.4,68.2 L893.6,63.1 L897.8,67.9 L902.0,66.2 L906.2,62.8 L910.4,57.4 L914.6,45.1 L918.8,51.3 L923.1,48.4 L927.3,53.7 L931.5,52.2 L935.7,64.2 L939.9,77.8 L944.1,70.4 L948.3,73.5 L952.5,73.1 L956.7,80.7 L960.9,87.7 L965.1,75.9 L969.3,93.4 L973.6,91.7 L977.8,86.4 L982.0,70.0 L986.2,66.1 L990.4,57.2 L994.6,66.5 L998.8,47.5 L1003.0,72.8 L1007.2,62.0 L1011.4,44.5 L1015.6,53.1 L1019.8,48.1 L1024.0,42.0 L1028.3,56.2 L1032.5,62.6 L1036.7,37.2 L1040.9,53.7 L1045.1,62.3 L1049.3,95.4 L1053.5,88.8 L1057.7,99.5 L1061.9,120.4 L1066.1,106.3 L1070.3,99.1 L1074.5,110.2 L1078.8,128.5 L1083.0,133.3 L1087.2,117.4 L1091.4,125.8 L1095.6,112.5 L1099.8,128.0 L1104.0,117.4" fill="none" stroke="#c0392b" stroke-width="2.4"/>
+<circle cx="1104.0" cy="117.4" r="3.5" fill="#c0392b"/>
+<text x="1098.0" y="109.4" text-anchor="end" font-size="12" font-weight="700" fill="#c0392b">133.4</text>
+</svg>
+<div class="navnote">口径:固定目标权重、日度再平衡、前复权收盘价,港股按 0.92 折人民币归一到基准日=100。为<b>历史回测</b>非未来承诺;含 3 只工程机械(三一/中联/徐工)+恒立液压,工程机械族群合计约 21% 暴露、电动工具族群(创科+泉峰)约 14%,集中度偏高,若要更分散可把同赛道跟随者降配或剔除。</div>
+</div>
+</section>
+
+<section id="tab-screen" style="display:none">
 <div class="ruler"><b>选法</b>:先全网找"中国 2B 制造·国内/全球龙头·海外收入≥20% 有规模·非技术垄断"的基石,再用<b>三问</b>精筛留下这 <b>17 只</b>——①<b>断崖式领先</b>(遥遥领先二三名,非胶着内卷)②<b>海外毛利够高</b>(溢价而非低价走量)③<b>不太低端</b>(高端/往上走,非被发达市场挤出)。
 <b>★皇冠 6 只</b>(福耀/恒立/创科/宁德/迈瑞/三花)= 三问全齐。<b>它们都是好公司,但仍是"2B 制造非技术垄断"</b>——买点=行业向好+份额升+估值到低点;必盯早期还是后期(见"阶段"列)+ 出海政治坎。数据基准 2026-07,海外占比/份额多为 2024-25 年报。</div>
 <div class="twrap"><table>
@@ -177,7 +238,7 @@ tr.cr td{background:var(--goldbg)} tr.cr:hover td{background:#efe6c2}
 <b>三问筛掉的</b>:胶着内卷(叉车合力/杭叉、逆变器锦浪/上能)、被龙头断崖甩开(亿纬/国轩,动力全球仅3-4%)、赛道偏低端(杰克缝纫机、巨星代工)、高端但周期暴雷(先导/杭可)、低毛利(均胜16%/继峰12%淘汰)、出海不足(大族海外仅12%淘汰)。<br>
 <b>特别观察·汇川技术</b>:国内自动化龙头但海外仅~5-6%尚未出海,一旦出海走起来就是最强新星,暂不入表。<br>
 仅为生意质地筛选参考,非投资建议;买卖阈值以你的框架为准。
-</div></div>
+</div></section></div>
 <script>
 const CODES="sh600660,sh601100,hk00669,sz300750,sz300760,sz002050,sz300274,sh605117,sh600309,sh600176,sh600563,sh688271,sh600031,sz000157,sz000425,hk01882,hk02285";
 function applyQuotes(txt){
@@ -191,10 +252,84 @@ function applyQuotes(txt){
   document.querySelectorAll('td.q[data-f="pe"]').forEach(td=>{const raw=map[td.dataset.c];if(!raw)return;const pe=parseFloat(raw.split('~')[39]);if(isFinite(pe)&&pe!==0)td.textContent=pe.toFixed(2);});
   const t=new Date().toLocaleTimeString('zh-CN',{hour12:false});
   document.getElementById('upd').innerHTML='<span class="live">● 实时</span> 已更新 '+ok+' 只 · '+t;
+  try{renderETF(map);}catch(e){}
 }
 function fallback(){const sc=document.createElement('script');sc.charset='GBK';sc.src='https://qt.gtimg.cn/q='+CODES+'&_='+Date.now();
   sc.onload=function(){let txt='';CODES.split(',').forEach(c=>{const r=window['v_'+c];if(r)txt+='v_'+c+'="'+r+'"\n';});applyQuotes(txt);sc.remove();};
   sc.onerror=function(){document.getElementById('upd').innerHTML='<span class="fail">⚠ 行情拉取失败</span>';sc.remove();};document.body.appendChild(sc);}
 function refresh(){fetch('https://qt.gtimg.cn/q='+CODES+'&_='+Date.now()).then(r=>r.arrayBuffer()).then(b=>{let t;try{t=new TextDecoder('gbk').decode(b);}catch(e){t=new TextDecoder('utf-8').decode(b);}applyQuotes(t);}).catch(fallback);}
+
+/* ===== 自建 ETF · 分档加权 ===== */
+const CAP=3000000, FX=0.92;
+const LOT={hk00669:500,hk01882:1000,hk02285:100};
+const CORE_W=0.10, SAT_W=0.40/11;
+const PORT=[
+ {c:'sh600660',n:'福耀玻璃',s:'汽车玻璃',t:'核心',w:CORE_W,cy:'RMB'},
+ {c:'sh601100',n:'恒立液压',s:'挖机液压件',t:'核心',w:CORE_W,cy:'RMB'},
+ {c:'hk00669',n:'创科实业',s:'电动工具',t:'核心',w:CORE_W,cy:'HKD'},
+ {c:'sz300750',n:'宁德时代',s:'动力/储能电池',t:'核心',w:CORE_W,cy:'RMB'},
+ {c:'sz300760',n:'迈瑞医疗',s:'医疗器械',t:'核心',w:CORE_W,cy:'RMB'},
+ {c:'sz002050',n:'三花智控',s:'制冷/汽车热管理',t:'核心',w:CORE_W,cy:'RMB'},
+ {c:'sz300274',n:'阳光电源',s:'逆变器/储能',t:'卫星',w:SAT_W,cy:'RMB'},
+ {c:'sh605117',n:'德业股份',s:'储能/微逆',t:'卫星',w:SAT_W,cy:'RMB'},
+ {c:'sh600309',n:'万华化学',s:'MDI/聚氨酯',t:'卫星',w:SAT_W,cy:'RMB'},
+ {c:'sh600176',n:'中国巨石',s:'玻璃纤维',t:'卫星',w:SAT_W,cy:'RMB'},
+ {c:'sh600563',n:'法拉电子',s:'薄膜电容',t:'卫星',w:SAT_W,cy:'RMB'},
+ {c:'sh688271',n:'联影医疗',s:'医学影像',t:'卫星',w:SAT_W,cy:'RMB'},
+ {c:'sh600031',n:'三一重工',s:'工程机械',t:'卫星',w:SAT_W,cy:'RMB'},
+ {c:'sz000157',n:'中联重科',s:'工程机械',t:'卫星',w:SAT_W,cy:'RMB'},
+ {c:'sz000425',n:'徐工机械',s:'工程机械',t:'卫星',w:SAT_W,cy:'RMB'},
+ {c:'hk01882',n:'海天国际',s:'注塑机',t:'卫星',w:SAT_W,cy:'HKD'},
+ {c:'hk02285',n:'泉峰控股',s:'电动工具/OPE',t:'卫星',w:SAT_W,cy:'HKD'}
+];
+function wan(v){return '¥'+(v/10000).toFixed(1)+'万';}
+function renderETF(map){
+ const rows=[];let dep=0,coreAmt=0,satAmt=0,dayNum=0;
+ PORT.forEach(p=>{
+   const raw=map[p.c];if(!raw)return;const f=raw.split('~');
+   const px=parseFloat(f[3]),chg=parseFloat(f[32]);if(!isFinite(px)||px<=0)return;
+   const pxCNY=p.cy==='HKD'?px*FX:px;
+   const lot=LOT[p.c]||100;
+   const tgtAmt=CAP*p.w;
+   const sh=Math.max(lot,Math.round(tgtAmt/pxCNY/lot)*lot);
+   const amt=sh*pxCNY;
+   p._amt=amt;p._sh=sh;p._px=px;p._chg=chg;
+   dep+=amt;if(p.t==='核心')coreAmt+=amt;else satAmt+=amt;
+ });
+ PORT.forEach(p=>{if(p._amt)dayNum+=p._chg*(p._amt/dep);});
+ PORT.forEach(p=>{
+   if(!p._amt){rows.push('<tr><td class="l"><div class="nml"><span class="nm">'+p.n+'</span><span class="code">'+p.c+' · '+p.cy+'</span></div><div class="seg">'+p.s+'</div></td><td colspan="8" style="color:var(--dim)">行情缺失</td></tr>');return;}
+   const actW=p._amt/dep, dev=(actW-p.w)*100;
+   const thr=p.t==='核心'?2:0.7;
+   const devCls=Math.abs(dev)>thr?'dev hi':'dev ok';
+   const chgCls=p._chg>=0?'up':'down';
+   const tierCls=p.t==='核心'?'t-core':'t-sat';
+   rows.push('<tr'+(p.t==='核心'?' class="cr"':'')+'>'+
+     '<td class="l"><div class="nml"><span class="nm">'+p.n+'</span><span class="code">'+p.c+' · '+p.cy+'</span></div><div class="seg">'+p.s+'</div></td>'+
+     '<td><span class="tier '+tierCls+'">'+(p.t==='核心'?'★核心':'卫星')+'</span></td>'+
+     '<td class="q">'+(p.w*100).toFixed(1)+'%</td>'+
+     '<td class="q"><span class="px">'+p._px.toFixed(2)+'</span></td>'+
+     '<td class="q '+chgCls+'">'+(p._chg>=0?'+':'')+(isFinite(p._chg)?p._chg.toFixed(2):'—')+'%</td>'+
+     '<td class="q"><span class="sh">'+p._sh.toLocaleString()+'</span></td>'+
+     '<td class="q">'+wan(p._amt)+'</td>'+
+     '<td class="q">'+(actW*100).toFixed(1)+'%</td>'+
+     '<td class="q"><span class="'+devCls+'">'+(dev>=0?'+':'')+dev.toFixed(1)+'pct</span></td>'+
+   '</tr>');
+ });
+ document.getElementById('etfbody').innerHTML=rows.join('');
+ const dc=document.getElementById('c-day');
+ dc.textContent=(dayNum>=0?'+':'')+dayNum.toFixed(2)+'%';dc.className='v '+(dayNum>=0?'up':'down');
+ document.getElementById('c-dep').textContent=wan(dep);
+ document.getElementById('c-cash').textContent=wan(CAP-dep);
+ document.getElementById('c-core').textContent=(coreAmt/dep*100).toFixed(1)+'%';
+ document.getElementById('c-sat').textContent=(satAmt/dep*100).toFixed(1)+'%';
+}
+document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',function(){
+ document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('on'));
+ this.classList.add('on');
+ document.getElementById('tab-etf').style.display=this.dataset.t==='etf'?'':'none';
+ document.getElementById('tab-screen').style.display=this.dataset.t==='screen'?'':'none';
+}));
+
 refresh();setInterval(refresh,30000);
 </script></body></html>
