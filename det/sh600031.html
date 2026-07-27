@@ -1,0 +1,120 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>三一重工 · 基石深度</title><style>
+:root{--bg:#eef2e6;--card:#f7faf0;--ink:#26301f;--dim:#5a6b4d;--line:#d3ddc2;--accent:#2f7d4f;--warn:#8a5a1a;--buy:#1f6b3a;--sell:#a23a3a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.85 -apple-system,'PingFang SC','Microsoft YaHei',sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:22px 18px 80px}
+a{color:var(--accent)}
+.top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+h1{font-size:30px;margin:6px 0 2px}
+.seg{color:var(--dim);font-size:16px}
+.crown{background:#f3e4a8;color:#7a5c10;border:1px solid #e0cd7a;border-radius:6px;padding:1px 8px;font-size:15px}
+.qbar{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0 8px;display:flex;flex-wrap:wrap;gap:18px;align-items:baseline;font-size:17px}
+.qbar b{font-size:26px;color:var(--accent)}
+.qbar .lbl{color:var(--dim);font-size:14px;margin-right:4px}
+#upd{color:var(--dim);font-size:13px}
+.rbtn{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:5px 12px;font-size:14px;cursor:pointer}
+h2{font-size:22px;margin:30px 0 10px;padding-left:10px;border-left:5px solid var(--accent)}
+p{margin:10px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;background:var(--card);font-size:16px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#e3ead4}
+.v-passx{color:#1f6b3a;font-weight:700}
+.v-pass{color:#2f7d4f;font-weight:600}
+.v-warn{color:#8a5a1a;font-weight:600}
+.v-fail{color:#a23a3a;font-weight:700}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:12px 0}
+.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px 12px 46px;margin:10px 0;position:relative}
+.step>b{font-size:17px}
+.sn{position:absolute;left:12px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sd{margin-top:6px}
+.dim{color:var(--dim);font-size:14px}
+table.calc{margin:10px 0 2px;font-size:15px}
+table.calc .dx{color:var(--sell);font-weight:700;white-space:nowrap}
+table.calc .pv{color:var(--buy);font-weight:700;font-size:17px;white-space:nowrap}
+table.calc tr.sum td{background:#eef3e2}
+.verdict{background:#e6f0e0;border:1px solid #bcd3a8;border-radius:12px;padding:14px 18px;font-size:18px;margin:12px 0}
+.val3{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.val3 .b{flex:1;min-width:150px;border-radius:10px;padding:12px 14px;text-align:center;border:1px solid var(--line)}
+.val3 .sell{background:#f6e4e4;border-color:#e0bcbc}
+.val3 .buy{background:#e4f0e6;border-color:#bcd8c2}
+.val3 .bot{background:#eae4f0;border-color:#cbbce0}
+.val3 .k{font-size:14px;color:var(--dim)}
+.val3 .p{font-size:26px;font-weight:700;margin-top:2px}
+.up{border-left:5px solid #c9b6e0;margin:12px 0;background:var(--card);border-radius:0 10px 10px 0;padding:12px 16px}
+.up.jj{border-color:#e0a6c0}.up.td{border-color:#c9a06a}.up.ts{border-color:#7aa6c9}.up.mg{border-color:#e0b46a}
+.up .who{font-weight:700;font-size:17px}
+.up.nocov{opacity:.7}
+.nav{margin:8px 0 4px}
+.foot{color:var(--dim);font-size:14px;margin-top:26px;border-top:1px dashed var(--line);padding-top:12px}
+.foot a{display:inline-block;margin:2px 10px 2px 0}
+</style></head><body><div class="wrap">
+<div class="nav"><a href="../bedrock.html">← 返回中国高端制造基石</a></div>
+<div class="top"><h1>三一重工</h1><span class="seg">工程机械</span></div>
+<div class="qbar" data-c="sh600031">
+<span><span class="lbl">现价</span><b id="px">—</b></span>
+<span><span class="lbl">涨跌</span><span id="chg">—</span></span>
+<span><span class="lbl">PE-TTM</span><span id="pe">—</span></span>
+<span><span class="lbl">总市值(亿)</span><span id="cap">—</span></span>
+<button class="rbtn" onclick="refresh()">↻ 刷新</button><span id="upd">加载中…</span>
+</div>
+
+<h2>一、财报与增长</h2><p>2025营收892.31亿(+14.73%)、归母净利84.08亿(+41.18%)，经营现金流创新高199.75亿；海外主业收入558.56亿占工程机械主业64%、海外毛利率升至31.64%——周期上行+出海双轮</p><p>利润含金量存疑：2025净利+41%远超营收+14.7%(靠毛利率抬升/费用杠杆而非量)，到2026Q1急刹车——营收240.42亿仍+14.22%，但归母净利24.81亿仅<b>+0.46%</b>，增收不增利已现形</p>
+<h2>二、业务状况</h2><p>挖机全球销量第一；2026H1行业挖机销量15.23万台(+26.4%)，出口7.33万台(+33.5%)>国内(+20.4%)，国内更新周期上行(东吴测2025-2028年均+20%)；电动化/数字化+海外亚非拉高增(非洲+55%)</p><p>强周期本质：营收2021峰值1061.13亿→2022/2023连跌至740亿，挖机收入787亿→约295亿腰斩；本轮周期市场普遍预期2028见顶后再向下，海外集中亚非拉(>40%)、欧美<20%</p>
+<h2>三、管理层</h2><p>梁稳根(创始人)2022年1月辞任董事长，向文波接棒并于2023年推行轮值董事长制，治理平稳代际传承、无重大失信记录；湖南民企标杆，持续大额分红+回购</p>
+<h2>四、竞争格局</h2><p>挖机全球销量第一，规模化+全产业链+极致性价比(同吨位比卡特彼勒低15-20%、比小松低约10%)+全球渠道+海外64%高毛利，国内份额龙头本土难替</p><p>价格追随者非规则制定者：营收仅卡特彼勒(~4600亿)约1/6、小松(~1900亿)约1/2.5；核心零部件自给率60% vs 卡特75%，产品寿命5000-7000h vs 日系8000-12000h；印度被罚约1.97亿(政治坎已现)</p>
+
+<h2>王超七问评分</h2>
+<table><tr><th style="width:32%">维度</th><th style="width:14%">判定</th><th>依据</th></tr>
+<tr><td>1 商业模式</td><td class='v-pass'>Pass</td><td>卖挖机/混凝土机械/起重机等重型设备给基建·矿业·地产B端，设备一次性销售+后市场配件服务，重资产制造、理性买家</td></tr>
+<tr><td>2 市场空间</td><td class='v-pass'>Pass</td><td>全球工程机械空间大，国内更新周期2025-2028上行(东吴年均+20%)+海外新兴市场基建旺；但天花板系于基建/地产资本开支，强周期波动</td></tr>
+<tr><td>3 盈利逻辑</td><td class='v-pass'>Pass</td><td>海外毛利31.64%、经营现金流创新高199.75亿，盈利真实；但2025+41%净利靠杠杆、2026Q1净利+0.46%，含金量转弱需盯</td></tr>
+<tr><td>4 护城河</td><td class='v-pass'>Pass</td><td>规模成本+全产业链+全球渠道，挖机全球销量第一(本土难替)；但技术非垄断——自给率60%vs卡特75%、寿命/残值逊于日系，性价比路线可被追赶，给不到Pass★</td></tr>
+<tr><td>5 粘性</td><td class='v-pass'>Pass</td><td>换机成本+后市场配件绑定+品牌信任；但B端理性、性价比导向，粘性中等而非锁定</td></tr>
+<tr><td>6 致命风险</td><td class='v-warn'>黄灯</td><td>强周期(2021峰1061亿→2023谷740亿)，国内地产/基建资本开支下行+2028周期见顶预期；海外反倾销/关税/本地化(印度已罚1.97亿)；利润含金量下滑——真实'改变斜率'级威胁但非一夜致死</td></tr>
+<tr><td>7 管理层</td><td class='v-pass'>Pass</td><td>梁稳根辞任、向文波轮值董事长制，治理传承平稳、无失信，持续分红回购</td></tr></table>
+<div class="verdict"><b>终判：</b><b>全球王(挖机销量全球第一)</b>+国内周期上行+出海成熟(海外64%>国内)，但属价格追随者(非规则制定者)、强周期、利润含金量2026Q1转弱——A档规则参与者偏全球王，现价19.41元已处高估/泡沫区，非建仓价<br><br><b>2B 制造阶段判据：</b>2B制造(挖机)无技术垄断→阶段判据：处'<b>周期上行+全球化出海成熟享受期</b>'(海外毛利31.64%>国内，占比64%)。但出海续命两坎均在：①竞争坎——卡特/小松/徐工/柳工同场同能出海，窗口非独享；②政治坎——印度已罚1.97亿，欧美双反/关税/本地化风险悬顶。叠加国内周期2028见顶预期+2026Q1增收不增利，禁用当前高增速外推。</div>
+
+<h2>估值三线 · 计算过程（第2步·瑕疵全量化）</h2>
+
+<div class="step"><span class="sn">1</span><b>完美 PE 起点 = 16 x</b><div class="sd">周期股不给中枢以上溢价：对标全球最优卡特彼勒前瞻约16-18x，三一挖机全球销量第一+海外占64%(毛利31.64%)，但为价格追随者(低卡特15-20%)、非技术垄断，故完美(无瑕疵)天花板给16x，已是上限</div></div>
+<div class="step"><span class="sn">2</span><b>每股收益 EPS</b>
+<div class="sd">EPS-TTM：19.41 ÷ 21.20 = <b>0.92 元</b><br>NTM EPS：0.92 ×（1+12%）≈ <b>1.03 元</b><br><span class="dim">周期上行：2026H1挖机销量+26.4%、出口+33.5%，更新周期年均+20%(东吴)；但2026Q1净利仅+0.46%显示毛利/费用红利见顶，故净利增速取保守+12%，非外推2025的+41%</span></div></div>
+<div class="step"><span class="sn">3</span><b>逐项瑕疵扣 PE（从 16 x 往下扣）</b>
+<table class="calc"><tr><th>瑕疵</th><th>类型</th><th>扣减</th><th>依据</th></tr><tr><td>工程机械周期</td><td>周期(半扣)</td><td class='dx'>−3 x</td><td>强周期：营收2021峰1061亿→2023谷740亿，挖机收入曾腰斩；本轮2028见顶预期，周期盈利不可全额资本化</td></tr><tr><td>业绩含金量/研发下降</td><td>结构</td><td class='dx'>−2 x</td><td>2025净利+41%远超营收+14.7%靠毛利/费用杠杆，2026Q1净利+0.46%增收不增利；核心零部件自给仅60%(vs卡特75%)、技术投入偏弱，含金量结构性折价</td></tr>
+<tr class="sum"><td><b>合计</b></td><td></td><td class="dx"><b>−5 x</b></td><td><b>扣后 PE = 16 − 5 = 11 x</b></td></tr></table></div>
+<div class="step"><span class="sn">4</span><b>三条线 = PE × NTM EPS</b>
+<table class="calc"><tr><th>线</th><th>算式</th><th>目标价</th><th>含义</th></tr><tr><td><b>超额卖出线</b></td><td>完美PE 16 × NTM 1.03</td><td class='pv'>¥16.5</td><td>泡沫区</td></tr><tr><td><b>正常买入线</b></td><td>扣后PE 11 × NTM 1.03</td><td class='pv'>¥11.3</td><td>A线</td></tr><tr><td><b>大底线</b></td><td>正常买入 11.3 ×0.7</td><td class='pv'>¥7.9</td><td>恐慌重仓</td></tr></table></div>
+<div class="val3">
+<div class="b sell"><div class="k">超额卖出线</div><div class="p">¥16.5</div></div>
+<div class="b buy"><div class="k">正常买入线(A线)</div><div class="p">¥11.3</div></div>
+<div class="b bot"><div class="k">大底线</div><div class="p">¥7.9</div></div>
+</div>
+<div class="step"><span class="sn">5</span><b>现价定位</b><div class="sd">现价19.41 ÷ NTM 1.03 = 前瞻PE <b>18.8 x</b> vs 扣后 11 x<br>→现价18.8x前瞻PE不仅高于扣后11x，更高于完美卖出线16x(¥16.5)，市场已把周期上行+出海全额定价，处高估/泡沫区，距A线¥11.3仍需回落约42%（非建仓指令）</div></div>
+
+
+<h2>四家 UP 主怎么看（原话/区间，不自算）</h2>
+<div class='up jj'><div class='who'>江江小可爱</div><div>合理市值区间反算：<b>买 ¥9.79 / 卖 ¥19.58</b>；当前<b>高于区间（高估）</b>。</div></div>
+<div class='up td nocov'><div class='who'>土豆(看财报)</div><div>未覆盖——不自算。</div></div>
+<div class='up ts nocov'><div class='who'>土斯土耶夫斯基</div><div>未覆盖——不自算。</div></div>
+<div class='up mg'><div class='who'>复利芒果</div><div>工程机械全球第三，三大品类龙头、海外渠道与数字化构筑护城河；上半年净利+46%但过半靠费用压缩，PE约20倍已含周期向上预期。<b>中性：看更新周期启动，但研发连年下降、业绩含金量存疑待验证。</b></div></div>
+
+<div class="foot"><b>数据来源：</b><a href='http://www.eeo.com.cn/2026/0331/823315.shtml' target='_blank'>经济观察报·2025营收892.31亿净利84.08亿</a><a href='https://wap.eastmoney.com/a/202604223713063892.html' target='_blank'>东方财富·2025净利+41.2%海外超六成</a><a href='https://www.jiemian.com/article/14361045.html' target='_blank'>界面新闻·2026Q1归母24.81亿+0.46%</a><a href='https://www.stcn.com/article/detail/4003261.html' target='_blank'>证券时报·2026H1挖机销量+26.4%</a><a href='http://www.inewsweek.cn/finance/2025-11-06/27426.shtml' target='_blank'>中国新闻周刊·挖机一哥比较烦</a><br>行情 qt.gtimg.cn 实时 · 财报/竞争数据现搜带源 · 本页为事实与概率判断，非建仓指令。</div>
+</div>
+<script>
+function refresh(){
+ var box=document.querySelector('[data-c]');var code=box.getAttribute('data-c');
+ fetch('https://qt.gtimg.cn/q='+code).then(r=>r.arrayBuffer()).then(b=>{
+  var t=new TextDecoder('gbk').decode(b);var m=t.match(/"([^"]*)"/);if(!m)return;
+  var f=m[1].split('~');
+  document.getElementById('px').textContent=f[3];
+  var c=parseFloat(f[32]);var el=document.getElementById('chg');
+  el.textContent=(c>=0?'+':'')+f[32]+'%';el.style.color=c>=0?'#a23a3a':'#1f6b3a';
+  document.getElementById('pe').textContent=f[39];
+  document.getElementById('cap').textContent=f[45];
+  var d=f[30]||'';document.getElementById('upd').textContent='更新 '+(d.length>=12?d.slice(0,4)+'-'+d.slice(4,6)+'-'+d.slice(6,8)+' '+d.slice(8,10)+':'+d.slice(10,12):d);
+ }).catch(e=>{document.getElementById('upd').textContent='行情源暂不可用';});
+}
+refresh();setInterval(refresh,30000);
+</script></body></html>
