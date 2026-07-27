@@ -1,0 +1,120 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>迈瑞医疗 · 基石深度</title><style>
+:root{--bg:#eef2e6;--card:#f7faf0;--ink:#26301f;--dim:#5a6b4d;--line:#d3ddc2;--accent:#2f7d4f;--warn:#8a5a1a;--buy:#1f6b3a;--sell:#a23a3a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.85 -apple-system,'PingFang SC','Microsoft YaHei',sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:22px 18px 80px}
+a{color:var(--accent)}
+.top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+h1{font-size:30px;margin:6px 0 2px}
+.seg{color:var(--dim);font-size:16px}
+.crown{background:#f3e4a8;color:#7a5c10;border:1px solid #e0cd7a;border-radius:6px;padding:1px 8px;font-size:15px}
+.qbar{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0 8px;display:flex;flex-wrap:wrap;gap:18px;align-items:baseline;font-size:17px}
+.qbar b{font-size:26px;color:var(--accent)}
+.qbar .lbl{color:var(--dim);font-size:14px;margin-right:4px}
+#upd{color:var(--dim);font-size:13px}
+.rbtn{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:5px 12px;font-size:14px;cursor:pointer}
+h2{font-size:22px;margin:30px 0 10px;padding-left:10px;border-left:5px solid var(--accent)}
+p{margin:10px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;background:var(--card);font-size:16px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#e3ead4}
+.v-passx{color:#1f6b3a;font-weight:700}
+.v-pass{color:#2f7d4f;font-weight:600}
+.v-warn{color:#8a5a1a;font-weight:600}
+.v-fail{color:#a23a3a;font-weight:700}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:12px 0}
+.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px 12px 46px;margin:10px 0;position:relative}
+.step>b{font-size:17px}
+.sn{position:absolute;left:12px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sd{margin-top:6px}
+.dim{color:var(--dim);font-size:14px}
+table.calc{margin:10px 0 2px;font-size:15px}
+table.calc .dx{color:var(--sell);font-weight:700;white-space:nowrap}
+table.calc .pv{color:var(--buy);font-weight:700;font-size:17px;white-space:nowrap}
+table.calc tr.sum td{background:#eef3e2}
+.verdict{background:#e6f0e0;border:1px solid #bcd3a8;border-radius:12px;padding:14px 18px;font-size:18px;margin:12px 0}
+.val3{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.val3 .b{flex:1;min-width:150px;border-radius:10px;padding:12px 14px;text-align:center;border:1px solid var(--line)}
+.val3 .sell{background:#f6e4e4;border-color:#e0bcbc}
+.val3 .buy{background:#e4f0e6;border-color:#bcd8c2}
+.val3 .bot{background:#eae4f0;border-color:#cbbce0}
+.val3 .k{font-size:14px;color:var(--dim)}
+.val3 .p{font-size:26px;font-weight:700;margin-top:2px}
+.up{border-left:5px solid #c9b6e0;margin:12px 0;background:var(--card);border-radius:0 10px 10px 0;padding:12px 16px}
+.up.jj{border-color:#e0a6c0}.up.td{border-color:#c9a06a}.up.ts{border-color:#7aa6c9}.up.mg{border-color:#e0b46a}
+.up .who{font-weight:700;font-size:17px}
+.up.nocov{opacity:.7}
+.nav{margin:8px 0 4px}
+.foot{color:var(--dim);font-size:14px;margin-top:26px;border-top:1px dashed var(--line);padding-top:12px}
+.foot a{display:inline-block;margin:2px 10px 2px 0}
+</style></head><body><div class="wrap">
+<div class="nav"><a href="../bedrock.html">← 返回中国高端制造基石</a></div>
+<div class="top"><h1>迈瑞医疗</h1><span class="seg">医疗器械</span><span class='crown'>👑 皇冠</span></div>
+<div class="qbar" data-c="sz300760">
+<span><span class="lbl">现价</span><b id="px">—</b></span>
+<span><span class="lbl">涨跌</span><span id="chg">—</span></span>
+<span><span class="lbl">PE-TTM</span><span id="pe">—</span></span>
+<span><span class="lbl">总市值(亿)</span><span id="cap">—</span></span>
+<button class="rbtn" onclick="refresh()">↻ 刷新</button><span id="upd">加载中…</span>
+</div>
+
+<h2>一、财报与增长</h2><p>2025营收332.82亿(-9.4%,上市以来首降)/归母净利81.36亿(-30.3%)；国内医疗设备招采延后+反腐扰动+高基数三重拖累，毛利率仍约63%，ROE由历史25%+回落至约20%</p><p>2026Q1营收83.52亿(+1.39%)，扣非净利23.90亿(-7.76%)；国内39.03亿(-11.13%仍磨底)，国际44.49亿(+15.70%,欧洲>25%)；合同负债33.42亿(+50.18%)预示订单回补=筑底企稳信号</p><p>现金流与分红硬：2025经营现金流28.72亿(+111.31%)；2025全年现金分红53.10亿、派息率65.27%，2026Q1再派中期股利约15.16亿；研发投入39.29亿(占营收11.80%)</p>
+<h2>二、业务状况</h2><p>四大产线：体外诊断IVD 122.41亿(占36.78%,已成第一大产线)/生命信息与支持98.37亿(监护全球领先)/医学影像57.17亿/新兴业务53.78亿(+38.85%,首次纳入主营)</p><p>国际收入176.50亿、占比升至53%(过半)，发展中国家+15%、欧洲+25%；并购补链：控股惠泰医疗切入心血管电生理，收购德国DiaSys强化IVD原料与本地化产能；现居全球器械第23名，十年目标进前10</p>
+<h2>三、管理层</h2><p>创始人李西廷(董事长)+徐航掌舵，团队稳定、治理规范、无失信记录；分红纪律硬(派息率连续65%+)+持续高研发(11.8%)；正推进港股IPO(A+H)</p>
+<h2>四、竞争格局</h2><p>国内绝对第一；监护仪全球领先、接近垄断级份额；靠研发规模+全产品线+渠道+装机基数构筑国产替代护城河，同行难以整线复制</p><p>高端IVD/影像仍在追赶GPS(GE/飞利浦/西门子)与罗氏/雅培/丹纳赫；打法=国内国产替代+海外性价比×本地化渐进渗透高端，但欧美高端准入与地缘是天花板</p>
+
+<h2>王超七问评分</h2>
+<table><tr><th style="width:32%">维度</th><th style="width:14%">判定</th><th>依据</th></tr>
+<tr><td>1 商业模式</td><td class='v-passx'>Pass★</td><td>2B卖设备+高值耗材+IVD封闭试剂，装机后试剂/维保持续收费(razor-razorblade)，医院/经销付费，现金流与复购结构优</td></tr>
+<tr><td>2 市场空间</td><td class='v-passx'>Pass★</td><td>全球器械市场数千亿美元，迈瑞列全球第23、十年冲前10；国产替代+新兴市场+高端渗透三重空间，天花板远未到</td></tr>
+<tr><td>3 盈利逻辑</td><td class='v-pass'>Pass</td><td>毛利率约63%、历史ROE 25%+可持续，但2025净利-30%、ROE回落显示当前承压，盈利质量优但处周期低位，给Pass不给★</td></tr>
+<tr><td>4 护城河</td><td class='v-passx'>Pass★</td><td>研发39.29亿/占营收11.8%+全产品线+渠道+品牌+海量装机基数，国内难被单点替代，规模+技术双壁垒</td></tr>
+<tr><td>5 粘性</td><td class='v-pass'>Pass</td><td>IVD试剂/流水线封闭系统+维保锁定强粘性；但监护/影像属资本设备一次性采购，粘性弱于试剂，整体Pass</td></tr>
+<tr><td>6 致命风险</td><td class='v-pass'>Pass</td><td>集采压价/医疗反腐/海外地缘与潜在制裁是真实威胁，但可通过出海分散+全产品线对冲，无一夜致死项</td></tr>
+<tr><td>7 管理层</td><td class='v-passx'>Pass★</td><td>创始人稳定、治理规范无失信，分红纪律与研发投入双硬，产业整合(惠泰/DiaSys)与出海执行力强</td></tr></table>
+<div class="verdict"><b>终判：</b><b>全球王·A档</b>(规则制定者)—本土难替+海外53%且真赚钱(欧洲+25%)；但高端IVD/影像仍追赶GPS与罗氏系，监护线才是全球领先，故列A档下沿而非顶级规则制定者<br><br><b>2B 制造阶段判据：</b>2B医疗设备，无绝对技术垄断(仅监护接近垄断，IVD/影像追赶中)：判<b>早中期</b>。国内磨底(招采延后+反腐,国内-11%)属周期扰动，海外发力(国际+15.7%、欧洲+25%、新兴市场)是第二曲线；出海续命路径成立(GPS本地高价、迈瑞性价比+DiaSys本地化)，但需过政治坎(欧美高端准入/地缘)</div>
+
+<h2>估值三线 · 计算过程（第2步·瑕疵全量化）</h2>
+
+<div class="step"><span class="sn">1</span><b>完美 PE 起点 = 35 x</b><div class="sd">医疗器械全球龙头，研发规模+全产品线+试剂复购+长期赛道，历史成长期曾享40-70x；对标全球最优器械龙头(丹纳赫/罗氏系约28-30x)但迈瑞长期增速与国产替代弹性更高，给35x为天花板</div></div>
+<div class="step"><span class="sn">2</span><b>每股收益 EPS</b>
+<div class="sd">EPS-TTM：148.43 ÷ 22.96 = <b>6.46 元</b><br>NTM EPS：6.46 ×(1+10%)≈ <b>7.11 元</b><br><span class="dim">2026Q1营收已转正(+1.39%)、国际+15.7%、合同负债+50.18%预示订单回补，券商定调'筑底企稳'；国内磨底压制，取温和回升+10%(而非历史高增速外推)</span></div></div>
+<div class="step"><span class="sn">3</span><b>逐项瑕疵扣 PE（从 35 x 往下扣）</b>
+<table class="calc"><tr><th>瑕疵</th><th>类型</th><th>扣减</th><th>依据</th></tr><tr><td>集采/反腐</td><td>结构为主</td><td class='dx'>−6 x</td><td>2025国内业务大幅下滑、2026Q1国内仍-11.13%，反腐使招采延后属周期、集采压价属结构，合并主扣6x</td></tr><tr><td>海外汇率/地缘</td><td>周期(半扣)</td><td class='dx'>−2 x</td><td>国际占53%放大汇率敏感，叠加地缘/高端准入不确定，半扣2x</td></tr>
+<tr class="sum"><td><b>合计</b></td><td></td><td class="dx"><b>−8 x</b></td><td><b>扣后 PE = 35 − 8 = 27 x</b></td></tr></table></div>
+<div class="step"><span class="sn">4</span><b>三条线 = PE × NTM EPS</b>
+<table class="calc"><tr><th>线</th><th>算式</th><th>目标价</th><th>含义</th></tr><tr><td><b>超额卖出线</b></td><td>完美PE 35 × NTM 7.11</td><td class='pv'>¥249</td><td>泡沫区</td></tr><tr><td><b>正常买入线</b></td><td>扣后PE 27 × NTM 7.11</td><td class='pv'>¥192</td><td>A线</td></tr><tr><td><b>大底线</b></td><td>正常买入 192 × 0.7</td><td class='pv'>¥134</td><td>恐慌重仓</td></tr></table></div>
+<div class="val3">
+<div class="b sell"><div class="k">超额卖出线</div><div class="p">¥249</div></div>
+<div class="b buy"><div class="k">正常买入线(A线)</div><div class="p">¥192</div></div>
+<div class="b bot"><div class="k">大底线</div><div class="p">¥134</div></div>
+</div>
+<div class="step"><span class="sn">5</span><b>现价定位</b><div class="sd">现价148.43 ÷ NTM 7.11 = 前瞻PE <b>20.9 x</b> vs 扣后 27 x<br>→ 现价低于正常买入线(192)、高于大底线(134)，处偏低估区间；前瞻PE 20.9x已低于扣后27x，估值已消化磨底（非建仓指令）</div></div>
+
+
+<h2>四家 UP 主怎么看（原话/区间，不自算）</h2>
+<div class='up jj nocov'><div class='who'>江江小可爱</div><div>未覆盖——不自算。</div></div>
+<div class='up td nocov'><div class='who'>土豆(看财报)</div><div>未覆盖——不自算。</div></div>
+<div class='up ts nocov'><div class='who'>土斯土耶夫斯基</div><div>未覆盖——不自算。</div></div>
+<div class='up mg'><div class='who'>复利芒果</div><div>医疗器械龙头，全产品线渠道+数字化生态护城河，国际化收入过半质变；滚动PE约22倍处历史低位、经营现金流超百亿、分红65%+。<b>看好：国内磨底海外发力，若国内转正则中长期配置价值凸显。</b></div></div>
+
+<div class="foot"><b>数据来源：</b><a href='https://www.cls.cn/detail/2329475' target='_blank'>迈瑞2025年财报 国际业务占比53%(财联社)</a><a href='https://wallstreetcn.com/articles/3768782' target='_blank'>迈瑞2025营收降9.4%净利降30.3%(华尔街见闻)</a><a href='https://www.stcn.com/article/detail/3712930.html' target='_blank'>迈瑞2025年报三大产线(证券时报)</a><a href='https://stcn.com/article/detail/3849860.html' target='_blank'>迈瑞一季度营收83.52亿(证券时报)</a><br>行情 qt.gtimg.cn 实时 · 财报/竞争数据现搜带源 · 本页为事实与概率判断，非建仓指令。</div>
+</div>
+<script>
+function refresh(){
+ var box=document.querySelector('[data-c]');var code=box.getAttribute('data-c');
+ fetch('https://qt.gtimg.cn/q='+code).then(r=>r.arrayBuffer()).then(b=>{
+  var t=new TextDecoder('gbk').decode(b);var m=t.match(/"([^"]*)"/);if(!m)return;
+  var f=m[1].split('~');
+  document.getElementById('px').textContent=f[3];
+  var c=parseFloat(f[32]);var el=document.getElementById('chg');
+  el.textContent=(c>=0?'+':'')+f[32]+'%';el.style.color=c>=0?'#a23a3a':'#1f6b3a';
+  document.getElementById('pe').textContent=f[39];
+  document.getElementById('cap').textContent=f[45];
+  var d=f[30]||'';document.getElementById('upd').textContent='更新 '+(d.length>=12?d.slice(0,4)+'-'+d.slice(4,6)+'-'+d.slice(6,8)+' '+d.slice(8,10)+':'+d.slice(10,12):d);
+ }).catch(e=>{document.getElementById('upd').textContent='行情源暂不可用';});
+}
+refresh();setInterval(refresh,30000);
+</script></body></html>
