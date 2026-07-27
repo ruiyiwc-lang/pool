@@ -35,6 +35,9 @@ table.calc .dx{color:var(--sell);font-weight:700;white-space:nowrap}
 table.calc .pv{color:var(--buy);font-weight:700;font-size:17px;white-space:nowrap}
 table.calc tr.sum td{background:#eef3e2}
 .verdict{background:#e6f0e0;border:1px solid #bcd3a8;border-radius:12px;padding:14px 18px;font-size:18px;margin:12px 0}
+.prem{background:#fbf1e0;border:1px solid #e6cfa0;border-left:5px solid #c8942e;border-radius:12px;padding:10px 16px 12px;margin:12px 0}
+.prem>b{font-size:16px;color:#7a5a12}
+.prem .sd{margin-top:6px;font-size:15.5px;line-height:1.75}
 .expect{background:#eef1f7;border:1px solid #c6d0e4;border-radius:12px;padding:8px 16px 14px;margin:12px 0}
 .exrow{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed #cdd6e8}
 .exrow:last-child{border-bottom:none}
@@ -86,6 +89,7 @@ table.calc tr.sum td{background:#eef3e2}
 
 <div class="step"><span class="sn">法</span><b>估值法 = 期权/预期差（主业稳态锚）</b><div class="sd">主业稳态锚定价，机器人机电执行器尚无规模收入=VC式期权，不给确定性估值只做敏感度。</div></div>
 <div class="step"><span class="sn">1</span><b>计算锚（NTM EPS × 该类合理 PE → 三线）</b><div class="sd">阀件/热管理主业稳态25x × NTM EPS 1.23（2026 1.13/2027 1.32加权）→ 正常买入31；完美区超额卖出40；大底≈21。机器人执行器期权单列、不计入。</div></div>
+<div class="prem"><b>⚖ 为什么敢给这个 PE（溢价来源 × 风险敞口）</b><div class="sd"><b>溢价来源：</b>主业溢价25x=热管理全球第一+绑定特斯拉的合理稳态；机器人机电执行器(Optimus)是VC式期权，单列、不计入确定性估值。</div><div class="sd"><b>风险有多大：</b>风险中：现价已在25x稳态锚上多付约18%(把机器人期权price in)。若执行器迟迟不定点/不放量(50亿订单已辟谣)，则回吐这18%溢价。</div></div>
 <div class="step"><span class="sn">2</span><b>三条线</b>
 <div class="val3">
 <div class="b sell"><div class="k">超额卖出线</div><div class="p">¥40</div></div>
