@@ -1,0 +1,120 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>紫金矿业 · 基石深度</title><style>
+:root{--bg:#eef2e6;--card:#f7faf0;--ink:#26301f;--dim:#5a6b4d;--line:#d3ddc2;--accent:#2f7d4f;--warn:#8a5a1a;--buy:#1f6b3a;--sell:#a23a3a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.85 -apple-system,'PingFang SC','Microsoft YaHei',sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:22px 18px 80px}
+a{color:var(--accent)}
+.top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+h1{font-size:30px;margin:6px 0 2px}
+.seg{color:var(--dim);font-size:16px}
+.crown{background:#f3e4a8;color:#7a5c10;border:1px solid #e0cd7a;border-radius:6px;padding:1px 8px;font-size:15px}
+.qbar{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0 8px;display:flex;flex-wrap:wrap;gap:18px;align-items:baseline;font-size:17px}
+.qbar b{font-size:26px;color:var(--accent)}
+.qbar .lbl{color:var(--dim);font-size:14px;margin-right:4px}
+#upd{color:var(--dim);font-size:13px}
+.rbtn{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:5px 12px;font-size:14px;cursor:pointer}
+h2{font-size:22px;margin:30px 0 10px;padding-left:10px;border-left:5px solid var(--accent)}
+p{margin:10px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;background:var(--card);font-size:16px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#e3ead4}
+.v-passx{color:#1f6b3a;font-weight:700}
+.v-pass{color:#2f7d4f;font-weight:600}
+.v-warn{color:#8a5a1a;font-weight:600}
+.v-fail{color:#a23a3a;font-weight:700}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:12px 0}
+.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px 12px 46px;margin:10px 0;position:relative}
+.step>b{font-size:17px}
+.sn{position:absolute;left:12px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sd{margin-top:6px}
+.dim{color:var(--dim);font-size:14px}
+table.calc{margin:10px 0 2px;font-size:15px}
+table.calc .dx{color:var(--sell);font-weight:700;white-space:nowrap}
+table.calc .pv{color:var(--buy);font-weight:700;font-size:17px;white-space:nowrap}
+table.calc tr.sum td{background:#eef3e2}
+.verdict{background:#e6f0e0;border:1px solid #bcd3a8;border-radius:12px;padding:14px 18px;font-size:18px;margin:12px 0}
+.val3{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.val3 .b{flex:1;min-width:150px;border-radius:10px;padding:12px 14px;text-align:center;border:1px solid var(--line)}
+.val3 .sell{background:#f6e4e4;border-color:#e0bcbc}
+.val3 .buy{background:#e4f0e6;border-color:#bcd8c2}
+.val3 .bot{background:#eae4f0;border-color:#cbbce0}
+.val3 .k{font-size:14px;color:var(--dim)}
+.val3 .p{font-size:26px;font-weight:700;margin-top:2px}
+.up{border-left:5px solid #c9b6e0;margin:12px 0;background:var(--card);border-radius:0 10px 10px 0;padding:12px 16px}
+.up.jj{border-color:#e0a6c0}.up.td{border-color:#c9a06a}.up.ts{border-color:#7aa6c9}.up.mg{border-color:#e0b46a}
+.up .who{font-weight:700;font-size:17px}
+.up.nocov{opacity:.7}
+.nav{margin:8px 0 4px}
+.foot{color:var(--dim);font-size:14px;margin-top:26px;border-top:1px dashed var(--line);padding-top:12px}
+.foot a{display:inline-block;margin:2px 10px 2px 0}
+</style></head><body><div class="wrap">
+<div class="nav"><a href="../bedrock.html">← 返回中国高端制造基石</a></div>
+<div class="top"><h1>紫金矿业</h1><span class="seg">黄金/铜·全球矿业</span></div>
+<div class="qbar" data-c="sh601899">
+<span><span class="lbl">现价</span><b id="px">—</b></span>
+<span><span class="lbl">涨跌</span><span id="chg">—</span></span>
+<span><span class="lbl">PE-TTM</span><span id="pe">—</span></span>
+<span><span class="lbl">总市值(亿)</span><span id="cap">—</span></span>
+<button class="rbtn" onclick="refresh()">↻ 刷新</button><span id="upd">加载中…</span>
+</div>
+
+<h2>一、财报与增长</h2><p><b>2025</b>营收3491亿(+15%)、归母净利518亿(+62%)，矿产金90吨(+23%)、矿产铜109万吨、当量碳酸锂2.55万吨(从零到规模);全年分红160亿(+58%)。</p><p>2026Q1营收≈985亿(+24.8%)、归母净利201亿(+97.5%)首破200亿、利润总额316亿(+115%)，核心指标历史新高。</p><p>金铜量价:Q1金锭均价1089元/克(+65%)，黄金毛利率飙至69.6%;矿产铜卡莫阿权益产量腰斩(59,163→27,361吨);碳酸锂+10倍成新引擎。</p>
+<h2>二、业务状况</h2><p>全球金铜锂矿业巨头:刚果金卡莫阿-卡库拉铜矿、塞尔维亚、南美锂盐湖+西藏拉果错;2026指引矿产金105吨/铜120万吨/锂12万吨;分拆境外黄金板块赴港上市。</p><p>金价历史性突破为最直接催化(毛利率飙升)，铜受益全球电气化长期缺口，锂从零到规模化开辟新曲线——量价双轮但底层是大宗周期。</p>
+<h2>三、管理层</h2><p>陈景河(创始人/董事长,地质专家):以'地质找矿+逆周期并购'见长，海外扩张凶悍、兑现力强;分红连年提升(+58%);争议在高杠杆并购与海外资本开支节奏，需盯资产负债表。</p>
+<h2>四、竞争格局</h2><p>全球矿业对标必和必拓(BHP)/自由港:紫金铜C1成本处全球成本曲线左侧、金产量增速全球领先——成本领先是穿越周期真本事，但优质矿权可被BHP/自由港/嘉能可竞购，资源护城河强而非不可复制。</p>
+
+<h2>王超七问评分</h2>
+<table><tr><th style="width:32%">维度</th><th style="width:14%">判定</th><th>依据</th></tr>
+<tr><td>1 商业模式</td><td class='v-pass'>Pass</td><td>挖矿卖金/铜/锂大宗品，B端/交易所付市场价，赚'资源+低成本'价差，产品无差异价格他定</td></tr>
+<tr><td>2 市场空间</td><td class='v-pass'>Pass</td><td>金(避险+央行购金)、铜(电气化长缺口)、锂(EV/储能)三赛道天花板高，2026指引量增确定</td></tr>
+<tr><td>3 盈利逻辑</td><td class='v-passx'>Pass★</td><td>全球成本曲线左侧+金价高位，黄金毛利率冲至69.6%、ROE高企，量价齐升；当期高盈利含金价周期水分</td></tr>
+<tr><td>4 护城河</td><td class='v-pass'>Pass</td><td>资源储量+全球最低梯队成本+并购整合力=真实壁垒，但优质矿权可被巨头竞购，强而非不可复制</td></tr>
+<tr><td>5 粘性</td><td class='v-pass'>Pass</td><td>大宗品无客户粘性，'粘性'实为低成本带来的穿越周期存活力——熊市别人亏它仍赚</td></tr>
+<tr><td>6 致命风险</td><td class='v-warn'>黄灯</td><td>金铜价格周期下行(当期EPS靠金价+65%撑起)+海外地缘(刚果金安全/权益腰斩、资源国有化、双反)——真实'改变利润中枢'级但非猝死</td></tr>
+<tr><td>7 管理层</td><td class='v-pass'>Pass</td><td>陈景河地质专家+并购老手，兑现力与分红双升，无失信；唯高杠杆扩张与海外capex需监控</td></tr></table>
+<div class="verdict"><b>终判：</b><b>A档·全球王(周期属性，由旧B档上修)</b>：本土难替(国内金铜龙头)+全球能打且海外真金白银赚(卡莫阿/塞尔维亚/南美)=全球王；但命脉系于金铜价格中枢，黄灯锁顶——周期上行赚戴维斯双击，下行估值+盈利双杀，只能给周期股中枢PE，严禁按金价高点外推。<br><br><b>2B 制造阶段判据：</b>判据三条:①资源护城河(储量+成本曲线左侧)是否维持——盯C1成本与储量替代率;②金铜锂价格周期位置——当前金价历史高位,用正常化中枢而非高点定价;③海外地缘(刚果金权益腰斩/资源国有化+双反)——出海续命须过'强竞对+目标国政治狙击'两道坎。</div>
+
+<h2>估值三线 · 计算过程（第2步·瑕疵全量化）</h2>
+
+<div class="step"><span class="sn">1</span><b>完美 PE 起点 = 18 x</b><div class="sd">周期成长型矿业龙头:金铜锂产量CAGR高(金+23%全球第一梯队)+成本曲线左侧,应比静态巨头BHP/自由港(10-15x)享溢价;但周期股当期盈利含金价高位水分,绝不给消费股30x,18x为正常化中枢上限</div></div>
+<div class="step"><span class="sn">2</span><b>每股收益 EPS</b>
+<div class="sd">EPS-TTM：31.77 ÷ 13.69 = <b>2.32 元</b><br>NTM EPS：2.32 ×（1+12%）≈ <b>2.60 元</b><br><span class="dim">2026指引量增确定,但Q1金价已+65%基数极高、再上行空间有限;仅取+12%,避免把金价历史高点线性外推(周期股大忌)</span></div></div>
+<div class="step"><span class="sn">3</span><b>逐项瑕疵扣 PE（从 18 x 往下扣）</b>
+<table class="calc"><tr><th>瑕疵</th><th>类型</th><th>扣减</th><th>依据</th></tr><tr><td>金铜价格周期(EPS靠金价+65%)</td><td>周期(半扣)</td><td class='dx'>−4 x</td><td>26Q1金价+65%、黄金毛利率52.9%→69.6%，盈利含显著价格红利，均值回归风险</td></tr><tr><td>海外地缘/高资本开支</td><td>结构</td><td class='dx'>−3 x</td><td>卡莫阿权益产量腰斩、资源国有化+双反+高杠杆扩张capex</td></tr>
+<tr class="sum"><td><b>合计</b></td><td></td><td class="dx"><b>−7 x</b></td><td><b>扣后 PE = 18 − 7 = 11 x</b></td></tr></table></div>
+<div class="step"><span class="sn">4</span><b>三条线 = PE × NTM EPS</b>
+<table class="calc"><tr><th>线</th><th>算式</th><th>目标价</th><th>含义</th></tr><tr><td><b>超额卖出线</b></td><td>完美PE 18 × NTM 2.60</td><td class='pv'>¥46.8</td><td>泡沫区</td></tr><tr><td><b>正常买入线</b></td><td>扣后PE 11 × NTM 2.60</td><td class='pv'>¥28.6</td><td>A线</td></tr><tr><td><b>大底线</b></td><td>正常买入 28.6×0.7</td><td class='pv'>¥20.0</td><td>恐慌重仓</td></tr></table></div>
+<div class="val3">
+<div class="b sell"><div class="k">超额卖出线</div><div class="p">¥46.8</div></div>
+<div class="b buy"><div class="k">正常买入线(A线)</div><div class="p">¥28.6</div></div>
+<div class="b bot"><div class="k">大底线</div><div class="p">¥20.0</div></div>
+</div>
+<div class="step"><span class="sn">5</span><b>现价定位</b><div class="sd">现价31.77 ÷ NTM 2.60 = 前瞻PE <b>12.2 x</b> vs 扣后 11 x<br>→前瞻PE12.2x略高于中枢11x、现价高于A线28.6约11%，未进A档；金价高位期尤忌追高（非建仓指令）</div></div>
+
+
+<h2>四家 UP 主怎么看（原话/区间，不自算）</h2>
+<div class='up jj'><div class='who'>江江小可爱</div><div>合理市值区间反算：<b>买 ¥18.43 / 卖 ¥35.2</b>；当前<b>区间内</b>。</div></div>
+<div class='up td'><div class='who'>土豆(看财报)</div><div><b>「买在无人问津处，超预期只是起点」</b>——顶级好公司，但需自判是否周期顶；土豆不信而等。</div></div>
+<div class='up ts nocov'><div class='who'>土斯土耶夫斯基</div><div>未覆盖——不自算。</div></div>
+<div class='up mg'><div class='who'>复利芒果</div><div>铜金为主多金属并举，世界级资源储备叠加逆周期并购定力构筑护城河；前三季归母净利+55%、滚动 PE 约 21.7 倍、负债率 53% 尚稳健。<b>中性偏正面：欣赏战略与执行，但价格周期与海外风险超能力圈需敬畏。</b></div></div>
+
+<div class="foot"><b>数据来源：</b><a href='https://www.zjky.cn/news/news-detail-122638.htm' target='_blank'>紫金2025归母净利518亿</a><a href='https://wallstreetcn.com/articles/3770515' target='_blank'>26Q1营收逼近千亿净利翻番</a><a href='https://stcn.com/article/detail/3774743.html' target='_blank'>26Q1利润+98%锂成核心引擎</a><a href='https://www.zjky.cn/news/news-detail-121482.htm' target='_blank'>高盛:紫金全球矿业迅速崛起</a><br>行情 qt.gtimg.cn 实时 · 财报/竞争数据现搜带源 · 本页为事实与概率判断，非建仓指令。</div>
+</div>
+<script>
+function refresh(){
+ var box=document.querySelector('[data-c]');var code=box.getAttribute('data-c');
+ fetch('https://qt.gtimg.cn/q='+code).then(r=>r.arrayBuffer()).then(b=>{
+  var t=new TextDecoder('gbk').decode(b);var m=t.match(/"([^"]*)"/);if(!m)return;
+  var f=m[1].split('~');
+  document.getElementById('px').textContent=f[3];
+  var c=parseFloat(f[32]);var el=document.getElementById('chg');
+  el.textContent=(c>=0?'+':'')+f[32]+'%';el.style.color=c>=0?'#a23a3a':'#1f6b3a';
+  document.getElementById('pe').textContent=f[39];
+  document.getElementById('cap').textContent=f[45];
+  var d=f[30]||'';document.getElementById('upd').textContent='更新 '+(d.length>=12?d.slice(0,4)+'-'+d.slice(4,6)+'-'+d.slice(6,8)+' '+d.slice(8,10)+':'+d.slice(10,12):d);
+ }).catch(e=>{document.getElementById('upd').textContent='行情源暂不可用';});
+}
+refresh();setInterval(refresh,30000);
+</script></body></html>
