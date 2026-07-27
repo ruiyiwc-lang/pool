@@ -1,11 +1,11 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>个人股票池 · 七问重评</title>
+<title>核心股票池 · 聚焦潜力</title>
 <style>
 :root{--bg:#eef2e6;--card:#f8faf3;--card2:#e7edda;--line:#d2dac6;--txt:#2a332a;--sub:#566150;--dim:#879480;--acc:#3567a0;--up:#c0392b;--down:#2f8f5b}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.5;padding:24px 14px 70px;font-size:18px}
-.wrap{max-width:1200px;margin:0 auto}
+.wrap{max-width:1180px;margin:0 auto}
 h1{font-size:25px;font-weight:800;color:#233022}
 .statusbar{display:flex;gap:14px;align-items:center;margin-top:10px;flex-wrap:wrap}
 #upd{font-size:14px;color:var(--sub)} #upd .live{color:var(--down);font-weight:700} #upd .fail{color:var(--up)}
@@ -18,274 +18,207 @@ thead th{background:#e3ead6;color:#4a5644;font-weight:700;font-size:13px;text-al
 th.r,td.q{text-align:right}
 tbody td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
 tr:hover td{background:var(--card2)}
-tr.grp td{font-size:15px;padding:8px 12px;border-bottom:2px solid var(--line)}
-.g-s td{background:#e6d8f0} .g-s2 td{background:#efe4d2} .g-a td{background:#e2f0e6} .g-b td{background:#eef3e2} .g-w td{background:#f0e2e2}
+tr.grp td{font-size:15px;padding:9px 12px;border-bottom:2px solid var(--line)}
+.g-sea td{background:#e2f0f0} .g-sw td{background:#e8e2f2} .g-dc td{background:#f6ecd9} .g-ele td{background:#ececec}
 .nm{font-weight:800;font-size:16px;color:var(--acc);text-decoration:none} .code{color:var(--dim);font-size:11.5px;margin-left:6px}
+.gd{font-size:11px;font-weight:800;padding:1px 7px;border-radius:5px;margin-left:6px;border:1px solid}
+.gd-s{background:#e6d8f0;color:#6a3b9a;border-color:#cbb6e0} .gd-a{background:#e2f0e6;color:#1f7a42;border-color:#a9d6b6} .gd-b{background:#eef3e2;color:#5a7a2a;border-color:#cdd9b0} .gd-w{background:#f0e2e2;color:#9a3b3b;border-color:#e2bcbc}
 .seg{font-size:12.5px;color:var(--sub);margin-top:3px}
 .px{font-weight:800;font-size:16px} .chg{display:block;font-size:12px;font-weight:700} .up{color:var(--up)} .down{color:var(--down)}
 .tp{white-space:nowrap;font-size:12.5px;font-weight:700;line-height:1.5} .tp-s{color:#b23434} .tp-b{color:#1f7a42} .tp-d{color:#7a52a3}
 .vf{font-size:12.5px;font-weight:800;padding:3px 10px;border-radius:20px;white-space:nowrap;border:1px solid}
 .vf-buy{background:#e2f2e6;color:#1f7a42;border-color:#a9d6b6} .vf-fair{background:#fbf3dc;color:#8a6a15;border-color:#e6d29a}
 .vf-exp{background:#fbe9d6;color:#a5601a;border-color:#eccaa0} .vf-bub{background:#f7dede;color:#b23434;border-color:#e6b3b3} .vf-watch{background:#e6e6e6;color:#555;border-color:#c9c9c9}
-.cell{font-size:13px;color:var(--txt);min-width:200px;line-height:1.5}
+.cell{font-size:13px;color:var(--txt);min-width:230px;line-height:1.5}
 .foot{color:var(--sub);font-size:13.5px;margin-top:22px;line-height:1.9;border-top:2px solid var(--line);padding-top:14px}
 </style></head><body><div class="wrap">
-<h1>个人股票池 · 七问重评（可点开阅读）</h1>
+<h1>核心股票池 · 聚焦潜力（25 只）</h1>
 <div class="statusbar"><span id="upd">加载中…</span><button class="rbtn" onclick="refresh()">↻ 刷新行情</button>
-<span class="nav"><a href="./bedrock.html">制造基石</a><a href="./index.html">← 老S/A/B页</a></span></div>
-<div class="ruler"><b>说明</b>:本表用<b>王超七问深挖</b>重评级(取代旧 UP 共识粗分),每只<b>点标的名📄可打开完整详情页</b>(四维尽调+七问+估值三线五步+四家UP原话),与制造基石页同一套标准。<b>段位</b>=生意成色(S/S-/A/A-/B+/B/观察),独立的<b>估值灯</b>=现在能不能买:<span class="vf vf-buy">买区</span>/<span class="vf vf-fair">合理</span>/<span class="vf vf-exp">偏贵</span>/<span class="vf vf-bub">泡沫</span>/<span class="vf vf-watch">观察</span>;<b>目标价</b>=各自详情页算出的卖/买/底三线(季度财报后重算)。行情实时,均为事实定位、非投资建议。</div>
+<span class="nav"><a href="./bedrock.html">制造基石</a><a href="./index.html">老S/A/B页</a></span></div>
+<div class="ruler"><b>只留 S + A + B 里有潜力的（已砍掉 B 里无潜力 10 只）</b>。按<b>潜力型</b>分组：主业大海🌊(赛道越做越大)/换赛道转型🔀(成则重生)=核心；打折⚠(透支/存疑/观察)=慎；大象🏠周期🏞️(收租/周期·无成长)=下一刀候选。
+点标的名 📄 进详情页(四维+七问+估值三线+市场预期差+四家UP)。<b>估值灯</b>=现在贵不贵(<span class="vf vf-buy">买区</span>/<span class="vf vf-fair">合理</span>/<span class="vf vf-exp">偏贵</span>/<span class="vf vf-bub">泡沫</span>/<span class="vf vf-watch">观察</span>)；<b>括号里是兑现概率</b>。行情实时·非投资建议。</div>
 <div class="twrap"><table>
-<thead><tr><th>标的 · 细分</th><th class="r">现价</th><th>目标价 卖/买/底</th><th class="r">PE</th><th>估值灯</th><th>段位看点</th></tr></thead>
-<tbody><tr class="grp g-s"><td colspan="6"><b>S 档</b> · 1 只</td></tr><tr>
-<td class="l"><a class="nm" href="./det/hk00700.html">腾讯控股 📄</a><span class="code">hk00700</span><div class="seg">社交/游戏/广告/金融科技/AI·S级锚</div></td>
-<td class="q" data-c="hk00700" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 HK$803</div><div class="tp-b">买 HK$525</div><div class="tp-d">底 HK$368</div></td>
-<td class="q" data-c="hk00700" data-f="pe">–</td>
-<td><span class="vf vf-buy">买区</span></td>
-<td class="cell">社交垄断·国内定价权天花板</td>
-</tr><tr class="grp g-s2"><td colspan="6"><b>S- 档</b> · 1 只</td></tr><tr>
-<td class="l"><a class="nm" href="./det/sh600519.html">贵州茅台 📄</a><span class="code">sh600519</span><div class="seg">高端白酒·消费定价权</div></td>
-<td class="q" data-c="sh600519" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 ¥2040</div><div class="tp-b">买 ¥1190</div><div class="tp-d">底 ¥833</div></td>
-<td class="q" data-c="sh600519" data-f="pe">–</td>
-<td><span class="vf vf-exp">偏贵</span></td>
-<td class="cell">赛道见顶的定价权王·批价腰斩(S→S-)</td>
-</tr><tr class="grp g-a"><td colspan="6"><b>A 档</b> · 15 只</td></tr><tr>
-<td class="l"><a class="nm" href="./det/sh600660.html">福耀玻璃 📄</a><span class="code">sh600660</span><div class="seg">汽车玻璃·全球龙头</div></td>
-<td class="q" data-c="sh600660" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 ¥83.6</div><div class="tp-b">买 ¥60.8</div><div class="tp-d">底 ¥42.6</div></td>
-<td class="q" data-c="sh600660" data-f="pe">–</td>
-<td><span class="vf vf-buy">买区</span></td>
-<td class="cell">汽车玻璃全球王·👑皇冠</td>
-</tr><tr>
-<td class="l"><a class="nm" href="./det/sz300760.html">迈瑞医疗 📄</a><span class="code">sz300760</span><div class="seg">医疗器械</div></td>
+<thead><tr><th>标的·段位·细分</th><th class="r">现价</th><th>目标价 卖/买/底</th><th class="r">PE</th><th>估值灯</th><th>潜力型 · 看点 · 兑现概率</th></tr></thead>
+<tbody><tr class="grp g-sea"><td colspan="6"><b>🌊 主业大海 · 赛道越做越大（核心潜力）</b> · 12 只</td></tr><tr>
+<td class="l"><a class="nm" href="./det/sz300760.html">迈瑞医疗 📄</a><span class="gd gd-a">A</span><span class="code">sz300760</span><div class="seg">医疗器械</div></td>
 <td class="q" data-c="sz300760" data-f="px"><span class="px">–</span><span class="chg"></span></td>
 <td class="tp"><div class="tp-s">卖 ¥249</div><div class="tp-b">买 ¥192</div><div class="tp-d">底 ¥134</div></td>
 <td class="q" data-c="sz300760" data-f="pe">–</td>
 <td><span class="vf vf-buy">买区</span></td>
-<td class="cell">医疗器械全球王·👑皇冠</td>
+<td class="cell">🌊全球器械·国产替代+海外53%已兑现（兑现概率 中高）</td>
 </tr><tr>
-<td class="l"><a class="nm" href="./det/sz300750.html">宁德时代 📄</a><span class="code">sz300750</span><div class="seg">动力/储能电池</div></td>
+<td class="l"><a class="nm" href="./det/sz300750.html">宁德时代 📄</a><span class="gd gd-a">A</span><span class="code">sz300750</span><div class="seg">动力/储能电池</div></td>
 <td class="q" data-c="sz300750" data-f="px"><span class="px">–</span><span class="chg"></span></td>
 <td class="tp"><div class="tp-s">卖 ¥627</div><div class="tp-b">买 ¥448</div><div class="tp-d">底 ¥314</div></td>
 <td class="q" data-c="sz300750" data-f="pe">–</td>
 <td><span class="vf vf-buy">买区</span></td>
-<td class="cell">动力/储能全球王·⚠后期挤出</td>
+<td class="cell">🌊储能大海+🔀LRS收租·动力已后期（中高）</td>
 </tr><tr>
-<td class="l"><a class="nm" href="./det/sz002594.html">比亚迪 📄</a><span class="code">sz002594</span><div class="seg">新能源车+电池+电子(垂直整合)</div></td>
+<td class="l"><a class="nm" href="./det/sz002594.html">比亚迪 📄</a><span class="gd gd-a">A</span><span class="code">sz002594</span><div class="seg">新能源车+电池+电子(垂直整合)</div></td>
 <td class="q" data-c="sz002594" data-f="px"><span class="px">–</span><span class="chg"></span></td>
 <td class="tp"><div class="tp-s">卖 ¥115.5</div><div class="tp-b">买 ¥82.5</div><div class="tp-d">底 ¥57.75</div></td>
 <td class="q" data-c="sz002594" data-f="pe">–</td>
 <td><span class="vf vf-exp">偏贵</span></td>
-<td class="cell">新能源车全球王·智驾黄灯</td>
+<td class="cell">🌊全球新能源出海+🔀智驾·海外+145%已兑现（中高）</td>
 </tr><tr>
-<td class="l"><a class="nm" href="./det/hk09992.html">泡泡玛特 📄</a><span class="code">hk09992</span><div class="seg">潮玩IP·全球化品类定义者</div></td>
+<td class="l"><a class="nm" href="./det/hk09992.html">泡泡玛特 📄</a><span class="gd gd-a">A</span><span class="code">hk09992</span><div class="seg">潮玩IP·全球化品类定义者</div></td>
 <td class="q" data-c="hk09992" data-f="px"><span class="px">–</span><span class="chg"></span></td>
 <td class="tp"><div class="tp-s">卖 HK$384</div><div class="tp-b">买 HK$185.6</div><div class="tp-d">底 HK$130</div></td>
 <td class="q" data-c="hk09992" data-f="pe">–</td>
 <td><span class="vf vf-buy">买区</span></td>
-<td class="cell">潮玩品类定义者·IP周期黄灯</td>
+<td class="cell">🌊全球潮玩渗透极低·赌IP系统能否持续（中·VC赌注）</td>
 </tr><tr>
-<td class="l"><a class="nm" href="./det/sh603259.html">药明康德 📄</a><span class="code">sh603259</span><div class="seg">CXO·CRDMO一体化</div></td>
+<td class="l"><a class="nm" href="./det/sh603259.html">药明康德 📄</a><span class="gd gd-a">A</span><span class="code">sh603259</span><div class="seg">CXO·CRDMO一体化</div></td>
 <td class="q" data-c="sh603259" data-f="px"><span class="px">–</span><span class="chg"></span></td>
 <td class="tp"><div class="tp-s">卖 ¥184.6</div><div class="tp-b">买 ¥92.3</div><div class="tp-d">底 ¥64.6</div></td>
 <td class="q" data-c="sh603259" data-f="pe">–</td>
 <td><span class="vf vf-exp">偏贵</span></td>
-<td class="cell">CXO全球龙头·BIOSECURE地缘黄灯</td>
+<td class="cell">🌊全球CXO+GLP-1·卡BIOSECURE地缘（中）</td>
 </tr><tr>
-<td class="l"><a class="nm" href="./det/hk09988.html">阿里巴巴-W 📄</a><span class="code">hk09988</span><div class="seg">半2B:电商2C+云智能2B/AI</div></td>
-<td class="q" data-c="hk09988" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 HK$143.0</div><div class="tp-b">买 HK$94.25</div><div class="tp-d">底 HK$65.98</div></td>
-<td class="q" data-c="hk09988" data-f="pe">–</td>
-<td><span class="vf vf-exp">偏贵</span></td>
-<td class="cell">云AI重估·电商份额流失黄灯</td>
-</tr><tr>
-<td class="l"><a class="nm" href="./det/sh601899.html">紫金矿业 📄</a><span class="code">sh601899</span><div class="seg">黄金/铜·全球矿业</div></td>
+<td class="l"><a class="nm" href="./det/sh601899.html">紫金矿业 📄</a><span class="gd gd-a">A</span><span class="code">sh601899</span><div class="seg">黄金/铜·全球矿业</div></td>
 <td class="q" data-c="sh601899" data-f="px"><span class="px">–</span><span class="chg"></span></td>
 <td class="tp"><div class="tp-s">卖 ¥46.8</div><div class="tp-b">买 ¥28.6</div><div class="tp-d">底 ¥20.0</div></td>
 <td class="q" data-c="sh601899" data-f="pe">–</td>
 <td><span class="vf vf-exp">偏贵</span></td>
-<td class="cell">全球矿业王·周期(升自B)</td>
+<td class="cell">🌊全球金铜+锂新曲线·周期属性（产量高/利润续爆中低）</td>
 </tr><tr>
-<td class="l"><a class="nm" href="./det/sh600309.html">万华化学 📄</a><span class="code">sh600309</span><div class="seg">MDI/聚氨酯</div></td>
-<td class="q" data-c="sh600309" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 ¥102.2</div><div class="tp-b">买 ¥71.0</div><div class="tp-d">底 ¥49.7</div></td>
-<td class="q" data-c="sh600309" data-f="pe">–</td>
-<td><span class="vf vf-fair">合理</span></td>
-<td class="cell">MDI全球王·化工周期黄灯</td>
-</tr><tr>
-<td class="l"><a class="nm" href="./det/sh600031.html">三一重工 📄</a><span class="code">sh600031</span><div class="seg">工程机械</div></td>
-<td class="q" data-c="sh600031" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 ¥16.5</div><div class="tp-b">买 ¥11.3</div><div class="tp-d">底 ¥7.9</div></td>
-<td class="q" data-c="sh600031" data-f="pe">–</td>
-<td><span class="vf vf-bub">泡沫</span></td>
-<td class="cell">挖机全球王·周期已泡沫</td>
-</tr><tr>
-<td class="l"><a class="nm" href="./det/hk01882.html">海天国际 📄</a><span class="code">hk01882</span><div class="seg">注塑机</div></td>
-<td class="q" data-c="hk01882" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 HK$37.5</div><div class="tp-b">买 HK$22.5</div><div class="tp-d">底 HK$15.75</div></td>
-<td class="q" data-c="hk01882" data-f="pe">–</td>
-<td><span class="vf vf-buy">买区</span></td>
-<td class="cell">注塑机全球销量第一·周期便宜区</td>
-</tr><tr>
-<td class="l"><a class="nm" href="./det/hk00669.html">创科实业 📄</a><span class="code">hk00669</span><div class="seg">无绳电动工具</div></td>
+<td class="l"><a class="nm" href="./det/hk00669.html">创科实业 📄</a><span class="gd gd-a">A</span><span class="code">hk00669</span><div class="seg">无绳电动工具</div></td>
 <td class="q" data-c="hk00669" data-f="px"><span class="px">–</span><span class="chg"></span></td>
 <td class="tp"><div class="tp-s">卖 HK$166.8</div><div class="tp-b">买 HK$127.9</div><div class="tp-d">底 HK$89.5</div></td>
 <td class="q" data-c="hk00669" data-f="pe">–</td>
 <td><span class="vf vf-fair">合理</span></td>
-<td class="cell">无绳工具全球王·关税黄灯</td>
+<td class="cell">🌊无绳工具专业端持续抢份额（高·已兑现）</td>
 </tr><tr>
-<td class="l"><a class="nm" href="./det/sz002050.html">三花智控 📄</a><span class="code">sz002050</span><div class="seg">制冷/汽车热管理</div></td>
-<td class="q" data-c="sz002050" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 ¥39.2</div><div class="tp-b">买 ¥25.8</div><div class="tp-d">底 ¥18.0</div></td>
-<td class="q" data-c="sz002050" data-f="pe">–</td>
-<td><span class="vf vf-bub">泡沫</span></td>
-<td class="cell">阀件全球王·机器人期权透支</td>
-</tr><tr>
-<td class="l"><a class="nm" href="./det/sh688008.html">澜起科技 📄</a><span class="code">sh688008</span><div class="seg">半导体·内存接口芯片(技术垄断收费站)</div></td>
-<td class="q" data-c="sh688008" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 ¥170.5</div><div class="tp-b">买 ¥80.6</div><div class="tp-d">底 ¥56.4</div></td>
-<td class="q" data-c="sh688008" data-f="pe">–</td>
-<td><span class="vf vf-bub">泡沫</span></td>
-<td class="cell">内存接口收费站·PE109泡沫</td>
-</tr><tr>
-<td class="l"><a class="nm" href="./det/sz300274.html">阳光电源 📄</a><span class="code">sz300274</span><div class="seg">逆变器/储能</div></td>
-<td class="q" data-c="sz300274" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 ¥124</div><div class="tp-b">买 ¥87</div><div class="tp-d">底 ¥61</div></td>
-<td class="q" data-c="sz300274" data-f="pe">–</td>
-<td><span class="vf vf-exp">偏贵</span></td>
-<td class="cell">逆变器/储能·A?存疑(被卷)</td>
-</tr><tr class="grp g-a"><td colspan="6"><b>A- 档</b> · 1 只</td></tr><tr>
-<td class="l"><a class="nm" href="./det/sz000333.html">美的集团 📄</a><span class="code">sz000333</span><div class="seg">白电/2B工业科技</div></td>
-<td class="q" data-c="sz000333" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 ¥124.0</div><div class="tp-b">买 ¥86.8</div><div class="tp-d">底 ¥60.8</div></td>
-<td class="q" data-c="sz000333" data-f="pe">–</td>
-<td><span class="vf vf-buy">买区</span></td>
-<td class="cell">白电全球王雏形(升自B)</td>
-</tr><tr class="grp g-b"><td colspan="6"><b>B+ 档</b> · 4 只</td></tr><tr>
-<td class="l"><a class="nm" href="./det/sz002028.html">思源电气 📄</a><span class="code">sz002028</span><div class="seg">输配电设备·出海</div></td>
-<td class="q" data-c="sz002028" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 ¥186.9</div><div class="tp-b">买 ¥122.8</div><div class="tp-d">底 ¥85.98</div></td>
-<td class="q" data-c="sz002028" data-f="pe">–</td>
-<td><span class="vf vf-exp">偏贵</span></td>
-<td class="cell">输配电出海成长·PE39偏贵</td>
-</tr><tr>
-<td class="l"><a class="nm" href="./det/sh688271.html">联影医疗 📄</a><span class="code">sh688271</span><div class="seg">医学影像</div></td>
+<td class="l"><a class="nm" href="./det/sh688271.html">联影医疗 📄</a><span class="gd gd-b">B+</span><span class="code">sh688271</span><div class="seg">医学影像</div></td>
 <td class="q" data-c="sh688271" data-f="px"><span class="px">–</span><span class="chg"></span></td>
 <td class="tp"><div class="tp-s">卖 ¥122.4</div><div class="tp-b">买 ¥84.3</div><div class="tp-d">底 ¥59.0</div></td>
 <td class="q" data-c="sh688271" data-f="pe">–</td>
 <td><span class="vf vf-exp">偏贵</span></td>
-<td class="cell">高端影像本土王冲全球·早期</td>
+<td class="cell">🌊高端影像技术门槛(自研5T/PET)·海外+51%（中）</td>
 </tr><tr>
-<td class="l"><a class="nm" href="./det/sz000157.html">中联重科 📄</a><span class="code">sz000157</span><div class="seg">工程机械</div></td>
-<td class="q" data-c="sz000157" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 ¥9.28</div><div class="tp-b">买 ¥6.96</div><div class="tp-d">底 ¥4.87</div></td>
-<td class="q" data-c="sz000157" data-f="pe">–</td>
-<td><span class="vf vf-fair">合理</span></td>
-<td class="cell">塔机单项全球王·周期</td>
-</tr><tr>
-<td class="l"><a class="nm" href="./det/hk02285.html">泉峰控股 📄</a><span class="code">hk02285</span><div class="seg">电动工具/OPE</div></td>
+<td class="l"><a class="nm" href="./det/hk02285.html">泉峰控股 📄</a><span class="gd gd-b">B+</span><span class="code">hk02285</span><div class="seg">电动工具/OPE</div></td>
 <td class="q" data-c="hk02285" data-f="px"><span class="px">–</span><span class="chg"></span></td>
 <td class="tp"><div class="tp-s">卖 HK$35.2</div><div class="tp-b">买 HK$24.6</div><div class="tp-d">底 HK$17.2</div></td>
 <td class="q" data-c="hk02285" data-f="pe">–</td>
 <td><span class="vf vf-buy">买区</span></td>
-<td class="cell">OPE全球第二·周期反转初期</td>
-</tr><tr class="grp g-b"><td colspan="6"><b>B 档</b> · 12 只</td></tr><tr>
-<td class="l"><a class="nm" href="./det/sh603288.html">海天味业 📄</a><span class="code">sh603288</span><div class="seg">调味品·品类王</div></td>
-<td class="q" data-c="sh603288" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 ¥48.3</div><div class="tp-b">买 ¥36.6</div><div class="tp-d">底 ¥25.6</div></td>
-<td class="q" data-c="sh603288" data-f="pe">–</td>
-<td><span class="vf vf-fair">合理</span></td>
-<td class="cell">调味品品类王·出海弱</td>
+<td class="cell">🌊OPE电动化·EGO份额10→17%·周期反转初期（中·小盘）</td>
 </tr><tr>
-<td class="l"><a class="nm" href="./det/hk09633.html">农夫山泉 📄</a><span class="code">hk09633</span><div class="seg">包装水/饮料·品类王</div></td>
-<td class="q" data-c="hk09633" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 HK$63.0</div><div class="tp-b">买 HK$41.4</div><div class="tp-d">底 HK$29.0</div></td>
-<td class="q" data-c="hk09633" data-f="pe">–</td>
-<td><span class="vf vf-buy">买区</span></td>
-<td class="cell">包装水定价权·无糖茶见顶</td>
+<td class="l"><a class="nm" href="./det/sz002028.html">思源电气 📄</a><span class="gd gd-b">B+</span><span class="code">sz002028</span><div class="seg">输配电设备·出海</div></td>
+<td class="q" data-c="sz002028" data-f="px"><span class="px">–</span><span class="chg"></span></td>
+<td class="tp"><div class="tp-s">卖 ¥186.9</div><div class="tp-b">买 ¥122.8</div><div class="tp-d">底 ¥85.98</div></td>
+<td class="q" data-c="sz002028" data-f="pe">–</td>
+<td><span class="vf vf-exp">偏贵</span></td>
+<td class="cell">🌊电网+AI数据中心变压器出海·海外+85%（中·PE39贵）</td>
 </tr><tr>
-<td class="l"><a class="nm" href="./det/sz002352.html">顺丰控股 📄</a><span class="code">sz002352</span><div class="seg">物流·直营龙头</div></td>
-<td class="q" data-c="sz002352" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 ¥53.5</div><div class="tp-b">买 ¥36.5</div><div class="tp-d">底 ¥25.5</div></td>
-<td class="q" data-c="sz002352" data-f="pe">–</td>
-<td><span class="vf vf-buy">买区</span></td>
-<td class="cell">物流护城河★·重资产低净利</td>
-</tr><tr>
-<td class="l"><a class="nm" href="./det/sz002415.html">海康威视 📄</a><span class="code">sz002415</span><div class="seg">安防/AIoT·全球龙头(存量)</div></td>
-<td class="q" data-c="sz002415" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 ¥63.3</div><div class="tp-b">买 ¥42.2</div><div class="tp-d">底 ¥29.5</div></td>
-<td class="q" data-c="sz002415" data-f="pe">–</td>
-<td><span class="vf vf-buy">买区</span></td>
-<td class="cell">安防全球第一·美实体清单卡美欧</td>
-</tr><tr>
-<td class="l"><a class="nm" href="./det/sh600563.html">法拉电子 📄</a><span class="code">sh600563</span><div class="seg">薄膜电容</div></td>
-<td class="q" data-c="sh600563" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 ¥175</div><div class="tp-b">买 ¥128</div><div class="tp-d">底 ¥90</div></td>
-<td class="q" data-c="sh600563" data-f="pe">–</td>
-<td><span class="vf vf-fair">合理</span></td>
-<td class="cell">薄膜电容本土王·下游降速</td>
-</tr><tr>
-<td class="l"><a class="nm" href="./det/sh605117.html">德业股份 📄</a><span class="code">sh605117</span><div class="seg">储能/微逆</div></td>
+<td class="l"><a class="nm" href="./det/sh605117.html">德业股份 📄</a><span class="gd gd-b">B</span><span class="code">sh605117</span><div class="seg">储能/微逆</div></td>
 <td class="q" data-c="sh605117" data-f="px"><span class="px">–</span><span class="chg"></span></td>
 <td class="tp"><div class="tp-s">卖 ¥129</div><div class="tp-b">买 ¥86</div><div class="tp-d">底 ¥60</div></td>
 <td class="q" data-c="sh605117" data-f="pe">–</td>
 <td><span class="vf vf-fair">合理</span></td>
-<td class="cell">户储新兴市场错位·价格战苗头</td>
+<td class="cell">🌊储能新兴市场错位领先·价格战苗头（中）</td>
 </tr><tr>
-<td class="l"><a class="nm" href="./det/sz000425.html">徐工机械 📄</a><span class="code">sz000425</span><div class="seg">工程机械</div></td>
-<td class="q" data-c="sz000425" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 ¥9.15</div><div class="tp-b">买 ¥6.71</div><div class="tp-d">底 ¥4.70</div></td>
-<td class="q" data-c="sz000425" data-f="pe">–</td>
-<td><span class="vf vf-exp">偏贵</span></td>
-<td class="cell">起重机全球第四·低毛利高负债</td>
-</tr><tr>
-<td class="l"><a class="nm" href="./det/sh600089.html">特变电工 📄</a><span class="code">sh600089</span><div class="seg">变压器/特高压+多晶硅</div></td>
+<td class="l"><a class="nm" href="./det/sh600089.html">特变电工 📄</a><span class="gd gd-b">B</span><span class="code">sh600089</span><div class="seg">变压器/特高压+多晶硅</div></td>
 <td class="q" data-c="sh600089" data-f="px"><span class="px">–</span><span class="chg"></span></td>
 <td class="tp"><div class="tp-s">卖 ¥31.7</div><div class="tp-b">买 ¥23.0</div><div class="tp-d">底 ¥16.1</div></td>
 <td class="q" data-c="sh600089" data-f="pe">–</td>
 <td><span class="vf vf-fair">合理</span></td>
-<td class="cell">变压器出海+多晶硅周期底</td>
+<td class="cell">🌊变压器出海+68%·多晶硅周期底拖累（中）</td>
+</tr><tr class="grp g-sw"><td colspan="6"><b>🔀 换赛道转型 · 成则重生败则尘埃（核心潜力）</b> · 2 只</td></tr><tr>
+<td class="l"><a class="nm" href="./det/hk09988.html">阿里巴巴-W 📄</a><span class="gd gd-a">A</span><span class="code">hk09988</span><div class="seg">半2B:电商2C+云智能2B/AI</div></td>
+<td class="q" data-c="hk09988" data-f="px"><span class="px">–</span><span class="chg"></span></td>
+<td class="tp"><div class="tp-s">卖 HK$143.0</div><div class="tp-b">买 HK$94.25</div><div class="tp-d">底 HK$65.98</div></td>
+<td class="q" data-c="hk09988" data-f="pe">–</td>
+<td><span class="vf vf-exp">偏贵</span></td>
+<td class="cell">🔀电商(大象)→云+AI·云+38→45%已兑现，SOTP≈HK$142（中·重估在途）</td>
 </tr><tr>
-<td class="l"><a class="nm" href="./det/sh600176.html">中国巨石 📄</a><span class="code">sh600176</span><div class="seg">玻璃纤维</div></td>
-<td class="q" data-c="sh600176" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 ¥28.6</div><div class="tp-b">买 ¥20.8</div><div class="tp-d">底 ¥14.6</div></td>
-<td class="q" data-c="sh600176" data-f="pe">–</td>
-<td><span class="vf vf-bub">泡沫</span></td>
-<td class="cell">玻纤全球产能第一·中低端周期泡沫</td>
-</tr><tr>
-<td class="l"><a class="nm" href="./det/sh600276.html">恒瑞医药 📄</a><span class="code">sh600276</span><div class="seg">创新药(半2B:卖药+BD授权)</div></td>
+<td class="l"><a class="nm" href="./det/sh600276.html">恒瑞医药 📄</a><span class="gd gd-b">B</span><span class="code">sh600276</span><div class="seg">创新药(半2B:卖药+BD授权)</div></td>
 <td class="q" data-c="sh600276" data-f="px"><span class="px">–</span><span class="chg"></span></td>
 <td class="tp"><div class="tp-s">卖 ¥80.3</div><div class="tp-b">买 ¥49.6</div><div class="tp-d">底 ¥34.75</div></td>
 <td class="q" data-c="sh600276" data-f="pe">–</td>
 <td><span class="vf vf-exp">偏贵</span></td>
-<td class="cell">创新药龙头·出海未自建(降自A)</td>
-</tr><tr>
-<td class="l"><a class="nm" href="./det/hk01810.html">小米集团-W 📄</a><span class="code">hk01810</span><div class="seg">消费电子+AIoT+汽车(新曲线)</div></td>
-<td class="q" data-c="hk01810" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 HK$43.4</div><div class="tp-b">买 HK$18.6</div><div class="tp-d">底 HK$13.02</div></td>
-<td class="q" data-c="hk01810" data-f="pe">–</td>
-<td><span class="vf vf-exp">偏贵</span></td>
-<td class="cell">手机无定价权·汽车未定局(降自A)</td>
-</tr><tr>
-<td class="l"><a class="nm" href="./det/sz002202.html">金风科技 📄</a><span class="code">sz002202</span><div class="seg">风电整机·全球龙头</div></td>
-<td class="q" data-c="sz002202" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 ¥17.3</div><div class="tp-b">买 ¥8.6</div><div class="tp-d">底 ¥6.0</div></td>
-<td class="q" data-c="sz002202" data-f="pe">–</td>
+<td class="cell">🔀仿制→创新药+BD出海·创新药占比61.69%已兑现（中·待自建终端）</td>
+</tr><tr class="grp g-dc"><td colspan="6"><b>⚠️ 潜力打折 · 透支/存疑/观察（慎）</b> · 4 只</td></tr><tr>
+<td class="l"><a class="nm" href="./det/sz002050.html">三花智控 📄</a><span class="gd gd-a">A</span><span class="code">sz002050</span><div class="seg">制冷/汽车热管理</div></td>
+<td class="q" data-c="sz002050" data-f="px"><span class="px">–</span><span class="chg"></span></td>
+<td class="tp"><div class="tp-s">卖 ¥39.2</div><div class="tp-b">买 ¥25.8</div><div class="tp-d">底 ¥18.0</div></td>
+<td class="q" data-c="sz002050" data-f="pe">–</td>
 <td><span class="vf vf-bub">泡沫</span></td>
-<td class="cell">风电全球第一·盈利底高PE泡沫</td>
-</tr><tr class="grp g-w"><td colspan="6"><b>观察 档</b> · 1 只</td></tr><tr>
-<td class="l"><a class="nm" href="./det/sh601100.html">恒立液压 📄</a><span class="code">sh601100</span><div class="seg">挖机液压件</div></td>
+<td class="cell">🔀机器人执行器未定点(50亿订单已辟谣)·纯期权(低)+现价逼近卖出线</td>
+</tr><tr>
+<td class="l"><a class="nm" href="./det/sh688008.html">澜起科技 📄</a><span class="gd gd-a">A</span><span class="code">sh688008</span><div class="seg">半导体·内存接口芯片(技术垄断收费站)</div></td>
+<td class="q" data-c="sh688008" data-f="px"><span class="px">–</span><span class="chg"></span></td>
+<td class="tp"><div class="tp-s">卖 ¥170.5</div><div class="tp-b">买 ¥80.6</div><div class="tp-d">底 ¥56.4</div></td>
+<td class="q" data-c="sh688008" data-f="pe">–</td>
+<td><span class="vf vf-bub">泡沫</span></td>
+<td class="cell">🌊AI互连芯片收费站(真)·但PE108透支、韩国反垄断</td>
+</tr><tr>
+<td class="l"><a class="nm" href="./det/sh601100.html">恒立液压 📄</a><span class="gd gd-w">观察</span><span class="code">sh601100</span><div class="seg">挖机液压件</div></td>
 <td class="q" data-c="sh601100" data-f="px"><span class="px">–</span><span class="chg"></span></td>
 <td class="tp"><div class="tp-s">卖 ¥116</div><div class="tp-b">买 ¥57</div><div class="tp-d">底 ¥40</div></td>
 <td class="q" data-c="sh601100" data-f="pe">–</td>
 <td><span class="vf vf-watch">观察</span></td>
-<td class="cell">液压油缸本土王·董事长被留置(摘冠)</td>
+<td class="cell">🔀丝杠纯期权(低)+治理黑箱(留置复职但原因未明)·现价泡沫</td>
+</tr><tr>
+<td class="l"><a class="nm" href="./det/sz300274.html">阳光电源 📄</a><span class="gd gd-a">A?</span><span class="code">sz300274</span><div class="seg">逆变器/储能</div></td>
+<td class="q" data-c="sz300274" data-f="px"><span class="px">–</span><span class="chg"></span></td>
+<td class="tp"><div class="tp-s">卖 ¥124</div><div class="tp-b">买 ¥87</div><div class="tp-d">底 ¥61</div></td>
+<td class="q" data-c="sz300274" data-f="pe">–</td>
+<td><span class="vf vf-exp">偏贵</span></td>
+<td class="cell">🌊储能被华为/内卷·增收不增利·A?存疑（中）</td>
+</tr><tr class="grp g-ele"><td colspan="6"><b>🏠🏞️ 大象/周期 · 收租无成长潜力（下一刀候选）</b> · 7 只</td></tr><tr>
+<td class="l"><a class="nm" href="./det/hk00700.html">腾讯控股 📄</a><span class="gd gd-s">S</span><span class="code">hk00700</span><div class="seg">社交/游戏/广告/金融科技/AI·S级锚</div></td>
+<td class="q" data-c="hk00700" data-f="px"><span class="px">–</span><span class="chg"></span></td>
+<td class="tp"><div class="tp-s">卖 HK$803</div><div class="tp-b">买 HK$525</div><div class="tp-d">底 HK$368</div></td>
+<td class="q" data-c="hk00700" data-f="pe">–</td>
+<td><span class="vf vf-buy">买区</span></td>
+<td class="cell">🏠社交垄断·MAU饱和靠变现深化（收租型·现价买区）</td>
+</tr><tr>
+<td class="l"><a class="nm" href="./det/sh600519.html">贵州茅台 📄</a><span class="gd gd-s">S-</span><span class="code">sh600519</span><div class="seg">高端白酒·消费定价权</div></td>
+<td class="q" data-c="sh600519" data-f="px"><span class="px">–</span><span class="chg"></span></td>
+<td class="tp"><div class="tp-s">卖 ¥2040</div><div class="tp-b">买 ¥1190</div><div class="tp-d">底 ¥833</div></td>
+<td class="q" data-c="sh600519" data-f="pe">–</td>
+<td><span class="vf vf-exp">偏贵</span></td>
+<td class="cell">🏠赛道见顶·批价腰斩（收租·代际不接棒风险）</td>
+</tr><tr>
+<td class="l"><a class="nm" href="./det/sh600660.html">福耀玻璃 📄</a><span class="gd gd-a">A</span><span class="code">sh600660</span><div class="seg">汽车玻璃·全球龙头</div></td>
+<td class="q" data-c="sh600660" data-f="px"><span class="px">–</span><span class="chg"></span></td>
+<td class="tp"><div class="tp-s">卖 ¥83.6</div><div class="tp-b">买 ¥60.8</div><div class="tp-d">底 ¥42.6</div></td>
+<td class="q" data-c="sh600660" data-f="pe">–</td>
+<td><span class="vf vf-buy">买区</span></td>
+<td class="cell">🏠汽玻37→45封顶·好公司但无成长弹性（买区）</td>
+</tr><tr>
+<td class="l"><a class="nm" href="./det/sz000333.html">美的集团 📄</a><span class="gd gd-a">A-</span><span class="code">sz000333</span><div class="seg">白电/2B工业科技</div></td>
+<td class="q" data-c="sz000333" data-f="px"><span class="px">–</span><span class="chg"></span></td>
+<td class="tp"><div class="tp-s">卖 ¥124.0</div><div class="tp-b">买 ¥86.8</div><div class="tp-d">底 ¥60.8</div></td>
+<td class="q" data-c="sz000333" data-f="pe">–</td>
+<td><span class="vf vf-buy">买区</span></td>
+<td class="cell">🏠白电大象+温和多元(2B非改命转型)</td>
+</tr><tr>
+<td class="l"><a class="nm" href="./det/sh600309.html">万华化学 📄</a><span class="gd gd-a">A</span><span class="code">sh600309</span><div class="seg">MDI/聚氨酯</div></td>
+<td class="q" data-c="sh600309" data-f="px"><span class="px">–</span><span class="chg"></span></td>
+<td class="tp"><div class="tp-s">卖 ¥102.2</div><div class="tp-b">买 ¥71.0</div><div class="tp-d">底 ¥49.7</div></td>
+<td class="q" data-c="sh600309" data-f="pe">–</td>
+<td><span class="vf vf-exp">偏贵</span></td>
+<td class="cell">🏞️MDI寡头·周期底回升(周期非成长)</td>
+</tr><tr>
+<td class="l"><a class="nm" href="./det/sh600031.html">三一重工 📄</a><span class="gd gd-a">A</span><span class="code">sh600031</span><div class="seg">工程机械</div></td>
+<td class="q" data-c="sh600031" data-f="px"><span class="px">–</span><span class="chg"></span></td>
+<td class="tp"><div class="tp-s">卖 ¥16.5</div><div class="tp-b">买 ¥11.3</div><div class="tp-d">底 ¥7.9</div></td>
+<td class="q" data-c="sh600031" data-f="pe">–</td>
+<td><span class="vf vf-bub">泡沫</span></td>
+<td class="cell">🏞️挖机全球王·周期已泡沫</td>
+</tr><tr>
+<td class="l"><a class="nm" href="./det/hk01882.html">海天国际 📄</a><span class="gd gd-a">A</span><span class="code">hk01882</span><div class="seg">注塑机</div></td>
+<td class="q" data-c="hk01882" data-f="px"><span class="px">–</span><span class="chg"></span></td>
+<td class="tp"><div class="tp-s">卖 HK$37.5</div><div class="tp-b">买 HK$22.5</div><div class="tp-d">底 HK$15.75</div></td>
+<td class="q" data-c="hk01882" data-f="pe">–</td>
+<td><span class="vf vf-buy">买区</span></td>
+<td class="cell">🏞️注塑机全球第一·周期便宜区</td>
 </tr></tbody></table></div>
-<div class="foot">共 35 只(个人池+制造基石去重后已深挖标的)。白酒仅留茅台/汾酒,五粮液/泸州老窖已永久删除。AI硬件/半导体、金融/公用/煤油金属强周期、中药、区域非全球等按框架未纳入或快速否决。</div>
+<div class="foot">已砍(B无潜力)：中联/海天味业/农夫山泉/顺丰/海康/法拉/徐工/巨石/小米/金风。白酒仅留茅台。下一刀候选=大象/周期那 7 只(收租无成长)。</div>
 </div>
 <script>
-const CODES="hk00700,sh600519,sh600660,sz300760,sz300750,sz002594,hk09992,sh603259,hk09988,sh601899,sh600309,sh600031,hk01882,hk00669,sz002050,sh688008,sz300274,sz000333,sz002028,sh688271,sz000157,hk02285,sh603288,hk09633,sz002352,sz002415,sh600563,sh605117,sz000425,sh600089,sh600176,sh600276,hk01810,sz002202,sh601100";
+const CODES="sz300760,sz300750,sz002594,hk09992,sh603259,sh601899,hk00669,sh688271,hk02285,sz002028,sh605117,sh600089,hk09988,sh600276,sz002050,sh688008,sh601100,sz300274,hk00700,sh600519,sh600660,sz000333,sh600309,sh600031,hk01882";
 function applyQuotes(txt){
   const map={},re=/v_([a-z]+\d+)="([^"]*)"/g;let mm;
   while((mm=re.exec(txt))!==null){map[mm[1]]=mm[2];}
