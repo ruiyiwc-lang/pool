@@ -1,0 +1,120 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>思源电气 · 基石深度</title><style>
+:root{--bg:#eef2e6;--card:#f7faf0;--ink:#26301f;--dim:#5a6b4d;--line:#d3ddc2;--accent:#2f7d4f;--warn:#8a5a1a;--buy:#1f6b3a;--sell:#a23a3a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.85 -apple-system,'PingFang SC','Microsoft YaHei',sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:22px 18px 80px}
+a{color:var(--accent)}
+.top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+h1{font-size:30px;margin:6px 0 2px}
+.seg{color:var(--dim);font-size:16px}
+.crown{background:#f3e4a8;color:#7a5c10;border:1px solid #e0cd7a;border-radius:6px;padding:1px 8px;font-size:15px}
+.qbar{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0 8px;display:flex;flex-wrap:wrap;gap:18px;align-items:baseline;font-size:17px}
+.qbar b{font-size:26px;color:var(--accent)}
+.qbar .lbl{color:var(--dim);font-size:14px;margin-right:4px}
+#upd{color:var(--dim);font-size:13px}
+.rbtn{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:5px 12px;font-size:14px;cursor:pointer}
+h2{font-size:22px;margin:30px 0 10px;padding-left:10px;border-left:5px solid var(--accent)}
+p{margin:10px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;background:var(--card);font-size:16px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#e3ead4}
+.v-passx{color:#1f6b3a;font-weight:700}
+.v-pass{color:#2f7d4f;font-weight:600}
+.v-warn{color:#8a5a1a;font-weight:600}
+.v-fail{color:#a23a3a;font-weight:700}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:12px 0}
+.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px 12px 46px;margin:10px 0;position:relative}
+.step>b{font-size:17px}
+.sn{position:absolute;left:12px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sd{margin-top:6px}
+.dim{color:var(--dim);font-size:14px}
+table.calc{margin:10px 0 2px;font-size:15px}
+table.calc .dx{color:var(--sell);font-weight:700;white-space:nowrap}
+table.calc .pv{color:var(--buy);font-weight:700;font-size:17px;white-space:nowrap}
+table.calc tr.sum td{background:#eef3e2}
+.verdict{background:#e6f0e0;border:1px solid #bcd3a8;border-radius:12px;padding:14px 18px;font-size:18px;margin:12px 0}
+.val3{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.val3 .b{flex:1;min-width:150px;border-radius:10px;padding:12px 14px;text-align:center;border:1px solid var(--line)}
+.val3 .sell{background:#f6e4e4;border-color:#e0bcbc}
+.val3 .buy{background:#e4f0e6;border-color:#bcd8c2}
+.val3 .bot{background:#eae4f0;border-color:#cbbce0}
+.val3 .k{font-size:14px;color:var(--dim)}
+.val3 .p{font-size:26px;font-weight:700;margin-top:2px}
+.up{border-left:5px solid #c9b6e0;margin:12px 0;background:var(--card);border-radius:0 10px 10px 0;padding:12px 16px}
+.up.jj{border-color:#e0a6c0}.up.td{border-color:#c9a06a}.up.ts{border-color:#7aa6c9}.up.mg{border-color:#e0b46a}
+.up .who{font-weight:700;font-size:17px}
+.up.nocov{opacity:.7}
+.nav{margin:8px 0 4px}
+.foot{color:var(--dim);font-size:14px;margin-top:26px;border-top:1px dashed var(--line);padding-top:12px}
+.foot a{display:inline-block;margin:2px 10px 2px 0}
+</style></head><body><div class="wrap">
+<div class="nav"><a href="../bedrock.html">← 返回中国高端制造基石</a></div>
+<div class="top"><h1>思源电气</h1><span class="seg">输配电设备·出海</span></div>
+<div class="qbar" data-c="sz002028">
+<span><span class="lbl">现价</span><b id="px">—</b></span>
+<span><span class="lbl">涨跌</span><span id="chg">—</span></span>
+<span><span class="lbl">PE-TTM</span><span id="pe">—</span></span>
+<span><span class="lbl">总市值(亿)</span><span id="cap">—</span></span>
+<button class="rbtn" onclick="refresh()">↻ 刷新</button><span id="upd">加载中…</span>
+</div>
+
+<h2>一、财报与增长</h2><p><b>2025</b>营收215.39亿(+39.34%)/归母31.50亿(+53.74%)/扣非29.52亿(+57.13%)/净利率≈14.6%，10派7。</p><p>2026Q1营收45.69亿(+41.60%)/归母5.50亿(+23.17%,汇兑还原后约+39%);2026H1归母14.87亿(仅+15.03%,增速较2025显著放缓)。</p><p>海外收入58.03亿(+85.84%),营收占比≈27%(新签订单海外占比升~39%);北美AI数据中心变压器订单毛利率高达60-70%，但储能/EPC低毛利拖累综合毛利。</p>
+<h2>二、业务状况</h2><p>六大板块:开关/变压器/保护及自动化/电力电子/EPC/储能;750kV GIS中标额同比+20倍，国网单笔70亿大单;绑宁德时代50GWh储能。</p><p>海外高增(欧洲/中东/一带一路)58.03亿+85.84%，'AI算力撞全球电网超级周期';出海是续命非免死，ABB/西门子/华为亦可出海+目标国反倾销政治坎。</p>
+<h2>三、管理层</h2><p>董增平体系，治理规范、连续分红(10派7);2025递表港交所、摩根士丹利爆买，融资扩产加码出海;无失信。</p>
+<h2>四、竞争格局</h2><p>vs平高/许继(国内)、ABB/西门子(全球):国内享国网份额+海外先发认证渠道;但2B制造无技术垄断，同行可追赶，强竞对(含被制裁受限的华为)亦在出海，价格战+双反政治天花板长期悬顶。</p>
+
+<h2>王超七问评分</h2>
+<table><tr><th style="width:32%">维度</th><th style="width:14%">判定</th><th>依据</th></tr>
+<tr><td>1 商业模式</td><td class='v-pass'>Pass</td><td>一次+二次输配电设备，电网/发电/工商业/海外客户招投标付费，现金流稳</td></tr>
+<tr><td>2 市场空间</td><td class='v-pass'>Pass</td><td>全球电网超级周期+AI数据中心变压器+一带一路，天花板高、多年增长</td></tr>
+<tr><td>3 盈利逻辑</td><td class='v-pass'>Pass</td><td>2025净利率14.6%、北美变压器毛利60-70%支撑;但储能/EPC低毛利摊薄、H1净利增速降至+15%，不到★</td></tr>
+<tr><td>4 护城河</td><td class='v-pass'>Pass</td><td>规模+品牌+海外认证/渠道先发;但2B无技术垄断、平高/许继可复制，属'可追赶'</td></tr>
+<tr><td>5 粘性</td><td class='v-pass'>Pass</td><td>电网客户长周期认证壁垒+复购;招标制价格敏感、大客户可引二供</td></tr>
+<tr><td>6 致命风险</td><td class='v-warn'>黄灯</td><td>PE-TTM39偏高+竞争价格战(H1净利仅+15%增收增利趋弱)+海外反倾销/贸易政治+汇兑波动——真实'改变命运'级需监控</td></tr>
+<tr><td>7 管理层</td><td class='v-pass'>Pass</td><td>董增平治理规范、连续分红、赴港融资扩张，无失信</td></tr></table>
+<div class="verdict"><b>终判：</b><b>B+档·成长/全球化在路上(确认)</b>：本土难替(国网70亿大单)+全球能打且海外真赚钱(58亿+85.84%)→逼近全球王;但2B制造无技术垄断、强竞对(ABB/西门子/华为)亦可出海+政治坎未验，暂定B档规则参与者。★=0(无物理级垄断)，黄灯=1(估值高+竞争/政治顶)。成长确定但PE39偏贵。<br><br><b>2B 制造阶段判据：</b>2B制造出海享受期(早/中):竞对未完全追上、海外份额上升、量利齐升，窗口尚在。监控信号:①H1净利增速放缓至+15%是否为挤出期前兆 ②综合毛利率趋势 ③大客户是否引二供 ④电网/AI订单周期见顶 ⑤海外双反/本地化政治狙击。</div>
+
+<h2>估值三线 · 计算过程（第2步·瑕疵全量化）</h2>
+
+<div class="step"><span class="sn">1</span><b>完美 PE 起点 = 35 x</b><div class="sd">输配电出海高增成长股，对标全球最优工业设备龙头且PEG≈1(增速25-40%);但2B无绝对垄断，上限给35x</div></div>
+<div class="step"><span class="sn">2</span><b>每股收益 EPS</b>
+<div class="sd">EPS-TTM：168.30 ÷ 39.38 = <b>4.27 元</b><br>NTM EPS：4.27 ×（1+25%）≈ <b>5.34 元</b><br><span class="dim">2025+54%不可外推;2026Q1还原汇兑+39%、H1净利仅+15%、券商予2026-28复合约40%，取中性偏保守+25%</span></div></div>
+<div class="step"><span class="sn">3</span><b>逐项瑕疵扣 PE（从 35 x 往下扣）</b>
+<table class="calc"><tr><th>瑕疵</th><th>类型</th><th>扣减</th><th>依据</th></tr><tr><td>估值偏高/竞争价格战</td><td>结构</td><td class='dx'>−8 x</td><td>PE-TTM39已高于完美35;2B无技术垄断，平高/许继/ABB/西门子竞争，H1净利+15%<2025+54%，增收增利趋弱</td></tr><tr><td>电网投资/订单周期+低毛利拖累</td><td>周期(半扣)</td><td class='dx'>−4 x</td><td>电网capex与AI订单有周期性，EPC/储能低毛利摊薄综合毛利</td></tr>
+<tr class="sum"><td><b>合计</b></td><td></td><td class="dx"><b>−12 x</b></td><td><b>扣后 PE = 35 − 12 = 23 x</b></td></tr></table></div>
+<div class="step"><span class="sn">4</span><b>三条线 = PE × NTM EPS</b>
+<table class="calc"><tr><th>线</th><th>算式</th><th>目标价</th><th>含义</th></tr><tr><td><b>超额卖出线</b></td><td>完美PE 35 × NTM 5.34</td><td class='pv'>¥186.9</td><td>泡沫区</td></tr><tr><td><b>正常买入线</b></td><td>扣后PE 23 × NTM 5.34</td><td class='pv'>¥122.8</td><td>A线</td></tr><tr><td><b>大底线</b></td><td>正常买入 122.8×0.7</td><td class='pv'>¥85.98</td><td>恐慌重仓</td></tr></table></div>
+<div class="val3">
+<div class="b sell"><div class="k">超额卖出线</div><div class="p">¥186.9</div></div>
+<div class="b buy"><div class="k">正常买入线(A线)</div><div class="p">¥122.8</div></div>
+<div class="b bot"><div class="k">大底线</div><div class="p">¥85.98</div></div>
+</div>
+<div class="step"><span class="sn">5</span><b>现价定位</b><div class="sd">现价168.30 ÷ NTM 5.34 = 前瞻PE <b>31.5 x</b> vs 扣后 23 x<br>→现价高于扣后买入线¥122.8、低于卖出线¥186.9，处偏贵持有观察区，未进A档（非建仓指令）</div></div>
+
+
+<h2>四家 UP 主怎么看（原话/区间，不自算）</h2>
+<div class='up jj nocov'><div class='who'>江江小可爱</div><div>未覆盖——不自算。</div></div>
+<div class='up td'><div class='who'>土豆(看财报)</div><div><b>「风口上的猪，效率壁垒易被卷」</b>——电网设备弹性最大的民企，但 50 倍太贵。</div></div>
+<div class='up ts nocov'><div class='who'>土斯土耶夫斯基</div><div>未覆盖——不自算。</div></div>
+<div class='up mg nocov'><div class='who'>复利芒果</div><div>未检索到复利芒果讲过本标的——未覆盖，不自算。</div></div>
+
+<div class="foot"><b>数据来源：</b><a href='https://wap.eastmoney.com/a/202604183709682318.html' target='_blank'>2025净利31.50亿+53.74% 10派7</a><a href='https://www.stcn.com/article/detail/3803564.html' target='_blank'>2026Q1营收45.69亿+41.60%</a><a href='https://www.cls.cn/detail/2423177' target='_blank'>2026H1归母14.87亿+15.03%</a><a href='https://caifuhao.eastmoney.com/news/20260502113003758672560' target='_blank'>海外58.03亿+85.84%/北美变压器毛利60-70%</a><br>行情 qt.gtimg.cn 实时 · 财报/竞争数据现搜带源 · 本页为事实与概率判断，非建仓指令。</div>
+</div>
+<script>
+function refresh(){
+ var box=document.querySelector('[data-c]');var code=box.getAttribute('data-c');
+ fetch('https://qt.gtimg.cn/q='+code).then(r=>r.arrayBuffer()).then(b=>{
+  var t=new TextDecoder('gbk').decode(b);var m=t.match(/"([^"]*)"/);if(!m)return;
+  var f=m[1].split('~');
+  document.getElementById('px').textContent=f[3];
+  var c=parseFloat(f[32]);var el=document.getElementById('chg');
+  el.textContent=(c>=0?'+':'')+f[32]+'%';el.style.color=c>=0?'#a23a3a':'#1f6b3a';
+  document.getElementById('pe').textContent=f[39];
+  document.getElementById('cap').textContent=f[45];
+  var d=f[30]||'';document.getElementById('upd').textContent='更新 '+(d.length>=12?d.slice(0,4)+'-'+d.slice(4,6)+'-'+d.slice(6,8)+' '+d.slice(8,10)+':'+d.slice(10,12):d);
+ }).catch(e=>{document.getElementById('upd').textContent='行情源暂不可用';});
+}
+refresh();setInterval(refresh,30000);
+</script></body></html>
