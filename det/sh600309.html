@@ -1,0 +1,120 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>万华化学 · 基石深度</title><style>
+:root{--bg:#eef2e6;--card:#f7faf0;--ink:#26301f;--dim:#5a6b4d;--line:#d3ddc2;--accent:#2f7d4f;--warn:#8a5a1a;--buy:#1f6b3a;--sell:#a23a3a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.85 -apple-system,'PingFang SC','Microsoft YaHei',sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:22px 18px 80px}
+a{color:var(--accent)}
+.top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+h1{font-size:30px;margin:6px 0 2px}
+.seg{color:var(--dim);font-size:16px}
+.crown{background:#f3e4a8;color:#7a5c10;border:1px solid #e0cd7a;border-radius:6px;padding:1px 8px;font-size:15px}
+.qbar{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0 8px;display:flex;flex-wrap:wrap;gap:18px;align-items:baseline;font-size:17px}
+.qbar b{font-size:26px;color:var(--accent)}
+.qbar .lbl{color:var(--dim);font-size:14px;margin-right:4px}
+#upd{color:var(--dim);font-size:13px}
+.rbtn{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:5px 12px;font-size:14px;cursor:pointer}
+h2{font-size:22px;margin:30px 0 10px;padding-left:10px;border-left:5px solid var(--accent)}
+p{margin:10px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;background:var(--card);font-size:16px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#e3ead4}
+.v-passx{color:#1f6b3a;font-weight:700}
+.v-pass{color:#2f7d4f;font-weight:600}
+.v-warn{color:#8a5a1a;font-weight:600}
+.v-fail{color:#a23a3a;font-weight:700}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:12px 0}
+.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px 12px 46px;margin:10px 0;position:relative}
+.step>b{font-size:17px}
+.sn{position:absolute;left:12px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sd{margin-top:6px}
+.dim{color:var(--dim);font-size:14px}
+table.calc{margin:10px 0 2px;font-size:15px}
+table.calc .dx{color:var(--sell);font-weight:700;white-space:nowrap}
+table.calc .pv{color:var(--buy);font-weight:700;font-size:17px;white-space:nowrap}
+table.calc tr.sum td{background:#eef3e2}
+.verdict{background:#e6f0e0;border:1px solid #bcd3a8;border-radius:12px;padding:14px 18px;font-size:18px;margin:12px 0}
+.val3{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.val3 .b{flex:1;min-width:150px;border-radius:10px;padding:12px 14px;text-align:center;border:1px solid var(--line)}
+.val3 .sell{background:#f6e4e4;border-color:#e0bcbc}
+.val3 .buy{background:#e4f0e6;border-color:#bcd8c2}
+.val3 .bot{background:#eae4f0;border-color:#cbbce0}
+.val3 .k{font-size:14px;color:var(--dim)}
+.val3 .p{font-size:26px;font-weight:700;margin-top:2px}
+.up{border-left:5px solid #c9b6e0;margin:12px 0;background:var(--card);border-radius:0 10px 10px 0;padding:12px 16px}
+.up.jj{border-color:#e0a6c0}.up.td{border-color:#c9a06a}.up.ts{border-color:#7aa6c9}.up.mg{border-color:#e0b46a}
+.up .who{font-weight:700;font-size:17px}
+.up.nocov{opacity:.7}
+.nav{margin:8px 0 4px}
+.foot{color:var(--dim);font-size:14px;margin-top:26px;border-top:1px dashed var(--line);padding-top:12px}
+.foot a{display:inline-block;margin:2px 10px 2px 0}
+</style></head><body><div class="wrap">
+<div class="nav"><a href="../bedrock.html">← 返回中国高端制造基石</a></div>
+<div class="top"><h1>万华化学</h1><span class="seg">MDI/聚氨酯</span></div>
+<div class="qbar" data-c="sh600309">
+<span><span class="lbl">现价</span><b id="px">—</b></span>
+<span><span class="lbl">涨跌</span><span id="chg">—</span></span>
+<span><span class="lbl">PE-TTM</span><span id="pe">—</span></span>
+<span><span class="lbl">总市值(亿)</span><span id="cap">—</span></span>
+<button class="rbtn" onclick="refresh()">↻ 刷新</button><span id="upd">加载中…</span>
+</div>
+
+<h2>一、财报与增长</h2><p>2025营收2032.35亿(+11.62%)，归母净利125.27亿(-3.88%)、扣非121.44亿(-9.10%)：典型增收不增利，化工品价格下行拖累，坐实景气底部</p><p>2026修复启动：Q1营收540.52亿、归母净利37.18亿、经营现金流68.57亿(同比+10倍)；2026H1预告净利98–104亿(同比+60~70%)，Q2单季60.8–66.8亿创新高，靠价格回升+降本增效</p>
+<h2>二、业务状况</h2><p>三板块：聚氨酯(MDI/TDI/聚醚，利润核心)+石化(低毛利周期)+精细化学品与新材料(成长赛道，重资本开支)；MDI全球产能占比>40%(福建技改2026Q2投产后总产能450万吨/年，超巴斯夫+科思创之和)</p><p>价格弹性大：2026纯MDI 2.37万/吨(较年初+28%)、聚合MDI+34%；全球MDI消费902万吨(2025)、2026-28供需紧平衡；积极出海但美国对华MDI反倾销税约85.11%</p>
+<h2>三、管理层</h2><p>董事长廖增太(技术出身)，烟台国资混改背景、治理相对市场化、分红稳定、无重大失信；景气底仍维持研发与扩产投入</p>
+<h2>四、竞争格局</h2><p>MDI全球寡头：万华扩产后>40% vs 巴斯夫/科思创/亨斯迈；欧洲三巨头2026-27计划关停70-110万吨(占欧洲38-49%)，全球新增产能几乎全部来自中国</p><p>成本曲线最优：烟台MDI完全成本约8895元/吨，较东北亚同行低6075元/吨(第七代技术+单线80万吨规模)，产能利用率91%>全球均值84%；但TDI/新材料为竞争性赛道，非寡头</p>
+
+<h2>王超七问评分</h2>
+<table><tr><th style="width:32%">维度</th><th style="width:14%">判定</th><th>依据</th></tr>
+<tr><td>1 商业模式</td><td class='v-pass'>Pass</td><td>卖MDI/TDI/聚醚+石化+新材料给家电/建筑/汽车/鞋材2B客户，按吨定价，量×价×价差赚钱</td></tr>
+<tr><td>2 市场空间</td><td class='v-pass'>Pass</td><td>全球MDI消费902万吨(2025)、2026-28紧平衡+新材料成长；天花板受地产/建筑景气约束</td></tr>
+<tr><td>3 盈利逻辑</td><td class='v-pass'>Pass</td><td>成本护城河使周期底仍盈利(2025净利率~6%)，成本比东北亚低6075元/吨、利用率91%；但整体毛利随价差周期波动</td></tr>
+<tr><td>4 护城河</td><td class='v-passx'>Pass★</td><td>MDI全球>40%份额、第七代技术+单线80万吨规模=成本曲线最优，新进入者技术+资本壁垒极高，近似准收费站；欧洲三巨头正关停</td></tr>
+<tr><td>5 粘性</td><td class='v-pass'>Pass</td><td>2B长约+全球本地交付+一体化配套，切换成本中等；商品属性使粘性弱于消费品</td></tr>
+<tr><td>6 致命风险</td><td class='v-warn'>黄灯</td><td>化工景气周期(地产/建筑需求)主导盈利+美国反倾销税85.11%政治坎+新材料资本开支ROI未证明；均属周期性/可对冲，非结构性熄火</td></tr>
+<tr><td>7 管理层</td><td class='v-pass'>Pass</td><td>廖增太技术出身、国企混改治理市场化、分红稳定、无失信</td></tr></table>
+<div class="verdict"><b>终判：</b>MDI单环节=<b>全球王(A档规则制定者)</b>：本土难替+全球能打+海外赚钱；但公司整体是化工周期股，只能给周期中枢PE。1★(底硬在MDI)+1黄灯(顶受周期约束)。<br><br><b>2B 制造阶段判据：</b>2B制造阶段判据：处【<b>周期底部回升初段+MDI寡头准收费站</b>】。2025增收不增利(净利-3.9%)=景气底，2026Q1/H1净利同比+60~70%=修复启动，非后期挤出。MDI因技术+成本+寡头格局有护城河续命(Pass★)，出海窗口尚在(欧洲关停+产能东移)但受美国反倾销税85.11%政治压制。故禁止把2026修复期高增速当中枢外推。</div>
+
+<h2>估值三线 · 计算过程（第2步·瑕疵全量化）</h2>
+
+<div class="step"><span class="sn">1</span><b>完美 PE 起点 = 18 x</b><div class="sd">周期股铁律：不给消费股PE、不按底部修复高PE外推，取正常化中枢上沿。万华是全球MDI寡头+成本曲线最优+一体化，但MDI/石化本质是随地产/建筑景气波动的2B商品，盈利会大幅摆动，故完美(零瑕疵)天花板封在≈18x。</div></div>
+<div class="step"><span class="sn">2</span><b>每股收益 EPS</b>
+<div class="sd">EPS-TTM：73.51 ÷ 17.48 = <b>4.21 元</b><br>NTM EPS：4.21 ×（1+35%）≈ <b>5.68 元</b><br><span class="dim">2026为景气底回升年：H1预告净利98-104亿(+60~70%)，全年保守估~178亿(H2较Q2高点温和回落)，对应EPS≈5.68元、较TTM +约35%。已刻意不按Q2峰值年化。</span></div></div>
+<div class="step"><span class="sn">3</span><b>逐项瑕疵扣 PE（从 18 x 往下扣）</b>
+<table class="calc"><tr><th>瑕疵</th><th>类型</th><th>扣减</th><th>依据</th></tr><tr><td>化工景气周期</td><td>周期(半扣)</td><td class='dx'>−4 x</td><td>MDI/石化受地产/建筑景气主导，盈利大起大落(2025增收不增利即证明)，有退出路径故半扣</td></tr><tr><td>资本开支/新材料未兑现+贸易壁垒</td><td>结构</td><td class='dx'>−1.5 x</td><td>精细化学品与新材料重资本开支ROI未证明+美国对华MDI反倾销税85.11%压制高毛利出海(政治坎)</td></tr>
+<tr class="sum"><td><b>合计</b></td><td></td><td class="dx"><b>−5.5 x</b></td><td><b>扣后 PE = 18 − 5.5 = 12.5 x</b></td></tr></table></div>
+<div class="step"><span class="sn">4</span><b>三条线 = PE × NTM EPS</b>
+<table class="calc"><tr><th>线</th><th>算式</th><th>目标价</th><th>含义</th></tr><tr><td><b>超额卖出线</b></td><td>完美PE 18 × NTM 5.68</td><td class='pv'>¥102.2</td><td>泡沫区</td></tr><tr><td><b>正常买入线</b></td><td>扣后PE 12.5 × NTM 5.68</td><td class='pv'>¥71.0</td><td>A线</td></tr><tr><td><b>大底线</b></td><td>正常买入 71.0 ×0.7</td><td class='pv'>¥49.7</td><td>恐慌重仓</td></tr></table></div>
+<div class="val3">
+<div class="b sell"><div class="k">超额卖出线</div><div class="p">¥102.2</div></div>
+<div class="b buy"><div class="k">正常买入线(A线)</div><div class="p">¥71.0</div></div>
+<div class="b bot"><div class="k">大底线</div><div class="p">¥49.7</div></div>
+</div>
+<div class="step"><span class="sn">5</span><b>现价定位</b><div class="sd">现价73.51 ÷ NTM 5.68 = 前瞻PE <b>12.9 x</b> vs 扣后 12.5 x<br>→现价贴着正常买入线71.0上方(+3.5%)、略贵于扣后PE，处合理区上沿；不是A档大底，也远未到卖出泡沫区（非建仓指令）</div></div>
+
+
+<h2>四家 UP 主怎么看（原话/区间，不自算）</h2>
+<div class='up jj'><div class='who'>江江小可爱</div><div>合理市值区间反算：<b>买 ¥51.11 / 卖 ¥76.67</b>；当前<b>区间内</b>。</div></div>
+<div class='up td nocov'><div class='who'>土豆(看财报)</div><div>未覆盖——不自算。</div></div>
+<div class='up ts nocov'><div class='who'>土斯土耶夫斯基</div><div>未覆盖——不自算。</div></div>
+<div class='up mg nocov'><div class='who'>复利芒果</div><div>未检索到复利芒果讲过本标的——未覆盖，不自算。</div></div>
+
+<div class="foot"><b>数据来源：</b><a href='https://wallstreetcn.com/articles/3767623' target='_blank'>华尔街见闻·万华2025营收+12%净利-3.9%</a><a href='https://www.stcn.com/article/detail/4001063.html' target='_blank'>证券时报·2026H1预盈近百亿+60~70%</a><a href='https://finance.sina.com.cn/wm/2026-05-19/doc-inhymqcm7505786.shtml' target='_blank'>新浪财经·MDI 450万吨扩产/成本/竞争格局</a><a href='http://static.cninfo.com.cn/finalpage/2026-04-21/1225130793.PDF' target='_blank'>巨潮·万华化学2025年年度报告</a><br>行情 qt.gtimg.cn 实时 · 财报/竞争数据现搜带源 · 本页为事实与概率判断，非建仓指令。</div>
+</div>
+<script>
+function refresh(){
+ var box=document.querySelector('[data-c]');var code=box.getAttribute('data-c');
+ fetch('https://qt.gtimg.cn/q='+code).then(r=>r.arrayBuffer()).then(b=>{
+  var t=new TextDecoder('gbk').decode(b);var m=t.match(/"([^"]*)"/);if(!m)return;
+  var f=m[1].split('~');
+  document.getElementById('px').textContent=f[3];
+  var c=parseFloat(f[32]);var el=document.getElementById('chg');
+  el.textContent=(c>=0?'+':'')+f[32]+'%';el.style.color=c>=0?'#a23a3a':'#1f6b3a';
+  document.getElementById('pe').textContent=f[39];
+  document.getElementById('cap').textContent=f[45];
+  var d=f[30]||'';document.getElementById('upd').textContent='更新 '+(d.length>=12?d.slice(0,4)+'-'+d.slice(4,6)+'-'+d.slice(6,8)+' '+d.slice(8,10)+':'+d.slice(10,12):d);
+ }).catch(e=>{document.getElementById('upd').textContent='行情源暂不可用';});
+}
+refresh();setInterval(refresh,30000);
+</script></body></html>
