@@ -1,0 +1,120 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>澜起科技 · 基石深度</title><style>
+:root{--bg:#eef2e6;--card:#f7faf0;--ink:#26301f;--dim:#5a6b4d;--line:#d3ddc2;--accent:#2f7d4f;--warn:#8a5a1a;--buy:#1f6b3a;--sell:#a23a3a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.85 -apple-system,'PingFang SC','Microsoft YaHei',sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:22px 18px 80px}
+a{color:var(--accent)}
+.top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+h1{font-size:30px;margin:6px 0 2px}
+.seg{color:var(--dim);font-size:16px}
+.crown{background:#f3e4a8;color:#7a5c10;border:1px solid #e0cd7a;border-radius:6px;padding:1px 8px;font-size:15px}
+.qbar{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0 8px;display:flex;flex-wrap:wrap;gap:18px;align-items:baseline;font-size:17px}
+.qbar b{font-size:26px;color:var(--accent)}
+.qbar .lbl{color:var(--dim);font-size:14px;margin-right:4px}
+#upd{color:var(--dim);font-size:13px}
+.rbtn{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:5px 12px;font-size:14px;cursor:pointer}
+h2{font-size:22px;margin:30px 0 10px;padding-left:10px;border-left:5px solid var(--accent)}
+p{margin:10px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;background:var(--card);font-size:16px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#e3ead4}
+.v-passx{color:#1f6b3a;font-weight:700}
+.v-pass{color:#2f7d4f;font-weight:600}
+.v-warn{color:#8a5a1a;font-weight:600}
+.v-fail{color:#a23a3a;font-weight:700}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:12px 0}
+.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px 12px 46px;margin:10px 0;position:relative}
+.step>b{font-size:17px}
+.sn{position:absolute;left:12px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sd{margin-top:6px}
+.dim{color:var(--dim);font-size:14px}
+table.calc{margin:10px 0 2px;font-size:15px}
+table.calc .dx{color:var(--sell);font-weight:700;white-space:nowrap}
+table.calc .pv{color:var(--buy);font-weight:700;font-size:17px;white-space:nowrap}
+table.calc tr.sum td{background:#eef3e2}
+.verdict{background:#e6f0e0;border:1px solid #bcd3a8;border-radius:12px;padding:14px 18px;font-size:18px;margin:12px 0}
+.val3{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.val3 .b{flex:1;min-width:150px;border-radius:10px;padding:12px 14px;text-align:center;border:1px solid var(--line)}
+.val3 .sell{background:#f6e4e4;border-color:#e0bcbc}
+.val3 .buy{background:#e4f0e6;border-color:#bcd8c2}
+.val3 .bot{background:#eae4f0;border-color:#cbbce0}
+.val3 .k{font-size:14px;color:var(--dim)}
+.val3 .p{font-size:26px;font-weight:700;margin-top:2px}
+.up{border-left:5px solid #c9b6e0;margin:12px 0;background:var(--card);border-radius:0 10px 10px 0;padding:12px 16px}
+.up.jj{border-color:#e0a6c0}.up.td{border-color:#c9a06a}.up.ts{border-color:#7aa6c9}.up.mg{border-color:#e0b46a}
+.up .who{font-weight:700;font-size:17px}
+.up.nocov{opacity:.7}
+.nav{margin:8px 0 4px}
+.foot{color:var(--dim);font-size:14px;margin-top:26px;border-top:1px dashed var(--line);padding-top:12px}
+.foot a{display:inline-block;margin:2px 10px 2px 0}
+</style></head><body><div class="wrap">
+<div class="nav"><a href="../bedrock.html">← 返回中国高端制造基石</a></div>
+<div class="top"><h1>澜起科技</h1><span class="seg">半导体·内存接口芯片(技术垄断收费站)</span></div>
+<div class="qbar" data-c="sh688008">
+<span><span class="lbl">现价</span><b id="px">—</b></span>
+<span><span class="lbl">涨跌</span><span id="chg">—</span></span>
+<span><span class="lbl">PE-TTM</span><span id="pe">—</span></span>
+<span><span class="lbl">总市值(亿)</span><span id="cap">—</span></span>
+<button class="rbtn" onclick="refresh()">↻ 刷新</button><span id="upd">加载中…</span>
+</div>
+
+<h2>一、财报与增长</h2><p><b>2025</b>营收54.56亿(+49.94%)、归母净利22.36亿(+58.35%);互连类芯片收入51.39亿占94.18%、毛利率65.57%;2024全球内存接口芯片市占36.8%居首。</p><p>2026Q1营收14.61亿(+19.51%)、归母净利8.47亿(+61.30%)、互连类毛利率升至71.5%;DDR5第3/4子代RCD出货占比提升，PCIe Retimer/CXL收入攀升。</p><p>2026H1业绩预告:归母净利同比+63.9%~81.2%约19亿(AI服务器DDR5放量驱动)。</p>
+<h2>二、业务状况</h2><p>主业内存接口芯片=服务器每条内存通道必过的'收费站'，按量收税;DDR5渗透+子代迭代(RCD第3/4代)是当期增长核心引擎。</p><p>AI服务器高性能运力芯片新曲线:PCIe Retimer/CXL MXC/MRCD/MDB/CKD承接AI推理互连;互连类占总营收94.18%高度集中，深度绑定AI服务器与内存原厂资本开支。</p>
+<h2>三、管理层</h2><p>杨崇和(创始人董事长，海归技术派/半导体老兵)主导，治理规范、无失信;科创板首批上市。</p>
+<h2>四、竞争格局</h2><p>全球仅澜起/瑞萨(原IDT)/Rambus三家量产服务器内存接口芯片，合计市占>93%(澜起36.8%/瑞萨36%/Rambus20.5%)，JEDEC标准+客户认证+DDR5世代领先=准收费站寡头，物理级壁垒。</p><p>2026.7.15韩国首尔检方突袭三巨头，涉嫌串通报价/协同提价卡特尔，7.16 A股一度跌17%至207.7元——寡头定价权正招致反垄断狙击(政治/监管坎)。</p>
+
+<h2>王超七问评分</h2>
+<table><tr><th style="width:32%">维度</th><th style="width:14%">判定</th><th>依据</th></tr>
+<tr><td>1 商业模式</td><td class='v-passx'>Pass★</td><td>内存通道必过的收费站，按量收税，2025互连类收入51.39亿占94.18%</td></tr>
+<tr><td>2 市场空间</td><td class='v-pass'>Pass</td><td>DDR5渗透+子代迭代+AI服务器+CXL/Retimer新曲线抬升天花板，但受AI capex周期约束</td></tr>
+<tr><td>3 盈利逻辑</td><td class='v-passx'>Pass★</td><td>互连类毛利率65.57%(2025)→71.5%(2026Q1)，寡头定价权支撑高毛利</td></tr>
+<tr><td>4 护城河</td><td class='v-passx'>Pass★</td><td>全球仅3家，标准+认证+世代领先，同行短期无法复制(技术寡头收费站)</td></tr>
+<tr><td>5 粘性</td><td class='v-pass'>Pass</td><td>服务器认证周期长、切换成本高，与内存原厂深度绑定</td></tr>
+<tr><td>6 致命风险</td><td class='v-warn'>黄灯</td><td>韩国反垄断突袭(2026.7.15)若坐实=罚款+被迫降价压毛利;叠加AI capex周期回落与DDR世代切换空窗——真实'改变命运'级监管威胁</td></tr>
+<tr><td>7 管理层</td><td class='v-pass'>Pass</td><td>杨崇和创始人技术派，治理规范无失信</td></tr></table>
+<div class="verdict"><b>终判：</b><b>A档·全球寡头收费站(但现价泡沫，确认)</b>：技术垄断型2B收费站(内存接口芯片全球三强寡头，类'卖铲子'，满足续命路径①技术垄断，非纯国内无垄断2B制造)。护城河Pass★，但PE-TTM 108.92极高、AI叙事已price in大量预期，叠加2026.7韩国反垄断突袭。五步测算超额卖出线≈170.5，现价228.23已远超卖出线约34%=明确泡沫区。<br><br><b>2B 制造阶段判据：</b>技术垄断收费站(享受期早段)+AI周期判据:内存接口芯片=准收费站，满足'占住技术垄断'续命路径①，区别于纯国内无垄断2B制造;但仍受两重周期约束——①DDR世代切换周期(DDR5放量是有限窗口)②AI服务器资本开支周期。当前处DDR5渗透放量早期(份额升/毛利升)，然估值已透支该窗口，且反垄断正挑战其定价权。</div>
+
+<h2>估值三线 · 计算过程（第2步·瑕疵全量化）</h2>
+
+<div class="step"><span class="sn">1</span><b>完美 PE 起点 = 55 x</b><div class="sd">技术寡头收费站+AI高成长可享稀缺溢价，对标全球稀缺芯片龙头给55x完美起点(收费站可给高，但55已是天花板，108.92明显透支)</div></div>
+<div class="step"><span class="sn">2</span><b>每股收益 EPS</b>
+<div class="sd">EPS-TTM：228.23 ÷ 108.92 = <b>2.10 元</b><br>NTM EPS：2.10 ×（1+~48%）≈ <b>3.1 元</b><br><span class="dim">2026全年归母预计约38-40亿(H1指引+63.9%~81.2%约19亿+H2放量)，总股本约12.2亿股→NTM EPS≈3.1元(隐含增速~50%)</span></div></div>
+<div class="step"><span class="sn">3</span><b>逐项瑕疵扣 PE（从 55 x 往下扣）</b>
+<table class="calc"><tr><th>瑕疵</th><th>类型</th><th>扣减</th><th>依据</th></tr><tr><td>估值泡沫/AI预期已price in</td><td>结构</td><td class='dx'>−12.0 x</td><td>PE-TTM 108.92远超完美55x，AI叙事透支大量预期</td></tr><tr><td>韩国反垄断突袭/卡特尔指控</td><td>结构</td><td class='dx'>−8.0 x</td><td>2026.7.15韩检方突袭三巨头涉嫌串价，7.16 A股跌17%;若坐实=罚款+降价压毛利</td></tr><tr><td>DDR世代切换+内存/AI capex周期</td><td>周期(半扣)</td><td class='dx'>−5.0 x</td><td>DDR5放量属有限窗口，DDR4曾下行;AI资本开支若放缓则量价双压</td></tr><tr><td>PCIe Retimer/CXL新曲线未兑现</td><td>周期(半扣)</td><td class='dx'>−4.0 x</td><td>第二曲线收入占比仍小，AI推理互连放量存不确定性</td></tr>
+<tr class="sum"><td><b>合计</b></td><td></td><td class="dx"><b>−29.0 x</b></td><td><b>扣后 PE = 55 − 29 = 26 x</b></td></tr></table></div>
+<div class="step"><span class="sn">4</span><b>三条线 = PE × NTM EPS</b>
+<table class="calc"><tr><th>线</th><th>算式</th><th>目标价</th><th>含义</th></tr><tr><td><b>超额卖出线</b></td><td>完美PE 55 × NTM 3.1</td><td class='pv'>¥170.5</td><td>泡沫区</td></tr><tr><td><b>正常买入线</b></td><td>扣后PE 26 × NTM 3.1</td><td class='pv'>¥80.6</td><td>A线</td></tr><tr><td><b>大底线</b></td><td>正常买入 80.6×0.7</td><td class='pv'>¥56.4</td><td>恐慌重仓</td></tr></table></div>
+<div class="val3">
+<div class="b sell"><div class="k">超额卖出线</div><div class="p">¥170.5</div></div>
+<div class="b buy"><div class="k">正常买入线(A线)</div><div class="p">¥80.6</div></div>
+<div class="b bot"><div class="k">大底线</div><div class="p">¥56.4</div></div>
+</div>
+<div class="step"><span class="sn">5</span><b>现价定位</b><div class="sd">现价228.23 ÷ NTM 3.1 = 前瞻PE <b>73.6 x</b> vs 扣后 26 x<br>→现价远超超额卖出线170.5约34%、前瞻PE 73.6x远超扣后26x，明确泡沫区、无建仓价值，等大底（非建仓指令）</div></div>
+
+
+<h2>四家 UP 主怎么看（原话/区间，不自算）</h2>
+<div class='up jj nocov'><div class='who'>江江小可爱</div><div>未覆盖——不自算。</div></div>
+<div class='up td'><div class='who'>土豆(看财报)</div><div><b>「AI 数据流量的收费站，全球只有三家、澜起第一」</b>——AI 时代超级收费站、全球互连芯片第一，但 124 倍 PE。</div></div>
+<div class='up ts nocov'><div class='who'>土斯土耶夫斯基</div><div>未覆盖——不自算。</div></div>
+<div class='up mg nocov'><div class='who'>复利芒果</div><div>未检索到复利芒果讲过本标的——未覆盖，不自算。</div></div>
+
+<div class="foot"><b>数据来源：</b><a href='https://finance.ifeng.com/c/8sb8haTxvRC' target='_blank'>澜起2025营收+49.94%归母+58.35%</a><a href='https://www.cls.cn/detail/2356918' target='_blank'>澜起2026Q1净利+61.30%毛利71.5%</a><a href='https://finance.eastmoney.com/a/202607173809850275.html' target='_blank'>2026H1净利预增63.9%~81.2%</a><a href='https://m.jrj.com.cn/madapter/stock/2026/07/16142857828111.shtml' target='_blank'>全球内存接口三巨头遭韩突击搜查</a><br>行情 qt.gtimg.cn 实时 · 财报/竞争数据现搜带源 · 本页为事实与概率判断，非建仓指令。</div>
+</div>
+<script>
+function refresh(){
+ var box=document.querySelector('[data-c]');var code=box.getAttribute('data-c');
+ fetch('https://qt.gtimg.cn/q='+code).then(r=>r.arrayBuffer()).then(b=>{
+  var t=new TextDecoder('gbk').decode(b);var m=t.match(/"([^"]*)"/);if(!m)return;
+  var f=m[1].split('~');
+  document.getElementById('px').textContent=f[3];
+  var c=parseFloat(f[32]);var el=document.getElementById('chg');
+  el.textContent=(c>=0?'+':'')+f[32]+'%';el.style.color=c>=0?'#a23a3a':'#1f6b3a';
+  document.getElementById('pe').textContent=f[39];
+  document.getElementById('cap').textContent=f[45];
+  var d=f[30]||'';document.getElementById('upd').textContent='更新 '+(d.length>=12?d.slice(0,4)+'-'+d.slice(4,6)+'-'+d.slice(6,8)+' '+d.slice(8,10)+':'+d.slice(10,12):d);
+ }).catch(e=>{document.getElementById('upd').textContent='行情源暂不可用';});
+}
+refresh();setInterval(refresh,30000);
+</script></body></html>
