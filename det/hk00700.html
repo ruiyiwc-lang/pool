@@ -1,0 +1,120 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>腾讯控股 · 基石深度</title><style>
+:root{--bg:#eef2e6;--card:#f7faf0;--ink:#26301f;--dim:#5a6b4d;--line:#d3ddc2;--accent:#2f7d4f;--warn:#8a5a1a;--buy:#1f6b3a;--sell:#a23a3a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.85 -apple-system,'PingFang SC','Microsoft YaHei',sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:22px 18px 80px}
+a{color:var(--accent)}
+.top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+h1{font-size:30px;margin:6px 0 2px}
+.seg{color:var(--dim);font-size:16px}
+.crown{background:#f3e4a8;color:#7a5c10;border:1px solid #e0cd7a;border-radius:6px;padding:1px 8px;font-size:15px}
+.qbar{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0 8px;display:flex;flex-wrap:wrap;gap:18px;align-items:baseline;font-size:17px}
+.qbar b{font-size:26px;color:var(--accent)}
+.qbar .lbl{color:var(--dim);font-size:14px;margin-right:4px}
+#upd{color:var(--dim);font-size:13px}
+.rbtn{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:5px 12px;font-size:14px;cursor:pointer}
+h2{font-size:22px;margin:30px 0 10px;padding-left:10px;border-left:5px solid var(--accent)}
+p{margin:10px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;background:var(--card);font-size:16px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#e3ead4}
+.v-passx{color:#1f6b3a;font-weight:700}
+.v-pass{color:#2f7d4f;font-weight:600}
+.v-warn{color:#8a5a1a;font-weight:600}
+.v-fail{color:#a23a3a;font-weight:700}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:12px 0}
+.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px 12px 46px;margin:10px 0;position:relative}
+.step>b{font-size:17px}
+.sn{position:absolute;left:12px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sd{margin-top:6px}
+.dim{color:var(--dim);font-size:14px}
+table.calc{margin:10px 0 2px;font-size:15px}
+table.calc .dx{color:var(--sell);font-weight:700;white-space:nowrap}
+table.calc .pv{color:var(--buy);font-weight:700;font-size:17px;white-space:nowrap}
+table.calc tr.sum td{background:#eef3e2}
+.verdict{background:#e6f0e0;border:1px solid #bcd3a8;border-radius:12px;padding:14px 18px;font-size:18px;margin:12px 0}
+.val3{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.val3 .b{flex:1;min-width:150px;border-radius:10px;padding:12px 14px;text-align:center;border:1px solid var(--line)}
+.val3 .sell{background:#f6e4e4;border-color:#e0bcbc}
+.val3 .buy{background:#e4f0e6;border-color:#bcd8c2}
+.val3 .bot{background:#eae4f0;border-color:#cbbce0}
+.val3 .k{font-size:14px;color:var(--dim)}
+.val3 .p{font-size:26px;font-weight:700;margin-top:2px}
+.up{border-left:5px solid #c9b6e0;margin:12px 0;background:var(--card);border-radius:0 10px 10px 0;padding:12px 16px}
+.up.jj{border-color:#e0a6c0}.up.td{border-color:#c9a06a}.up.ts{border-color:#7aa6c9}.up.mg{border-color:#e0b46a}
+.up .who{font-weight:700;font-size:17px}
+.up.nocov{opacity:.7}
+.nav{margin:8px 0 4px}
+.foot{color:var(--dim);font-size:14px;margin-top:26px;border-top:1px dashed var(--line);padding-top:12px}
+.foot a{display:inline-block;margin:2px 10px 2px 0}
+</style></head><body><div class="wrap">
+<div class="nav"><a href="../bedrock.html">← 返回中国高端制造基石</a></div>
+<div class="top"><h1>腾讯控股</h1><span class="seg">社交/游戏/广告/金融科技/AI·S级锚</span></div>
+<div class="qbar" data-c="hk00700">
+<span><span class="lbl">现价</span><b id="px">—</b></span>
+<span><span class="lbl">涨跌</span><span id="chg">—</span></span>
+<span><span class="lbl">PE-TTM</span><span id="pe">—</span></span>
+<span><span class="lbl">总市值(亿)</span><span id="cap">—</span></span>
+<button class="rbtn" onclick="refresh()">↻ 刷新</button><span id="upd">加载中…</span>
+</div>
+
+<h2>一、财报与增长</h2><p><b>2025</b>营收7518亿(+14%)、Non-IFRS归母核心利润2596亿(+17%)、毛利率53%→56%、经营现金流3030亿(+17.2%);游戏(本土1642亿+18%/国际774亿+33%)+广告(1450亿+19%)+金融科技及企业服务(2294亿+8%)。</p><p>2026Q1营收1965亿(+9%)、Non-IFRS净利679亿(+11%)、毛利率57%;广告+20%领跑、企服+20%、本土游戏放缓+6%;资本开支319亿(+16%)延续AI高投入。</p><p>股东回报:2025回购约800亿港元/注销1.534亿股(较2024约1120亿缩量);2026Q1回购降至约76亿港元——AI优先、回购退居其次。</p>
+<h2>二、业务状况</h2><p>微信生态国民级流量底座:合并MAU 14.18亿(近饱和)，视频号时长+20%正兑现为广告;广告2026Q1+20%受益视频号/搜一搜/AI精准投放，是最确定增长引擎。</p><p>游戏国内外双轮(国际+33%首破百亿美元)+企服/腾讯云规模化盈利+AI(混元Hy3/元宝MAU破亿)第二曲线，目前是净投入项。</p>
+<h2>三、管理层</h2><p>马化腾+刘炽平长期稳健、治理透明、无失信;坚持回购'注销'真实增厚EPS，但2026资本配置转向AI优先，回购让渡短期股东回报。</p>
+<h2>四、竞争格局</h2><p>社交护城河=物理级网络效应，微信14亿MAU国民基础设施迁移成本极高，字节/阿里十年未撼动——国内定价权天花板，S档锚。</p><p>云vs阿里云(腾讯云聚焦高毛利SaaS已规模化盈利、不打价格战);AI vs字节豆包/阿里通义/DeepSeek竞争激烈，混元靠微信生态分发差异化。</p>
+
+<h2>王超七问评分</h2>
+<table><tr><th style="width:32%">维度</th><th style="width:14%">判定</th><th>依据</th></tr>
+<tr><td>1 商业模式</td><td class='v-passx'>Pass★</td><td>微信流量入口→游戏/广告/金融科技/云多引擎收税，2025营收7518亿、现金流3030亿</td></tr>
+<tr><td>2 市场空间</td><td class='v-pass'>Pass</td><td>MAU 14.18亿近饱和(+2%)，但视频号变现率、AI、出海(国际游戏+33%)仍有纵深</td></tr>
+<tr><td>3 盈利逻辑</td><td class='v-passx'>Pass★</td><td>毛利率53%→56%→57%持续抬升，Non-IFRS净利+17%，ROE与自由现金流强劲</td></tr>
+<tr><td>4 护城河</td><td class='v-passx'>Pass★</td><td>社交网络效应=物理级壁垒，微信国民基础设施十年无人撼动，同行不可复制</td></tr>
+<tr><td>5 粘性</td><td class='v-passx'>Pass★</td><td>微信集通讯/支付/小程序/内容于一体，个人+商业迁移成本极高</td></tr>
+<tr><td>6 致命风险</td><td class='v-pass'>Pass</td><td>监管(平台反垄断/游戏版号)是长期天花板，但已扛过2021整顿存活，无一夜致死因子</td></tr>
+<tr><td>7 管理层</td><td class='v-passx'>Pass★</td><td>马化腾/刘炽平长期稳健、治理透明、无失信，持续回购'注销'真实增厚EPS</td></tr></table>
+<div class="verdict"><b>终判：</b><b>S档(国内定价权天花板，确认)</b>：本土难替+全球能打且海外赚钱=全球王，叠加微信社交垄断=国内定价权天花板。七问5★2Pass、零Fail，底极硬;唯一顶部约束是MAU见顶后增长依赖变现深化与AI/出海兑现——S档来自不可复制的社交网络效应而非单纯增速。<br><br><b>2B 制造阶段判据：</b>护城河极强且不可逆:微信网络效应属数学/物理级壁垒，非2B制造'时间窗口式'高增长，可长期收税(类收费站+卖铲子)。赛道四基础(人口/场景/偏好/技术)均稳、无干涸信号。最大风险=监管(反垄断/版号)+AI资本开支高峰压制利润率(周期，有退出路径)。</div>
+
+<h2>估值三线 · 计算过程（第2步·瑕疵全量化）</h2>
+
+<div class="step"><span class="sn">1</span><b>完美 PE 起点 = 26 x</b><div class="sd">S档社交垄断+国内定价权天花板，对标全球最优社交/平台(Meta/Google约22-25x)给溢价;微信网络效应不可复制、现金流稳健，零瑕疵给26x</div></div>
+<div class="step"><span class="sn">2</span><b>每股收益 EPS</b>
+<div class="sd">EPS-TTM：443.6 ÷ 16.20 = <b>27.38 港元</b><br>NTM EPS：27.38 ×（1+13%）≈ <b>30.9 港元</b><br><span class="dim">Non-IFRS净利Q1+11%+回购注销缩股约2%增厚，取约+13%</span></div></div>
+<div class="step"><span class="sn">3</span><b>逐项瑕疵扣 PE（从 26 x 往下扣）</b>
+<table class="calc"><tr><th>瑕疵</th><th>类型</th><th>扣减</th><th>依据</th></tr><tr><td>AI资本开支高峰+新AI投入翻倍</td><td>周期(半扣)</td><td class='dx'>−3.5 x</td><td>2025 capex 792亿、2026Q1 319亿(+16%)，新AI投入今年至少翻倍，拖累利润率与FCF</td></tr><tr><td>金融科技降档+广告依赖单一变现</td><td>结构</td><td class='dx'>−3 x</td><td>金融科技2026Q1+9%受宏观拖累；广告靠视频号时长变现，抖音持续分流</td></tr><tr><td>监管+回购缩量</td><td>结构</td><td class='dx'>−2.5 x</td><td>平台反垄断/版号长期天花板；2026Q1回购降至约76亿港元，股东回报让位AI</td></tr>
+<tr class="sum"><td><b>合计</b></td><td></td><td class="dx"><b>−9 x</b></td><td><b>扣后 PE = 26 − 9 = 17 x</b></td></tr></table></div>
+<div class="step"><span class="sn">4</span><b>三条线 = PE × NTM EPS</b>
+<table class="calc"><tr><th>线</th><th>算式</th><th>目标价</th><th>含义</th></tr><tr><td><b>超额卖出线</b></td><td>完美PE 26 × NTM 30.9</td><td class='pv'>HK$803</td><td>泡沫区</td></tr><tr><td><b>正常买入线</b></td><td>扣后PE 17 × NTM 30.9</td><td class='pv'>HK$525</td><td>A线</td></tr><tr><td><b>大底线</b></td><td>正常买入 525×0.7</td><td class='pv'>HK$368</td><td>恐慌重仓</td></tr></table></div>
+<div class="val3">
+<div class="b sell"><div class="k">超额卖出线</div><div class="p">HK$803</div></div>
+<div class="b buy"><div class="k">正常买入线(A线)</div><div class="p">HK$525</div></div>
+<div class="b bot"><div class="k">大底线</div><div class="p">HK$368</div></div>
+</div>
+<div class="step"><span class="sn">5</span><b>现价定位</b><div class="sd">现价443.6 ÷ NTM 30.9 = 前瞻PE <b>14.4 x</b> vs 扣后 17 x<br>→现价已跌破买入线525约16%、前瞻PE14.4<扣后17，处买入线与大底之间偏低区（非建仓指令）</div></div>
+
+
+<h2>四家 UP 主怎么看（原话/区间，不自算）</h2>
+<div class='up jj'><div class='who'>江江小可爱</div><div>合理市值区间反算(池外补算)：<b>买 HK$622 / 卖 HK$778</b>。</div></div>
+<div class='up td'><div class='who'>土豆(看财报)</div><div><b>「桥要塌你敢不敢走过去收过路费」</b>——完全地板价、15 倍 PE 的印钞机，市场在为恐惧定价。</div></div>
+<div class='up ts'><div class='who'>土斯土耶夫斯基</div><div>以腾讯作 4 年价值投资博弈复盘案例，评 400 多港元属合理估值区间，但全程未给自己的买入低值（450 建仓/PE25-30 均为引用他人）——<b>推演非亲口</b>。</div></div>
+<div class='up mg'><div class='who'>复利芒果</div><div>无可替代的社交关系链+现金流+AI 提效，护城河坚固但业务复杂；TTM 约 20 倍近历史均值、前瞻压到 14 倍。<b>中性偏看好：便宜不等于马上涨，看得懂就买。</b></div></div>
+
+<div class="foot"><b>数据来源：</b><a href='https://www.iyiou.com/news/202603181124510' target='_blank'>腾讯2025年度业绩(营收7518亿/Non-IFRS净利2596亿)</a><a href='https://www.prnewswire.com/apac/news-releases/tencent-announces-2026-first-quarter-results-302770779.html' target='_blank'>腾讯2026Q1业绩(营收1965亿/毛利率57%)</a><a href='https://www.cls.cn/detail/2317702' target='_blank'>资本开支792亿/混元新模型</a><br>行情 qt.gtimg.cn 实时 · 财报/竞争数据现搜带源 · 本页为事实与概率判断，非建仓指令。</div>
+</div>
+<script>
+function refresh(){
+ var box=document.querySelector('[data-c]');var code=box.getAttribute('data-c');
+ fetch('https://qt.gtimg.cn/q='+code).then(r=>r.arrayBuffer()).then(b=>{
+  var t=new TextDecoder('gbk').decode(b);var m=t.match(/"([^"]*)"/);if(!m)return;
+  var f=m[1].split('~');
+  document.getElementById('px').textContent=f[3];
+  var c=parseFloat(f[32]);var el=document.getElementById('chg');
+  el.textContent=(c>=0?'+':'')+f[32]+'%';el.style.color=c>=0?'#a23a3a':'#1f6b3a';
+  document.getElementById('pe').textContent=f[39];
+  document.getElementById('cap').textContent=f[45];
+  var d=f[30]||'';document.getElementById('upd').textContent='更新 '+(d.length>=12?d.slice(0,4)+'-'+d.slice(4,6)+'-'+d.slice(6,8)+' '+d.slice(8,10)+':'+d.slice(10,12):d);
+ }).catch(e=>{document.getElementById('upd').textContent='行情源暂不可用';});
+}
+refresh();setInterval(refresh,30000);
+</script></body></html>
