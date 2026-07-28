@@ -26,6 +26,8 @@ tr.grp td{font-size:15px;padding:9px 12px;border-bottom:2px solid var(--line)}
 .seg{font-size:12.5px;color:var(--sub);margin-top:3px}
 .px{font-weight:800;font-size:16px} .chg{display:block;font-size:12px;font-weight:700} .up{color:var(--up)} .down{color:var(--down)}
 .tp{white-space:nowrap;font-size:12.5px;font-weight:700;line-height:1.5} .tp-s{color:#b23434} .tp-b{color:#1f7a42} .tp-d{color:#7a52a3}
+.tp-r{margin-top:3px;font-size:11.5px;font-weight:800;padding:1px 6px;border-radius:5px;display:inline-block;border:1px solid}
+.pos-lo{background:#e2f2e6;color:#1f7a42;border-color:#a9d6b6} .pos-mid{background:#fbf3dc;color:#8a6a15;border-color:#e6d29a} .pos-hi{background:#f7dede;color:#b23434;border-color:#e6b3b3}
 .vf{font-size:12.5px;font-weight:800;padding:3px 10px;border-radius:20px;white-space:nowrap;border:1px solid}
 .vf-buy{background:#e2f2e6;color:#1f7a42;border-color:#a9d6b6} .vf-fair{background:#fbf3dc;color:#8a6a15;border-color:#e6d29a}
 .vf-exp{background:#fbe9d6;color:#a5601a;border-color:#eccaa0} .vf-bub{background:#f7dede;color:#b23434;border-color:#e6b3b3} .vf-watch{background:#e6e6e6;color:#555;border-color:#c9c9c9}
@@ -44,13 +46,13 @@ tr.grp td{font-size:15px;padding:9px 12px;border-bottom:2px solid var(--line)}
 <div class="statusbar"><span id="upd">加载中…</span><button class="rbtn" onclick="refresh()">↻ 刷新行情</button>
 <span class="nav"><a href="./jiangjiang.html">江江</a><a href="./tudou.html">土豆</a><a href="./tusi.html">土斯</a><a href="./mango.html">复利芒果</a></span></div>
 <div class="ruler"><b>王超初步建仓组合（12 只）</b>：从核心池再精简——只留 ① <b>有潜力的大海🌊核心进攻 9 只</b> ② <b>换赛道转型🔀 1 只(恒瑞)</b> ③ <b>压舱收租🏠底仓 2 只(腾讯/茅台)</b>。已剔除潜力打折3只(三花/澜起/阳光)、收租无潜力3只(福耀/美的/万华)、阿里(重估在途另议)。</div>
-<div class="ruler">点标的名 📄 进详情页(四维+七问+估值三线+市场预期差+四家UP)。<b>估值灯</b>=现在贵不贵(<span class="vf vf-buy">买区</span>/<span class="vf vf-fair">合理</span>/<span class="vf vf-exp">偏贵</span>/<span class="vf vf-bub">泡沫</span>/<span class="vf vf-watch">观察</span>)，<b>灯下灰字=估值原因</b>(为什么给这个PE·风险多大)；最后一列开头<b><span class="prob prob-g">兑现 概率</span>徽章</b>=潜力兑现概率(<span class="prob prob-g">中高/高</span>/<span class="prob prob-m">中</span>/<span class="prob prob-r">低</span>/<span class="prob prob-n">收租无成长</span>)，其后为潜力看点。<b>十五五政策α</b>=十五五规划给的额外顺风：<span class="pol pol-s">强 ★</span>直接主线且预期未满 / <span class="pol pol-m">中</span>有α多含止血或已部分定价 / <span class="pol pol-w">弱</span>政策不给增量 / <span class="pol pol-neg">逆/无</span>方向相悖 / <span class="pol pol-priced">★已透支</span>α真但估值已price in。政策α只是加分项非买入理由。行情实时·非投资建议。</div>
+<div class="ruler">点标的名 📄 进详情页(四维+七问+估值三线+市场预期差+四家UP)。<b>估值灯</b>=现在贵不贵(<span class="vf vf-buy">买区</span>/<span class="vf vf-fair">合理</span>/<span class="vf vf-exp">偏贵</span>/<span class="vf vf-bub">泡沫</span>/<span class="vf vf-watch">观察</span>)，<b>灯下灰字=估值原因</b>(为什么给这个PE·风险多大)；最后一列开头<b><span class="prob prob-g">兑现 概率</span>徽章</b>=潜力兑现概率(<span class="prob prob-g">中高/高</span>/<span class="prob prob-m">中</span>/<span class="prob prob-r">低</span>/<span class="prob prob-n">收租无成长</span>)，其后为潜力看点。<b>十五五政策α</b>=十五五规划给的额外顺风：<span class="pol pol-s">强 ★</span>直接主线且预期未满 / <span class="pol pol-m">中</span>有α多含止血或已部分定价 / <span class="pol pol-w">弱</span>政策不给增量 / <span class="pol pol-neg">逆/无</span>方向相悖 / <span class="pol pol-priced">★已透支</span>α真但估值已price in。政策α只是加分项非买入理由。<b>目标价列底部<span class="tp-r pos-mid">距底 X.XXx·位置Y%</span></b>=实时算：现价是大底的几倍(越接近1越贴地板)＋现价在[大底→卖出]梯子上的位置(<span class="tp-r pos-lo">≤35%贴底</span>/<span class="tp-r pos-mid">中段</span>/<span class="tp-r pos-hi">≥75%近顶</span>)——看谁的安全垫厚、谁离地板远。行情实时·非投资建议。</div>
 <div class="twrap"><table>
-<thead><tr><th>标的·段位·细分</th><th class="r">现价</th><th>目标价 卖/买/底</th><th class="r">PE</th><th>估值灯 · 估值原因</th><th>兑现概率 · 潜力看点</th><th>十五五政策α</th></tr></thead>
+<thead><tr><th>标的·段位·细分</th><th class="r">现价</th><th>目标价 卖/买/底 + 距底·位置</th><th class="r">PE</th><th>估值灯 · 估值原因</th><th>兑现概率 · 潜力看点</th><th>十五五政策α</th></tr></thead>
 <tbody><tr class="grp g-sea"><td colspan="7"><b>🌊 主业大海 · 赛道越做越大（核心进攻·有潜力）</b> · 9 只</td></tr><tr>
 <td class="l"><a class="nm" href="./det/sz300760.html">迈瑞医疗 📄</a><span class="gd gd-a">A</span><span class="code">sz300760</span><div class="seg">医疗器械</div></td>
 <td class="q" data-c="sz300760" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 ¥195</div><div class="tp-b">买 ¥156</div><div class="tp-d">底 ¥109</div></td>
+<td class="tp" data-sell="195" data-buy="156" data-bot="109"><div class="tp-s">卖 ¥195</div><div class="tp-b">买 ¥156</div><div class="tp-d">底 ¥109</div><div class="tp-r">距底 –</div></td>
 <td class="q" data-c="sz300760" data-f="pe">–</td>
 <td class="vfcell"><span class="vf vf-buy">买区</span><div class="vwhy">前瞻PE20(PEG1.5)·增速回13%高确定性；跌破则↓约25%</div></td>
 <td class="cell"><span class="prob prob-g">兑现 中高</span> 🌊全球器械·国产替代+海外53%已兑现</td>
@@ -58,7 +60,7 @@ tr.grp td{font-size:15px;padding:9px 12px;border-bottom:2px solid var(--line)}
 </tr><tr>
 <td class="l"><a class="nm" href="./det/sz300750.html">宁德时代 📄</a><span class="gd gd-a">A</span><span class="code">sz300750</span><div class="seg">动力/储能电池</div></td>
 <td class="q" data-c="sz300750" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 ¥462</div><div class="tp-b">买 ¥385</div><div class="tp-d">底 ¥270</div></td>
+<td class="tp" data-sell="462" data-buy="385" data-bot="270"><div class="tp-s">卖 ¥462</div><div class="tp-b">买 ¥385</div><div class="tp-d">底 ¥270</div><div class="tp-r">距底 –</div></td>
 <td class="q" data-c="sz300750" data-f="pe">–</td>
 <td class="vfcell"><span class="vf vf-fair">合理</span><div class="vwhy">PE17.5中枢偏低·动力后期不给溢价，储能高增托底</div></td>
 <td class="cell"><span class="prob prob-g">兑现 中高</span> 🌊储能大海+🔀LRS收租·动力已后期</td>
@@ -66,7 +68,7 @@ tr.grp td{font-size:15px;padding:9px 12px;border-bottom:2px solid var(--line)}
 </tr><tr>
 <td class="l"><a class="nm" href="./det/sz002594.html">比亚迪 📄</a><span class="gd gd-a">A</span><span class="code">sz002594</span><div class="seg">新能源车+电池+电子(垂直整合)</div></td>
 <td class="q" data-c="sz002594" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 ¥120</div><div class="tp-b">买 ¥90</div><div class="tp-d">底 ¥63</div></td>
+<td class="tp" data-sell="120" data-buy="90" data-bot="63"><div class="tp-s">卖 ¥120</div><div class="tp-b">买 ¥90</div><div class="tp-d">底 ¥63</div><div class="tp-r">距底 –</div></td>
 <td class="q" data-c="sz002594" data-f="pe">–</td>
 <td class="vfcell"><span class="vf vf-buy">买区</span><div class="vwhy">PE18(PEG0.7)折价·市场怕价格战；出海护城河为真</div></td>
 <td class="cell"><span class="prob prob-g">兑现 中高</span> 🌊全球新能源出海+🔀智驾·海外+145%已兑现</td>
@@ -74,7 +76,7 @@ tr.grp td{font-size:15px;padding:9px 12px;border-bottom:2px solid var(--line)}
 </tr><tr>
 <td class="l"><a class="nm" href="./det/hk09992.html">泡泡玛特 📄</a><span class="gd gd-a">A</span><span class="code">hk09992</span><div class="seg">潮玩IP·全球化品类定义者</div></td>
 <td class="q" data-c="hk09992" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 HK$380</div><div class="tp-b">买 HK$240</div><div class="tp-d">底 HK$168</div></td>
+<td class="tp" data-sell="380" data-buy="240" data-bot="168"><div class="tp-s">卖 HK$380</div><div class="tp-b">买 HK$240</div><div class="tp-d">底 HK$168</div><div class="tp-r">距底 –</div></td>
 <td class="q" data-c="hk09992" data-f="pe">–</td>
 <td class="vfcell"><span class="vf vf-buy">买区</span><div class="vwhy">市场只给~13x=折价非溢价；单一IP风险大(可-50%)</div></td>
 <td class="cell"><span class="prob prob-m">兑现 中·VC</span> 🌊全球潮玩渗透极低·赌IP系统能否持续</td>
@@ -82,7 +84,7 @@ tr.grp td{font-size:15px;padding:9px 12px;border-bottom:2px solid var(--line)}
 </tr><tr>
 <td class="l"><a class="nm" href="./det/sh603259.html">药明康德 📄</a><span class="gd gd-a">A</span><span class="code">sh603259</span><div class="seg">CXO·CRDMO一体化</div></td>
 <td class="q" data-c="sh603259" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 ¥150</div><div class="tp-b">买 ¥117</div><div class="tp-d">底 ¥82</div></td>
+<td class="tp" data-sell="150" data-buy="117" data-bot="82"><div class="tp-s">卖 ¥150</div><div class="tp-b">买 ¥117</div><div class="tp-d">底 ¥82</div><div class="tp-r">距底 –</div></td>
 <td class="q" data-c="sh603259" data-f="pe">–</td>
 <td class="vfcell"><span class="vf vf-fair">合理</span><div class="vwhy">PE18·被BIOSECURE地缘主动打折；法案落地再杀</div></td>
 <td class="cell"><span class="prob prob-m">兑现 中</span> 🌊全球CXO+GLP-1·卡BIOSECURE地缘</td>
@@ -90,7 +92,7 @@ tr.grp td{font-size:15px;padding:9px 12px;border-bottom:2px solid var(--line)}
 </tr><tr>
 <td class="l"><a class="nm" href="./det/sh601899.html">紫金矿业 📄</a><span class="gd gd-a">A</span><span class="code">sh601899</span><div class="seg">黄金/铜·全球矿业</div></td>
 <td class="q" data-c="sh601899" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 ¥34.2</div><div class="tp-b">买 ¥28.5</div><div class="tp-d">底 ¥20.0</div></td>
+<td class="tp" data-sell="34.2" data-buy="28.5" data-bot="20.0"><div class="tp-s">卖 ¥34.2</div><div class="tp-b">买 ¥28.5</div><div class="tp-d">底 ¥20.0</div><div class="tp-r">距底 –</div></td>
 <td class="q" data-c="sh601899" data-f="pe">–</td>
 <td class="vfcell"><span class="vf vf-fair">合理</span><div class="vwhy">中枢PE15·产量放量撑正常化EPS1.9，金价不外推→中枢略贵</div></td>
 <td class="cell"><span class="prob prob-r">兑现 中低</span> 🌊全球金铜+锂新曲线·周期属性(利润续爆存疑)</td>
@@ -98,7 +100,7 @@ tr.grp td{font-size:15px;padding:9px 12px;border-bottom:2px solid var(--line)}
 </tr><tr>
 <td class="l"><a class="nm" href="./det/sh688271.html">联影医疗 📄</a><span class="gd gd-b">B+</span><span class="code">sh688271</span><div class="seg">医学影像</div></td>
 <td class="q" data-c="sh688271" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 ¥161</div><div class="tp-b">买 ¥134</div><div class="tp-d">底 ¥94</div></td>
+<td class="tp" data-sell="161" data-buy="134" data-bot="94"><div class="tp-s">卖 ¥161</div><div class="tp-b">买 ¥134</div><div class="tp-d">底 ¥94</div><div class="tp-r">距底 –</div></td>
 <td class="q" data-c="sh688271" data-f="pe">–</td>
 <td class="vfcell"><span class="vf vf-buy">买区</span><div class="vwhy">前瞻PE40·真技术门槛溢价(本池最贵)；证伪则↓30%+</div></td>
 <td class="cell"><span class="prob prob-m">兑现 中</span> 🌊高端影像技术门槛(自研5T/PET)·海外+51%</td>
@@ -106,7 +108,7 @@ tr.grp td{font-size:15px;padding:9px 12px;border-bottom:2px solid var(--line)}
 </tr><tr>
 <td class="l"><a class="nm" href="./det/sz002028.html">思源电气 📄</a><span class="gd gd-b">B+</span><span class="code">sz002028</span><div class="seg">输配电设备·出海</div></td>
 <td class="q" data-c="sz002028" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 ¥192</div><div class="tp-b">买 ¥150</div><div class="tp-d">底 ¥105</div></td>
+<td class="tp" data-sell="192" data-buy="150" data-bot="105"><div class="tp-s">卖 ¥192</div><div class="tp-b">买 ¥150</div><div class="tp-d">底 ¥105</div><div class="tp-r">距底 –</div></td>
 <td class="q" data-c="sz002028" data-f="pe">–</td>
 <td class="vfcell"><span class="vf vf-fair">合理</span><div class="vwhy">PE25·出海高增但一致预期偏乐观已折价；不及则↓约25%</div></td>
 <td class="cell"><span class="prob prob-m">兑现 中</span> 🌊电网+AI数据中心变压器出海·海外+85%</td>
@@ -114,7 +116,7 @@ tr.grp td{font-size:15px;padding:9px 12px;border-bottom:2px solid var(--line)}
 </tr><tr>
 <td class="l"><a class="nm" href="./det/sh600089.html">特变电工 📄</a><span class="gd gd-b">B</span><span class="code">sh600089</span><div class="seg">变压器/特高压+多晶硅</div></td>
 <td class="q" data-c="sh600089" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 ¥23.8</div><div class="tp-b">买 ¥19.6</div><div class="tp-d">底 ¥13.7</div></td>
+<td class="tp" data-sell="23.8" data-buy="19.6" data-bot="13.7"><div class="tp-s">卖 ¥23.8</div><div class="tp-b">买 ¥19.6</div><div class="tp-d">底 ¥13.7</div><div class="tp-r">距底 –</div></td>
 <td class="q" data-c="sh600089" data-f="pe">–</td>
 <td class="vfcell"><span class="vf vf-fair">合理</span><div class="vwhy">中枢PE14·输变电成长+硅料周期底；业务杂尾部风险</div></td>
 <td class="cell"><span class="prob prob-m">兑现 中</span> 🌊变压器出海+68%·多晶硅周期底拖累</td>
@@ -122,7 +124,7 @@ tr.grp td{font-size:15px;padding:9px 12px;border-bottom:2px solid var(--line)}
 </tr><tr class="grp g-sw"><td colspan="7"><b>🔀 换赛道转型 · 成则重生败则尘埃</b> · 1 只</td></tr><tr>
 <td class="l"><a class="nm" href="./det/sh600276.html">恒瑞医药 📄</a><span class="gd gd-b">B</span><span class="code">sh600276</span><div class="seg">创新药(半2B:卖药+BD授权)</div></td>
 <td class="q" data-c="sh600276" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 ¥65</div><div class="tp-b">买 ¥50</div><div class="tp-d">底 ¥35</div></td>
+<td class="tp" data-sell="65" data-buy="50" data-bot="35"><div class="tp-s">卖 ¥65</div><div class="tp-b">买 ¥50</div><div class="tp-d">底 ¥35</div><div class="tp-r">距底 –</div></td>
 <td class="q" data-c="sh600276" data-f="pe">–</td>
 <td class="vfcell"><span class="vf vf-fair">合理</span><div class="vwhy">混合PE32·创新药占比61.69%已兑现给成长PE；管线期权不计</div></td>
 <td class="cell"><span class="prob prob-m">兑现 中</span> 🔀仿制→创新药+BD出海·创新药占比61.69%已兑现·待自建终端</td>
@@ -130,7 +132,7 @@ tr.grp td{font-size:15px;padding:9px 12px;border-bottom:2px solid var(--line)}
 </tr><tr class="grp g-ele"><td colspan="7"><b>🏠 压舱收租 · 无潜力但高确定性（底仓·腾讯/茅台）</b> · 2 只</td></tr><tr>
 <td class="l"><a class="nm" href="./det/hk00700.html">腾讯控股 📄</a><span class="gd gd-s">S</span><span class="code">hk00700</span><div class="seg">社交/游戏/广告/金融科技/AI·S级锚</div></td>
 <td class="q" data-c="hk00700" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 HK$646</div><div class="tp-b">买 HK$544</div><div class="tp-d">底 HK$381</div></td>
+<td class="tp" data-sell="646" data-buy="544" data-bot="381"><div class="tp-s">卖 HK$646</div><div class="tp-b">买 HK$544</div><div class="tp-d">底 HK$381</div><div class="tp-r">距底 –</div></td>
 <td class="q" data-c="hk00700" data-f="pe">–</td>
 <td class="vfcell"><span class="vf vf-buy">买区</span><div class="vwhy">稳态PE16·不给溢价，forward13x=天花板恐慌错杀</div></td>
 <td class="cell"><span class="prob prob-n">兑现 收租</span> 🏠社交垄断·MAU饱和靠变现深化(收租型)</td>
@@ -138,10 +140,10 @@ tr.grp td{font-size:15px;padding:9px 12px;border-bottom:2px solid var(--line)}
 </tr><tr>
 <td class="l"><a class="nm" href="./det/sh600519.html">贵州茅台 📄</a><span class="gd gd-s">S-</span><span class="code">sh600519</span><div class="seg">高端白酒·消费定价权</div></td>
 <td class="q" data-c="sh600519" data-f="px"><span class="px">–</span><span class="chg"></span></td>
-<td class="tp"><div class="tp-s">卖 ¥1580</div><div class="tp-b">买 ¥1305</div><div class="tp-d">底 ¥914</div></td>
+<td class="tp" data-sell="1510" data-buy="1270" data-bot="820"><div class="tp-s">卖 ¥1510</div><div class="tp-b">买 ¥1270</div><div class="tp-d">底 ¥820</div><div class="tp-r">距底 –</div></td>
 <td class="q" data-c="sh600519" data-f="pe">–</td>
-<td class="vfcell"><span class="vf vf-buy">买区</span><div class="vwhy">稳态PE19·唯一内伤未排除，批价腰斩若恶化则下修</div></td>
-<td class="cell"><span class="prob prob-n">兑现 收租</span> 🏠赛道见顶·批价腰斩(代际不接棒风险)</td>
+<td class="vfcell"><span class="vf vf-fair">合理</span><div class="vwhy">稳态PE18.5·奢侈品定价权真(年内2次提价)；只在重要事宜喝、需求窄→无大众托底、大底更深</div></td>
+<td class="cell"><span class="prob prob-n">兑现 收租</span> 🏠奢侈品·只在重要事宜喝(婚宴/商务/高端礼)·批价软=商务囤货退、无大众托底</td>
 <td class="polcell"><span class="pol pol-neg">逆/无</span><div class="polwhy">白酒非政策方向;扩内需重服务非吃喝</div></td>
 </tr></tbody></table></div>
 <div class="foot">建仓组合 12 只 = 大海🌊9(迈瑞/宁德/比亚迪/泡泡/药明/紫金/联影/思源/特变) + 转型🔀1(恒瑞) + 压舱🏠2(腾讯/茅台)。历轮剔除：首轮B无潜力10只、二次成色/溢价不够6只(恒立/创科/泉峰/德业/三一/海天国际)、本轮潜力打折3只(三花/澜起/阳光)+收租无潜力3只(福耀/美的/万华)+阿里(SOTP重估在途,另议)。</div>
@@ -154,7 +156,13 @@ function applyQuotes(txt){
   let ok=0;
   document.querySelectorAll('td.q[data-f="px"]').forEach(td=>{
     const raw=map[td.dataset.c];if(!raw)return;const f=raw.split('~');const px=parseFloat(f[3]),chg=parseFloat(f[32]);
-    if(isFinite(px)&&px>0){ok++;td.querySelector('.px').textContent=px.toFixed(2);const ce=td.querySelector('.chg');ce.textContent=(chg>=0?'+':'')+(isFinite(chg)?chg.toFixed(2):'—')+'%';ce.className='chg '+(chg>=0?'up':'down');}
+    if(isFinite(px)&&px>0){ok++;td.querySelector('.px').textContent=px.toFixed(2);const ce=td.querySelector('.chg');ce.textContent=(chg>=0?'+':'')+(isFinite(chg)?chg.toFixed(2):'—')+'%';ce.className='chg '+(chg>=0?'up':'down');
+      const tr=td.closest('tr');const tp=tr&&tr.querySelector('.tp');
+      if(tp){const bot=parseFloat(tp.dataset.bot),sell=parseFloat(tp.dataset.sell),r=tp.querySelector('.tp-r');
+        if(r&&isFinite(bot)&&bot>0){const ratio=px/bot,pos=(px-bot)/(sell-bot)*100;
+          r.textContent='距底 '+ratio.toFixed(2)+'x·位置'+pos.toFixed(0)+'%';
+          r.className='tp-r '+(pos<=35?'pos-lo':(pos>=75?'pos-hi':'pos-mid'));}}
+    }
   });
   document.querySelectorAll('td.q[data-f="pe"]').forEach(td=>{const raw=map[td.dataset.c];if(!raw)return;const pe=parseFloat(raw.split('~')[39]);if(isFinite(pe)&&pe!==0)td.textContent=pe.toFixed(2);});
   const t=new Date().toLocaleTimeString('zh-CN',{hour12:false});
